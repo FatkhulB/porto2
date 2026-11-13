@@ -22,60 +22,60 @@ const options = [
     bannerScaleX: 1.07,
     bannerScaleY: 3.35,
     tag: "PORTFOLIO WORKS",
-    summary: "Featured applications, interactive web systems & creative experiments",
+    summary: "Featured design works, interactive browser games & web applications",
     cards: [
       {
-        title: "Persona 3 Reload Pause Menu",
-        desc: "Pixel-perfect vanilla recreation with SVG color-inversion, Web Audio SFX, and video backdrops."
+        title: "Creative Design Project",
+        desc: "Bold visual identities, banners, key visuals, and promotional assets built with Canva & Figma."
       },
       {
-        title: "Persona 5 Style Portfolio",
-        desc: "Signature comic-book high-contrast red & black interactive developer showcase."
+        title: "Snake Game",
+        desc: "Classic snake-eats-fruit browser game with customizable skins, maps, fruits, and local high scores."
       },
       {
-        title: "Persona 5 Typography Playground",
-        desc: "Custom typeface exploration tool for Ransom and Solid font systems."
+        title: "StoneBound",
+        desc: "Retro 2D side-scrolling browser platformer built with TypeScript, Phaser 3, Vite, and Firebase."
       },
       {
-        title: "Modern Web App Suite",
-        desc: "High-performance responsive web applications crafted with clean code architecture."
+        title: "SkyBean Adventure & PRD Studio",
+        desc: "3D tropical ocean platformer in Three.js and AI-powered PRD/GDD architecture studio in React."
       }
     ]
   },
   {
-    name: "SKILLS",
-    description: "View Technical Abilities & Stack",
+    name: "CERTIFICATE",
+    description: "View Verified Certificates & Credentials",
     rotation: -12,
     zIndex: 2,
     offsetX: -65,
     offsetY: 30,
-    fontSize: "4.55rem",
-    bannerScaleX: 0.96,
+    fontSize: "3.75rem",
+    bannerScaleX: 0.72,
     bannerScaleY: 3.05,
-    tag: "ABILITIES & PROFICIENCY",
-    summary: "Modern frontend technologies, system design, and AI workflows",
+    tag: "CERTIFICATIONS",
+    summary: "Continuous learning documented across Data Science, SQL, Python & Finance",
     cards: [
       {
-        title: "Modern Frontend Core",
-        desc: "TypeScript, JavaScript (ES6+), HTML5 Semantic Architecture, Native CSS3 (Flexbox/Grid/Animations)."
+        title: "Belajar Dasar Data Science",
+        desc: "Dicoding Indonesia (2026) — Core data science workflow, analysis, and foundational concepts."
       },
       {
-        title: "Component Systems",
-        desc: "React, Next.js App Router, Vue.js, Tailwind CSS v4, Headless UI, Material Design 3 tokens."
+        title: "Belajar Dasar SQL",
+        desc: "Dicoding Indonesia (2026) — Relational databases and Structured Query Language fundamentals."
       },
       {
-        title: "Performance & Audio",
-        desc: "Web Audio API latency mitigation, 60fps WAAPI & CSS Hardware Accelerated pipelines."
+        title: "Memulai Pemrograman dengan Python",
+        desc: "Dicoding Indonesia (2026) — Python programming fundamentals for data and problem solving."
       },
       {
-        title: "AI Integration & Dev Tools",
-        desc: "Frontier LLM integrations, Prompt Engineering, Agentic coding workflows, Git automation."
+        title: "Personal Development & Financial Literacy",
+        desc: "Dicoding Indonesia (2026) — Self-development strategy and introduction to financial literacy."
       }
     ]
   },
   {
     name: "ABOUT",
-    description: "Developer Profile & Philosophy",
+    description: "Analyst Profile, Education & Experience",
     rotation: -4,
     zIndex: 3,
     offsetX: -80,
@@ -84,25 +84,25 @@ const options = [
     bannerScaleX: 1.02,
     bannerScaleY: 3.25,
     tag: "PROFILE & JOURNEY",
-    summary: "Frontend web designer & developer dedicated to immersive web experiences",
+    summary: "Fatkhul Barri — Mathematics student at ITS interested in data science, analytics & creative work",
     cards: [
       {
-        title: "Design Philosophy",
-        desc: "Belief in high-fidelity micro-interactions, bold visual identity, and accessible engineering."
+        title: "Academic Background",
+        desc: "Bachelor of Mathematics at Institut Teknologi Sepuluh Nopember (ITS), previously SMAN 3 Tuban."
       },
       {
-        title: "Inspiration",
-        desc: "Persona 3 Reload & Atlus design systems: dynamic angled layouts, typographic hierarchy, and responsive fluid motion."
+        title: "Data & Market Curiosity",
+        desc: "Inspired by Indonesian stock market analysis—turning raw data patterns into clear, actionable insights."
       },
       {
-        title: "Developer Identity",
-        desc: "Ilham Ziqri: Frontend specialist crafting web interfaces that feel alive, intuitive, and memorable."
+        title: "Experience & Toolkit",
+        desc: "Creative Media, Event & IT Staff roles backed by SQL, Python, Java, Excel, Figma, and Canva."
       }
     ]
   },
   {
     name: "CONTACT",
-    description: "Initiate Communication",
+    description: "Connect via Email & Social Channels",
     rotation: 5,
     zIndex: 4,
     offsetX: -85,
@@ -111,15 +111,15 @@ const options = [
     bannerScaleX: 1.04,
     bannerScaleY: 3.2,
     tag: "COMMUNICATION CHANNELS",
-    summary: "Available for collaboration, freelance inquiries, and frontend opportunities",
+    summary: "Open to data internships, junior analyst roles, freelance analysis & collaboration",
     cards: [
       {
-        title: "Direct Mail",
-        desc: "aiosssml@gmail.com: Priority channel for direct communication and collaborations."
+        title: "Direct Mail & WhatsApp",
+        desc: "fatkhulbarri15@gmail.com · +62 851-9832-3402 (Surabaya, East Java, Indonesia)"
       },
       {
-        title: "GitHub Repository",
-        desc: "github.com/Aiosssss: Explore active source code, repos, and open-source experiments."
+        title: "GitHub, Kaggle & LinkedIn",
+        desc: "github.com/FatkhulB · kaggle.com/flbarri · linkedin.com/in/fatkhulbarrii"
       }
     ]
   }
@@ -128,92 +128,129 @@ const options = [
 const slinkData = [
   {
     numeral: "I",
-    title: "P3R PORTFOLIO",
-    subtitle: "Persona 3 Reload UI & Web Audio Engine",
-    url: "#"
+    title: "CREATIVE DESIGN PROJECT",
+    fullTitle: "CREATIVE DESIGN PROJECT",
+    subtitle: "Design Project · 2025 · Canva, Figma",
+    type: "Design Project",
+    year: "2025",
+    tools: ["Canva", "Figma"],
+    desc: "A collection of creative design work defined by bold compositions, dynamic layouts, and vibrant palettes. Blends energetic visuals with clean structure to create eye-catching banners, key visuals, and promotional assets.",
+    image: "assets/projects/1.jpg",
+    url: "https://canva.link/cng1zsi4jsuyj54",
+    linkLabel: "Open Project"
   },
   {
     numeral: "II",
-    title: "PERSONA 5 PORTO",
-    subtitle: "Phantom Thieves Comic Showcase",
-    url: "../porto-persona/index.html"
+    title: "SNAKE GAME",
+    fullTitle: "SNAKE GAME",
+    subtitle: "Game · 2025 · HTML, CSS, JavaScript",
+    type: "Game",
+    year: "2025",
+    tools: ["HTML", "CSS", "JavaScript"],
+    desc: "A classic snake-eats-fruit game with a fresh twist. Customize snake skins, maps, and fruits, chase best scores saved locally, and enjoy vibrant eat animations with smooth responsive controls.",
+    image: "assets/projects/2.jpg",
+    url: "https://snakegames-alpha.vercel.app/",
+    linkLabel: "Play Game"
   },
   {
     numeral: "III",
-    title: "P5 FONT GENERATOR",
-    subtitle: "Ransom Cutout Typography Tool",
-    url: "../persona5-font/index.html"
+    title: "STONEBOUND",
+    fullTitle: "STONEBOUND — THE SWORD THAT HATED HEROES",
+    subtitle: "Game · 2026 · TypeScript, Phaser 3, Vite",
+    type: "Game",
+    year: "2026",
+    tools: ["TypeScript", "Phaser 3", "Vite", "Firebase", "GitHub Actions", "Vitest"],
+    desc: "A retro 2D side-scrolling browser platformer. Play as Pip or Pipa carrying Veyr, a legendary sword that refuses to be drawn. Explore The Buried Road, solve puzzles, telegraph enemy attacks, and defeat the boss.",
+    image: "assets/projects/3.jpg",
+    url: "https://fatkhulb.github.io/StoneBound/",
+    linkLabel: "Play Game"
   },
   {
     numeral: "IV",
-    title: "AIOS UTBK PLATFORM",
-    subtitle: "Neumorphic SNBT Exam Simulator",
-    url: "../aios-app/index.html"
+    title: "SKYBEAN ADVENTURE",
+    fullTitle: "SKYBEAN ADVENTURE — TROPICAL OCEAN 3D PLATFORMER",
+    subtitle: "Game · 2026 · Three.js, JS, Web Audio API",
+    type: "Game",
+    year: "2026",
+    tools: ["Three.js", "JavaScript", "HTML5", "Tailwind CSS", "Web Audio API"],
+    desc: "A high-performance 3D platformer set across tropical archipelagos inspired by Super Mario Odyssey. Explore 6 expansive themed islands with dynamic ocean waves, dodge obstacles, and master 12 heroes with unique skills.",
+    image: "assets/projects/4.jpg",
+    url: "https://fatkhulb.github.io/SkyBean/",
+    linkLabel: "Play Game"
   },
   {
     numeral: "V",
-    title: "CREATIX AGENCY",
-    subtitle: "High-Performance Modern Web Platform",
-    url: "../web-app/index.html"
+    title: "PRD STUDIO",
+    fullTitle: "PRD STUDIO",
+    subtitle: "Design Project · 2026 · React, Tailwind, PostgreSQL",
+    type: "Design Project",
+    year: "2026",
+    tools: ["React", "Tailwind CSS", "SVG", "Mermaid", "PostgreSQL"],
+    desc: "A modern AI-powered platform for architecting structured PRDs, Game Design Documents (GDD), interactive SVG & Mermaid wireframes, AI coding assistant prompts, and PostgreSQL schemas.",
+    image: "assets/projects/5.jpg",
+    url: "https://fatkhulb.github.io/PRD-Studio/",
+    linkLabel: "Open Project"
   }
 ];
 
-const skillTabsList = [
-  { id: "frontend", code: "01", label: "FRONTEND" },
-  { id: "backend", code: "02", label: "BACKEND" },
-  { id: "ai", code: "03", label: "AI & ML" },
-  { id: "languages", code: "04", label: "LANGUAGES" }
+const certTabsList = [
+  { id: "all", code: "01", label: "ALL" },
+  { id: "data", code: "02", label: "DATA SCIENCE" },
+  { id: "sql", code: "03", label: "SQL" },
+  { id: "python", code: "04", label: "PYTHON" },
+  { id: "other", code: "05", label: "OTHER" }
 ];
 
-const skillGroupsData = [
+const certItemsData = [
   {
-    id: "frontend",
-    title: "FRONTEND & WEB ENGINEERING",
-    code: "01",
-    skills: [
-      { name: "JavaScript / TypeScript", level: 92 },
-      { name: "React · Next.js · Vue 3", level: 88 },
-      { name: "HTML5 · Modern CSS3 · Tailwind", level: 95 },
-      { name: "SvelteKit · State Management", level: 84 },
-      { name: "WebGL · Three.js · Canvas", level: 80 },
-      { name: "UI/UX Design · Figma Systems", level: 86 }
-    ]
+    id: "cert-1",
+    title: "Belajar Dasar Data Science",
+    issuer: "Dicoding Indonesia",
+    year: "2026",
+    tag: "data",
+    tagLabel: "DATA SCIENCE",
+    image: "assets/certs/1.jpg",
+    link: "https://dicoding.com/certificates/KEXLQRVKRPG2"
   },
   {
-    id: "backend",
-    title: "BACKEND & CLOUD ARCHITECTURE",
-    code: "02",
-    skills: [
-      { name: "Node.js · Express · REST APIs", level: 85 },
-      { name: "Python · FastAPI · Django", level: 82 },
-      { name: "SQL · PostgreSQL · Supabase", level: 80 },
-      { name: "Docker · CI/CD · Cloud Hosting", level: 76 },
-      { name: "Git · GitHub · Workflows", level: 90 },
-      { name: "WebSockets & Realtime Systems", level: 78 }
-    ]
+    id: "cert-2",
+    title: "Belajar Dasar Structured Query Language (SQL)",
+    issuer: "Dicoding Indonesia",
+    year: "2026",
+    tag: "sql",
+    tagLabel: "SQL",
+    image: "assets/certs/2.jpg",
+    link: "https://dicoding.com/certificates/98XW0M9M0XM3"
   },
   {
-    id: "ai",
-    title: "AI & MACHINE LEARNING",
-    code: "03",
-    skills: [
-      { name: "Prompt Engineering & Agent Swarms", level: 90 },
-      { name: "TensorFlow / PyTorch · Neural Nets", level: 82 },
-      { name: "NLP & LLM API Integrations", level: 85 },
-      { name: "Computer Vision · MediaPipe", level: 80 },
-      { name: "Vector DB & RAG Architecture", level: 84 }
-    ]
+    id: "cert-3",
+    title: "Memulai Pemrograman dengan Python",
+    issuer: "Dicoding Indonesia",
+    year: "2026",
+    tag: "python",
+    tagLabel: "PYTHON",
+    image: "assets/certs/3.jpg",
+    link: "https://dicoding.com/certificates/KEXLQRK5RPG2"
   },
   {
-    id: "languages",
-    title: "LANGUAGE PROFICIENCY",
-    code: "04",
-    skills: [
-      { name: "Bahasa Indonesia (Native / Fluent)", level: 100 },
-      { name: "English (Professional Working Proficiency)", level: 86 },
-      { name: "English (Technical & Documentation)", level: 90 },
-      { name: "English (Spoken & Conversational)", level: 82 }
-    ]
+    id: "cert-4",
+    title: "Belajar Strategi Pengembangan Diri",
+    issuer: "Dicoding Indonesia",
+    year: "2026",
+    tag: "soft",
+    tagLabel: "SOFT SKILLS",
+    image: "assets/certs/4.jpg",
+    link: "https://dicoding.com/certificates/QLZ99LJL9Z5D"
+  },
+  {
+    id: "cert-5",
+    title: "Introduction to Financial Literacy",
+    issuer: "Dicoding Indonesia",
+    year: "2026",
+    tag: "finance",
+    tagLabel: "FINANCE",
+    image: "assets/certs/5.jpg",
+    link: "https://dicoding.com/certificates/KEXLQKOVYPG2"
   }
 ];
 
@@ -227,8 +264,9 @@ let isModalOpen = false;
 let isProjectPageOpen = false;
 let selectedSlinkIndex = 0;
 let isSkillPageOpen = false;
-let currentSkillTab = "frontend";
+let currentSkillTab = "all";
 let isAboutPageOpen = false;
+let currentAboutTab = "profile";
 let isContactPageOpen = false;
 let selectedContactIndex = 0;
 let isWavyTransitionRunning = false;
@@ -255,6 +293,12 @@ const slinkBgVideo = document.getElementById("slink-bg-video");
 const slinkCardsContainer = document.getElementById("slink-cards-container");
 const slinkConfirmBtn = document.getElementById("slink-confirm-btn");
 const slinkBackBtn = document.getElementById("slink-back-btn");
+const slinkPreviewImg = document.getElementById("slink-preview-img");
+const slinkPreviewBadge = document.getElementById("slink-preview-badge");
+const slinkPreviewTitle = document.getElementById("slink-preview-title");
+const slinkPreviewDesc = document.getElementById("slink-preview-desc");
+const slinkPreviewTools = document.getElementById("slink-preview-tools");
+const slinkPreviewOpenBtn = document.getElementById("slink-preview-open-btn");
 
 // DOM Elements: Skill Screen
 const skillPage = document.getElementById("skill-page");
@@ -271,6 +315,8 @@ const aboutPage = document.getElementById("about-page");
 const aboutBgVideo = document.getElementById("about-bg-video");
 const aboutHeaderDiv = document.getElementById("about-header-div");
 const aboutBackBtn = document.getElementById("about-back-btn");
+const aboutTabs = document.querySelectorAll(".p3r-about-tab");
+const aboutPanels = document.querySelectorAll(".p3r-about-panel");
 
 // DOM Elements: Contact Screen
 const contactPage = document.getElementById("contact-page");
@@ -280,27 +326,40 @@ const contactMailRows = document.querySelectorAll(".p3r-mail-row");
 
 // DOM Elements: Loading Screen
 const loadingScreen = document.getElementById("loading-screen");
-const loadingBar = document.getElementById("loading-bar");
-const loadingPercent = document.getElementById("loading-percent");
+const loadingIndicatorWrap = document.getElementById("loading-indicator-wrap");
+const loadingStatusText = document.getElementById("loading-status-text");
+const loadingStateText = document.getElementById("loading-state-text");
+const bgmLobbyEl = document.getElementById("bgm-lobby-el");
+const toggleBgmBtn = document.getElementById("toggle-bgm-btn");
+const toggleSfxBtn = document.getElementById("toggle-sfx-btn");
 
 // --------------------------------------------------------------------------
-// 3. Low-Latency Audio Engine (Web Audio API + Audio Pools + HTML5 Fallbacks)
+// 3. Low-Latency Audio Engine (Matched to Folder 2 AudioProvider)
 // --------------------------------------------------------------------------
+let isBgmMuted = false;
+let isSfxMuted = false;
 let audioCtx = null;
 let sfxAudioBuffer = null;
+let confirmAudioBuffer = null;
 let closeMenuAudioBuffer = null;
-let menuUtamaAudioBuffer = null;
+let openDetailAudioBuffer = null;
+let closeDetailAudioBuffer = null;
 
-const SFX_POOL_SIZE = 4;
 const sfxAudioPool = [];
+const confirmAudioPool = [];
 const closeMenuAudioPool = [];
-const menuUtamaAudioPool = [];
+const openDetailAudioPool = [];
+const closeDetailAudioPool = [];
 let sfxPoolIndex = 0;
+let confirmPoolIndex = 0;
 let closeMenuPoolIndex = 0;
-let menuUtamaPoolIndex = 0;
+let openDetailPoolIndex = 0;
+let closeDetailPoolIndex = 0;
 
-let hasMenuUtamaSFXPlayed = false;
-let experienceEntryTime = 0;
+if (bgmLobbyEl) {
+  bgmLobbyEl.volume = 0.35;
+  bgmLobbyEl.loop = true;
+}
 
 function getAudioContext() {
   if (!audioCtx) {
@@ -315,52 +374,118 @@ function getAudioContext() {
   return audioCtx;
 }
 
-// Pre-create light fallback HTMLAudioElement pools
+function ensureBGM() {
+  if (!bgmLobbyEl) return;
+  bgmLobbyEl.volume = 0.35;
+  bgmLobbyEl.loop = true;
+  if (isBgmMuted) {
+    if (!bgmLobbyEl.paused) bgmLobbyEl.pause();
+    return;
+  }
+  if (bgmLobbyEl.paused) {
+    const p = bgmLobbyEl.play();
+    if (p !== undefined) p.catch(() => {});
+  }
+}
+
+function updateAudioToggleUI() {
+  if (toggleBgmBtn) {
+    const label = toggleBgmBtn.querySelector(".control-text");
+    if (label) label.textContent = isBgmMuted ? "Music: OFF" : "Music: ON";
+    toggleBgmBtn.classList.toggle("is-muted", isBgmMuted);
+    toggleBgmBtn.setAttribute("aria-pressed", isBgmMuted ? "false" : "true");
+  }
+  if (toggleSfxBtn) {
+    const label = toggleSfxBtn.querySelector(".control-text");
+    if (label) label.textContent = isSfxMuted ? "SFX: OFF" : "SFX: ON";
+    toggleSfxBtn.classList.toggle("is-muted", isSfxMuted);
+    toggleSfxBtn.setAttribute("aria-pressed", isSfxMuted ? "false" : "true");
+  }
+  if (window.p3rMusicPlayer && typeof window.p3rMusicPlayer.updateUI === "function") {
+    window.p3rMusicPlayer.updateUI();
+  }
+}
+
+function toggleBGM() {
+  isBgmMuted = !isBgmMuted;
+  updateAudioToggleUI();
+  if (bgmLobbyEl) {
+    if (isBgmMuted) {
+      bgmLobbyEl.pause();
+    } else {
+      ensureBGM();
+    }
+  }
+  if (!isSfxMuted) playConfirmSFX();
+}
+
+function toggleSFX() {
+  isSfxMuted = !isSfxMuted;
+  updateAudioToggleUI();
+  if (!isSfxMuted) {
+    playConfirmSFX();
+  }
+}
+
+// Pre-create light fallback HTMLAudioElement pools matching Folder 2 volumes
 for (let i = 0; i < 2; i++) {
-  const a = new Audio("sfx/navigation.wav");
+  const a = new Audio("sfx/ndt.mp3");
   a.preload = "auto";
-  a.volume = 0.6;
+  a.volume = 0.5;
   sfxAudioPool.push(a);
 
-  const b = new Audio("sfx/close-menu.mp3");
+  const b = new Audio("sfx/sellect.mp3");
   b.preload = "auto";
-  b.volume = 0.75;
-  closeMenuAudioPool.push(b);
+  b.volume = 0.6;
+  confirmAudioPool.push(b);
 
-  const c = new Audio("sfx/menu-utama.mp3");
+  const c = new Audio("sfx/back.mp3");
   c.preload = "auto";
-  c.volume = 0.8;
-  menuUtamaAudioPool.push(c);
+  c.volume = 0.6;
+  closeMenuAudioPool.push(c);
+
+  const d = new Audio("sfx/odt.mp3");
+  d.preload = "auto";
+  d.volume = 0.6;
+  openDetailAudioPool.push(d);
+
+  const e = new Audio("sfx/cdt.mp3");
+  e.preload = "auto";
+  e.volume = 0.6;
+  closeDetailAudioPool.push(e);
 }
 
 // Background buffer decoding for instantaneous hardware playback
 async function loadAudioBuffers() {
   try {
-    const [navRes, closeRes, menuRes] = await Promise.all([
-      fetch("sfx/navigation.wav"),
-      fetch("sfx/close-menu.mp3"),
-      fetch("sfx/menu-utama.mp3")
+    const [navRes, confirmRes, closeRes, odtRes, cdtRes] = await Promise.all([
+      fetch("sfx/ndt.mp3"),
+      fetch("sfx/sellect.mp3"),
+      fetch("sfx/back.mp3"),
+      fetch("sfx/odt.mp3"),
+      fetch("sfx/cdt.mp3")
     ]);
     const ctx = getAudioContext();
     if (ctx) {
       if (navRes.ok && !sfxAudioBuffer) {
-        const buf = await navRes.arrayBuffer();
-        sfxAudioBuffer = await ctx.decodeAudioData(buf);
+        sfxAudioBuffer = await ctx.decodeAudioData(await navRes.arrayBuffer());
+      }
+      if (confirmRes.ok && !confirmAudioBuffer) {
+        confirmAudioBuffer = await ctx.decodeAudioData(await confirmRes.arrayBuffer());
       }
       if (closeRes.ok && !closeMenuAudioBuffer) {
-        const buf = await closeRes.arrayBuffer();
-        closeMenuAudioBuffer = await ctx.decodeAudioData(buf);
+        closeMenuAudioBuffer = await ctx.decodeAudioData(await closeRes.arrayBuffer());
       }
-      if (menuRes.ok && !menuUtamaAudioBuffer) {
-        const buf = await menuRes.arrayBuffer();
-        menuUtamaAudioBuffer = await ctx.decodeAudioData(buf);
+      if (odtRes.ok && !openDetailAudioBuffer) {
+        openDetailAudioBuffer = await ctx.decodeAudioData(await odtRes.arrayBuffer());
+      }
+      if (cdtRes.ok && !closeDetailAudioBuffer) {
+        closeDetailAudioBuffer = await ctx.decodeAudioData(await cdtRes.arrayBuffer());
       }
     }
   } catch (_) {}
 }
-if (window.innerWidth >= 1024) {
-  loadAudioBuffers();
-}
+loadAudioBuffers();
 
 // Clean unified audio playback dispatcher
 function playAudioChannel({
@@ -372,6 +497,14 @@ function playAudioChannel({
   volume = 0.6,
   onPlaySuccess
 }) {
+  if ((isLoaded || isStarted) && !isBgmMuted) {
+    ensureBGM();
+  }
+
+  if (isSfxMuted) {
+    return false;
+  }
+
   const ctx = getAudioContext();
   if (ctx && ctx.state === "running" && buffer) {
     try {
@@ -425,6 +558,17 @@ function playSFX() {
     pool: sfxAudioPool,
     getPoolIdx: () => sfxPoolIndex,
     setPoolIdx: (v) => { sfxPoolIndex = v; },
+    volume: 0.5
+  });
+}
+
+function playConfirmSFX() {
+  playAudioChannel({
+    buffer: confirmAudioBuffer,
+    staticElId: "sfx-confirm-el",
+    pool: confirmAudioPool,
+    getPoolIdx: () => confirmPoolIndex,
+    setPoolIdx: (v) => { confirmPoolIndex = v; },
     volume: 0.6
   });
 }
@@ -436,26 +580,30 @@ function playCloseMenuSFX() {
     pool: closeMenuAudioPool,
     getPoolIdx: () => closeMenuPoolIndex,
     setPoolIdx: (v) => { closeMenuPoolIndex = v; },
-    volume: 0.75
+    volume: 0.6
   });
 }
 
-async function playMenuUtamaSFX() {
-  if (hasMenuUtamaSFXPlayed) return true;
-  const ctx = getAudioContext();
-  if (ctx && ctx.state !== "running") {
-    try { await ctx.resume(); } catch (_) {}
-  }
+function playOpenDetailSFX() {
   playAudioChannel({
-    buffer: menuUtamaAudioBuffer,
-    staticElId: "sfx-menu-utama-el",
-    pool: menuUtamaAudioPool,
-    getPoolIdx: () => menuUtamaPoolIndex,
-    setPoolIdx: (v) => { menuUtamaPoolIndex = v; },
-    volume: 0.95,
-    onPlaySuccess: () => { hasMenuUtamaSFXPlayed = true; }
+    buffer: openDetailAudioBuffer,
+    staticElId: "sfx-open-detail-el",
+    pool: openDetailAudioPool,
+    getPoolIdx: () => openDetailPoolIndex,
+    setPoolIdx: (v) => { openDetailPoolIndex = v; },
+    volume: 0.6
   });
-  return true;
+}
+
+function playCloseDetailSFX() {
+  playAudioChannel({
+    buffer: closeDetailAudioBuffer,
+    staticElId: "sfx-close-detail-el",
+    pool: closeDetailAudioPool,
+    getPoolIdx: () => closeDetailPoolIndex,
+    setPoolIdx: (v) => { closeDetailPoolIndex = v; },
+    volume: 0.6
+  });
 }
 
 // Early Audio Unlocker on First User Gesture
@@ -474,12 +622,8 @@ async function unlockAudioEngine() {
     } catch (_) {}
   }
 
-  if (isStarted && !hasMenuUtamaSFXPlayed) {
-    if (Date.now() - experienceEntryTime < 2500) {
-      playMenuUtamaSFX();
-    } else {
-      hasMenuUtamaSFXPlayed = true;
-    }
+  if (isLoaded || isStarted) {
+    ensureBGM();
   }
 }
 
@@ -488,10 +632,29 @@ async function unlockAudioEngine() {
 });
 
 // --------------------------------------------------------------------------
-// 4. Main Menu SVG Dynamic Mask Inversion Engine
+// 4. Cutout Ransom Letter Engine & Persona 3 Dynamic Blade Menu
 // --------------------------------------------------------------------------
-const selectorPath = "M 24.853754, 93.31573 135.14625, 49.684266 114.14751, 97.331142 Z";
-const selectorBackgroundPath = "M 12.7428765,95.50088 144.25712,47.499123 116.75625,95.465764 Z";
+function createCutoutHtml(text, customSeed = 0) {
+  // Tactile rotations (degrees) inspired by Persona ransom collage aesthetic
+  const rotations = [-2.8, 2.2, -1.8, 3.2, -3.0, 1.5, -2.2, 2.6, -1.5, 3.0, -2.5, 2.0];
+  // Alternating palette: tile-white, tile-black, tile-cyan, tile-blue
+  const colorTiles = ["tile-white", "tile-black", "tile-cyan", "tile-blue"];
+  
+  const words = text.trim().split(/\s+/);
+  let globalCharIndex = customSeed;
+
+  return `<div class="p3r-cutout-group">` +
+    words.map((word) => {
+      const chars = word.split("").map((ch) => {
+        const rot = rotations[globalCharIndex % rotations.length];
+        const tile = colorTiles[globalCharIndex % colorTiles.length];
+        globalCharIndex++;
+        return `<span class="p3r-cutout-char ${tile}" style="--rot:${rot}deg;">${ch}</span>`;
+      }).join("");
+      return `<span class="p3r-cutout-word">${chars}</span>`;
+    }).join(`<span class="p3r-cutout-space" style="display:inline-block;width:0.35em;"></span>`) +
+  `</div>`;
+}
 
 let cachedOptionItems = [];
 
@@ -500,79 +663,35 @@ function renderOptions() {
   cachedOptionItems = [];
 
   options.forEach((opt, index) => {
-    const colorClass = colors[(index + 2) % colors.length];
-    const cleanName = opt.name.replace(/ /g, "");
-    const bannerScaleFactorX = opt.bannerScaleX || 1.0;
-    const bannerScaleY = opt.bannerScaleY || 3.2;
-    const scaleX = (cleanName.length * 0.52 + 1.6) * bannerScaleFactorX;
-    const selectorTransform = `translate(-60, -9) rotate(8, 0, 100) scale(${scaleX}, ${bannerScaleY})`;
-    const maskId = `selector-mask-${index}`;
+    const cutoutHtml = createCutoutHtml(opt.name, index * 2);
 
     const item = document.createElement("div");
-    item.className = `option-item ${index === 0 ? "selected" : ""}`;
+    item.className = `option-item ${index === selectedIndex ? "selected" : ""}`;
     item.id = `option-item-${index}`;
-    item.style.zIndex = index === 0 ? 15 : opt.zIndex;
+    item.style.zIndex = index === selectedIndex ? 15 : opt.zIndex;
 
     item.innerHTML = `
       <button 
         class="option-hitbox" 
         data-index="${index}" 
-        aria-label="${opt.name}">
+        aria-label="${opt.name}"
+        type="button">
+        
+        <!-- Unselected: Plain White Text (Awalnya Tidak Ada Style, Putih Polos Sesuai Permintaan) -->
+        <div class="option-plain-wrap" aria-hidden="${index === selectedIndex ? "true" : "false"}">
+          <span class="option-plain-text">${opt.name}</span>
+        </div>
+
+        <!-- Selected: Full Persona Jagged Comic Banner with Cutout Letters & Indicator -->
+        <div class="option-styled-wrap" aria-hidden="${index === selectedIndex ? "false" : "true"}">
+          <div class="persona-jagged-banner">
+            <div class="banner-jagged-inner">
+              ${cutoutHtml}
+              <span class="selected-indicator-arrow" aria-hidden="true">▶</span>
+            </div>
+          </div>
+        </div>
       </button>
-
-      <svg
-        width="950"
-        height="200"
-        xmlns="http://www.w3.org/2000/svg"
-        class="option-svg"
-        style="transform: translate(${opt.offsetX}px, ${opt.offsetY}px) rotate(${opt.rotation}deg);"
-      >
-        <defs>
-          <mask
-            id="${maskId}"
-            maskUnits="userSpaceOnUse"
-            maskContentUnits="userSpaceOnUse"
-            x="0"
-            y="0"
-            width="950"
-            height="200"
-          >
-            <rect width="100%" height="100%" fill="black" />
-            <g transform="${selectorTransform}" transform-origin="left center">
-              <path fill="white" d="${selectorPath}" />
-              <path class="pulse-anim" transform-origin="52 100" fill="white" d="${selectorBackgroundPath}" />
-            </g>
-          </mask>
-        </defs>
-
-        <!-- Selector banner when selected -->
-        <g class="selector-group" transform="${selectorTransform}" transform-origin="left center">
-          <path class="fill-pink pulse-anim" transform-origin="52 100" d="${selectorBackgroundPath}" />
-          <path class="fill-fg" d="${selectorPath}" />
-        </g>
-
-        <!-- Base Text -->
-        <text
-          x="150"
-          y="122"
-          class="option-text base-text ${colorClass}"
-          style="font-size: ${opt.fontSize || '4.8rem'};"
-        >
-          ${opt.name}
-        </text>
-
-        <!-- Masked Red Text (Over the white selector) -->
-        <g class="masked-red-group" mask="url(#${maskId})">
-          <text
-            x="150"
-            y="122"
-            class="option-text fill-red"
-            style="font-size: ${opt.fontSize || '4.8rem'};"
-          >
-            ${opt.name}
-          </text>
-        </g>
-      </svg>
     `;
 
     // Interactive event triggers
@@ -584,8 +703,11 @@ function renderOptions() {
     });
 
     hitbox.addEventListener("click", (e) => {
-      setIndex(index);
-      handleOptionConfirm(index, e);
+      if (selectedIndex !== index) {
+        setIndex(index);
+      } else {
+        handleOptionConfirm(index, e);
+      }
     });
 
     optionsList.appendChild(item);
@@ -611,13 +733,18 @@ function setIndex(index) {
 
   for (let idx = 0; idx < cachedOptionItems.length; idx++) {
     const item = cachedOptionItems[idx];
-    if (idx === selectedIndex) {
+    const isSelected = idx === selectedIndex;
+    if (isSelected) {
       item.classList.add("selected");
       item.style.zIndex = 15;
     } else {
       item.classList.remove("selected");
       item.style.zIndex = options[idx].zIndex;
     }
+    const plainWrap = item.querySelector(".option-plain-wrap");
+    const styledWrap = item.querySelector(".option-styled-wrap");
+    if (plainWrap) plainWrap.setAttribute("aria-hidden", isSelected ? "true" : "false");
+    if (styledWrap) styledWrap.setAttribute("aria-hidden", isSelected ? "false" : "true");
   }
 }
 
@@ -661,15 +788,15 @@ function calculateTargetRadius(origin) {
   return Math.ceil(maxDist * 1.85);
 }
 
-// Universal Origin Locators
-function getOptionCenter(optionIndex, clickEvent, fallbackXRatio = 0.56, fallbackYRatio = 0.48) {
+// Universal Origin Locators (Left-docked menu geometry)
+function getOptionCenter(optionIndex, clickEvent, fallbackXRatio = 0.22, fallbackYRatio = 0.50) {
   if (clickEvent && typeof clickEvent.clientX === "number" && (clickEvent.clientX > 0 || clickEvent.clientY > 0)) {
     return { x: clickEvent.clientX, y: clickEvent.clientY };
   }
 
   const optionItem = document.getElementById(`option-item-${optionIndex}`) || document.querySelectorAll(".option-item")[optionIndex];
   if (optionItem) {
-    const textEls = optionItem.querySelectorAll(".option-text");
+    const textEls = optionItem.querySelectorAll(".persona-jagged-banner, .option-plain-text, .p3r-cutout-group, .option-hitbox, .option-text");
     for (let i = 0; i < textEls.length; i++) {
       const tr = textEls[i].getBoundingClientRect();
       if (tr.width > 0 && tr.height > 0) {
@@ -711,16 +838,16 @@ function getExitOrigin(buttonElOrId, fallbackX, fallbackY) {
   };
 }
 
-// Named Aliases for Backward Compatibility & Direct Script Control (Updated for menu layout)
-const getProjectOptionCenter = (evt) => getOptionCenter(0, evt, 0.62, 0.38);
-const getSkillOptionCenter   = (evt) => getOptionCenter(1, evt, 0.60, 0.48);
-const getAboutOptionCenter   = (evt) => getOptionCenter(2, evt, 0.58, 0.57);
-const getContactOptionCenter = (evt) => getOptionCenter(3, evt, 0.57, 0.66);
+// Named Aliases for Backward Compatibility & Direct Script Control (Updated for left-docked layout)
+const getProjectOptionCenter = (evt) => getOptionCenter(0, evt, 0.22, 0.38);
+const getSkillOptionCenter   = (evt) => getOptionCenter(1, evt, 0.22, 0.46);
+const getAboutOptionCenter   = (evt) => getOptionCenter(2, evt, 0.22, 0.54);
+const getContactOptionCenter = (evt) => getOptionCenter(3, evt, 0.22, 0.62);
 
 const getProjectExitOrigin = () => getExitOrigin(slinkBackBtn, window.innerWidth - 120, window.innerHeight - 55);
 const getSkillExitOrigin   = () => getExitOrigin(skillBackBtn, window.innerWidth - 120, window.innerHeight - 55);
 const getAboutExitOrigin   = () => getExitOrigin(aboutBackBtn, window.innerWidth - 120, window.innerHeight - 55);
-const getContactExitOrigin = () => getExitOrigin(contactBackBtn, 80, window.innerHeight - 60);
+const getContactExitOrigin = () => getExitOrigin(contactBackBtn, window.innerWidth - 120, window.innerHeight - 55);
 
 // Unified WAAPI Ripple Reveal & Close Transitions
 function executeWavyReveal({
@@ -913,7 +1040,32 @@ function renderSlinkCards() {
   });
 }
 
-function selectSlinkCard(index) {
+function updateProjectPreview(item) {
+  if (!item) return;
+  if (slinkPreviewImg && item.image) {
+    slinkPreviewImg.src = item.image;
+    slinkPreviewImg.alt = item.fullTitle || item.title;
+  }
+  if (slinkPreviewBadge) {
+    slinkPreviewBadge.textContent = `${(item.type || "PROJECT").toUpperCase()} · ${item.year || ""}`;
+  }
+  if (slinkPreviewTitle) {
+    slinkPreviewTitle.textContent = item.fullTitle || item.title;
+  }
+  if (slinkPreviewDesc) {
+    slinkPreviewDesc.textContent = item.desc || "";
+  }
+  if (slinkPreviewTools) {
+    slinkPreviewTools.innerHTML = (item.tools || [])
+      .map((tool) => `<span class="slink-tool-chip">${tool}</span>`)
+      .join("");
+  }
+  if (slinkPreviewOpenBtn) {
+    slinkPreviewOpenBtn.textContent = `${(item.linkLabel || "OPEN PROJECT").toUpperCase()} ↗`;
+  }
+}
+
+function selectSlinkCard(index, silent = false) {
   selectedSlinkIndex = index;
   const cards = document.querySelectorAll(".slink-card");
   cards.forEach((c, idx) => {
@@ -925,26 +1077,54 @@ function selectSlinkCard(index) {
       c.setAttribute("aria-selected", "false");
     }
   });
-  playSFX();
+  updateProjectPreview(slinkData[selectedSlinkIndex]);
+  if (!silent) playSFX();
 }
 
 function confirmSlinkSelection() {
   const item = slinkData[selectedSlinkIndex];
   if (item && item.url && item.url !== "#") {
-    playSFX();
+    playConfirmSFX();
     setTimeout(() => {
-      window.location.href = item.url;
-    }, 200);
+      window.open(item.url, "_blank", "noopener,noreferrer");
+    }, 180);
   } else {
-    playSFX();
+    playConfirmSFX();
   }
+}
+
+// --------------------------------------------------------------------------
+// Browser History & Seamless Back Navigation (Prevents about:blank in Chrome)
+// --------------------------------------------------------------------------
+let isHistoryNavigating = false;
+
+function pushNavState(pageName) {
+  if (isHistoryNavigating) return;
+  try {
+    const currentHash = window.location.hash.replace("#", "");
+    if (currentHash !== pageName) {
+      history.pushState({ page: pageName }, "", "#" + pageName);
+    }
+  } catch (err) {}
+}
+
+function syncCloseToMainState() {
+  if (isHistoryNavigating) return;
+  try {
+    if (!isProjectPageOpen && !isSkillPageOpen && !isAboutPageOpen && !isContactPageOpen) {
+      if (window.location.hash && window.location.hash !== "#main") {
+        history.pushState({ page: "main" }, "", "#main");
+      }
+    }
+  } catch (err) {}
 }
 
 function openProjectPage(clickEvent) {
   if (isProjectPageOpen || isWavyTransitionRunning) return;
   isProjectPageOpen = true;
   selectedSlinkIndex = 0;
-  playSFX();
+  pushNavState("project");
+  playConfirmSFX();
 
   executeWavyReveal({
     pageEl: projectPage,
@@ -953,7 +1133,7 @@ function openProjectPage(clickEvent) {
     videoEl: slinkBgVideo,
     onStart: () => {
       renderSlinkCards();
-      selectSlinkCard(0);
+      selectSlinkCard(0, true);
       triggerProjectTitleAnimation();
     }
   });
@@ -962,6 +1142,7 @@ function openProjectPage(clickEvent) {
 function closeProjectPage() {
   if (!isProjectPageOpen || isWavyTransitionRunning) return;
   isProjectPageOpen = false;
+  syncCloseToMainState();
 
   executeWavyClose({
     pageEl: projectPage,
@@ -977,7 +1158,7 @@ const playWavyCircleTransition = (clickEvent, onComplete) => {
 };
 
 // --------------------------------------------------------------------------
-// 7. Subpage: SKILLS (Stats & Abilities Interface)
+// 7. Subpage: CERTIFICATE (Certificates & Verified Credentials)
 // --------------------------------------------------------------------------
 function triggerSkillTitleAnimation() {
   if (skillHeaderDiv) {
@@ -991,7 +1172,7 @@ function renderSkillsTabs() {
   if (!skillTabsNav) return;
   skillTabsNav.innerHTML = "";
 
-  skillTabsList.forEach((tab) => {
+  certTabsList.forEach((tab) => {
     const btn = document.createElement("button");
     const isActive = (tab.id === currentSkillTab);
     btn.className = `p3r-skill-tab ${isActive ? "active" : ""}`;
@@ -1020,66 +1201,131 @@ function setSkillTab(tabId) {
 }
 
 function prevSkillTab() {
-  const currIdx = skillTabsList.findIndex(t => t.id === currentSkillTab);
-  const prevIdx = (currIdx - 1 + skillTabsList.length) % skillTabsList.length;
-  setSkillTab(skillTabsList[prevIdx].id);
+  const currIdx = certTabsList.findIndex(t => t.id === currentSkillTab);
+  const prevIdx = (currIdx - 1 + certTabsList.length) % certTabsList.length;
+  setSkillTab(certTabsList[prevIdx].id);
 }
 
 function nextSkillTab() {
-  const currIdx = skillTabsList.findIndex(t => t.id === currentSkillTab);
-  const nextIdx = (currIdx + 1) % skillTabsList.length;
-  setSkillTab(skillTabsList[nextIdx].id);
+  const currIdx = certTabsList.findIndex(t => t.id === currentSkillTab);
+  const nextIdx = (currIdx + 1) % certTabsList.length;
+  setSkillTab(certTabsList[nextIdx].id);
 }
 
-function renderSkillStats(category = "frontend") {
+function openCertModal(cert, clickEvent) {
+  if (!cert || !portfolioModal) return;
+  modalTag.textContent = cert.tagLabel || "CERTIFICATE";
+  modalTitle.textContent = cert.title;
+  modalSummary.textContent = `${cert.issuer} · ${cert.year}`;
+
+  modalCardsContainer.innerHTML = `
+    <div class="p3r-modal-cert-preview">
+      <div class="p3r-modal-cert-img-wrap">
+        <img src="${cert.image}" alt="${cert.title}" class="p3r-modal-cert-img" />
+      </div>
+      <div class="p3r-modal-cert-meta">
+        <p class="p3r-modal-cert-desc">Issued by <strong>${cert.issuer}</strong> in <strong>${cert.year}</strong>. Verified digital credential available online.</p>
+        ${cert.link ? `<a href="${cert.link}" target="_blank" rel="noopener noreferrer" class="p3r-cert-credential-btn">View Credential ↗</a>` : ""}
+      </div>
+    </div>
+  `;
+
+  isModalOpen = true;
+  portfolioModal.classList.add("active");
+  portfolioModal.setAttribute("aria-hidden", "false");
+  playOpenDetailSFX();
+
+  const origin = (clickEvent && typeof clickEvent.clientX === "number" && (clickEvent.clientX > 0 || clickEvent.clientY > 0))
+    ? { x: clickEvent.clientX, y: clickEvent.clientY }
+    : { x: window.innerWidth * 0.5, y: window.innerHeight * 0.5 };
+  const targetRadius = calculateTargetRadius(origin);
+
+  portfolioModal.animate([
+    { clipPath: generateWavyPolygon(origin.x, origin.y, 0, 100, 6, 0.08, 12, 0.03, 0.0, 1.25, 1.05) },
+    { clipPath: generateWavyPolygon(origin.x, origin.y, targetRadius * 0.45, 100, 6, 0.085, 12, 0.03, 1.0, 1.25, 1.05), offset: 0.4 },
+    { clipPath: generateWavyPolygon(origin.x, origin.y, targetRadius, 100, 6, 0.05, 12, 0.015, 2.5, 1.15, 1.02) }
+  ], {
+    duration: 520,
+    easing: "cubic-bezier(0.2, 1, 0.35, 1)",
+    fill: "forwards"
+  });
+}
+
+function renderSkillStats(category = "all") {
   if (!p3rSkillsContainer) return;
   p3rSkillsContainer.innerHTML = "";
 
-  const groupsToDisplay = skillGroupsData.filter(g => g.id === category);
+  const filteredCerts = certItemsData.filter((c) => {
+    if (category === "all") return true;
+    if (category === "other") return c.tag === "soft" || c.tag === "finance";
+    return c.tag === category;
+  });
 
-  groupsToDisplay.forEach((group) => {
-    const groupDiv = document.createElement("div");
-    groupDiv.className = "p3r-skill-group";
-    groupDiv.id = `skill-group-${group.id}`;
+  const activeTabObj = certTabsList.find((t) => t.id === category);
+  const groupTitle = activeTabObj ? `${activeTabObj.label} CERTIFICATES` : "CERTIFICATES";
 
-    let rowsHTML = "";
-    group.skills.forEach((skill, idx) => {
-      rowsHTML += `
-        <div class="p3r-stat-row" style="animation-delay: ${idx * 0.06}s;">
-          <div class="p3r-stat-name-col">
-            <span class="p3r-stat-name">${skill.name}</span>
-          </div>
-          <div class="p3r-stat-bar-track">
-            <div class="p3r-stat-bar-fill" data-v="${skill.level}" style="width: ${skill.level}%;">
-              <div class="p3r-stat-bar-tip" aria-hidden="true"></div>
-            </div>
-          </div>
-          <div class="p3r-stat-lv">
-            <span class="p3r-stat-lv-prefix">LV</span>
-            <span class="p3r-stat-lv-val">${skill.level}</span>
-          </div>
-        </div>
-      `;
-    });
+  const groupDiv = document.createElement("div");
+  groupDiv.className = "p3r-skill-group";
+  groupDiv.id = `cert-group-${category}`;
 
-    groupDiv.innerHTML = `
-      <div class="p3r-skill-group-header">
-        <h3 class="p3r-group-title">${group.title}</h3>
-        <div class="p3r-group-line"></div>
+  const gridDiv = document.createElement("div");
+  gridDiv.className = "p3r-cert-grid";
+
+  filteredCerts.forEach((cert, idx) => {
+    const card = document.createElement("article");
+    card.className = "p3r-cert-card";
+    card.style.animationDelay = `${idx * 0.06}s`;
+
+    card.innerHTML = `
+      <div class="p3r-cert-card-top">
+        <span class="p3r-cert-index">CERT // ${String(idx + 1).padStart(2, "0")}</span>
+        <span class="p3r-cert-badge">${cert.tagLabel}</span>
       </div>
-      <div class="p3r-skill-rows-list">
-        ${rowsHTML}
+      <div class="p3r-cert-thumb-wrap">
+        <img src="${cert.image}" alt="${cert.title}" class="p3r-cert-thumb" loading="lazy" />
+      </div>
+      <div class="p3r-cert-body">
+        <h3 class="p3r-cert-title">${cert.title}</h3>
+        <p class="p3r-cert-issuer">${cert.issuer} · <span>${cert.year}</span></p>
+        <div class="p3r-cert-actions">
+          <button type="button" class="p3r-cert-preview-btn">Preview</button>
+          <a href="${cert.link}" target="_blank" rel="noopener noreferrer" class="p3r-cert-link-btn">View Credential ↗</a>
+        </div>
       </div>
     `;
 
-    p3rSkillsContainer.appendChild(groupDiv);
+    const thumbWrap = card.querySelector(".p3r-cert-thumb-wrap");
+    const previewBtn = card.querySelector(".p3r-cert-preview-btn");
+    const linkBtn = card.querySelector(".p3r-cert-link-btn");
+
+    if (thumbWrap) {
+      thumbWrap.addEventListener("click", (e) => openCertModal(cert, e));
+    }
+    if (previewBtn) {
+      previewBtn.addEventListener("click", (e) => openCertModal(cert, e));
+    }
+    if (linkBtn) {
+      linkBtn.addEventListener("click", () => playConfirmSFX());
+    }
+
+    gridDiv.appendChild(card);
   });
+
+  groupDiv.innerHTML = `
+    <div class="p3r-skill-group-header">
+      <h3 class="p3r-group-title">${groupTitle} (${filteredCerts.length})</h3>
+      <div class="p3r-group-line"></div>
+    </div>
+  `;
+  groupDiv.appendChild(gridDiv);
+  p3rSkillsContainer.appendChild(groupDiv);
 }
 
 function openSkillPage(clickEvent) {
   if (isSkillPageOpen || isWavyTransitionRunning) return;
   isSkillPageOpen = true;
-  playSFX();
+  pushNavState("certificate");
+  playConfirmSFX();
 
   executeWavyReveal({
     pageEl: skillPage,
@@ -1097,6 +1343,7 @@ function openSkillPage(clickEvent) {
 function closeSkillPage() {
   if (!isSkillPageOpen || isWavyTransitionRunning) return;
   isSkillPageOpen = false;
+  syncCloseToMainState();
 
   executeWavyClose({
     pageEl: skillPage,
@@ -1117,10 +1364,33 @@ function triggerAboutTitleAnimation() {
   }
 }
 
+function setAboutTab(tabId, silent = false) {
+  currentAboutTab = tabId;
+  if (!silent) playSFX();
+  aboutTabs.forEach((tab) => {
+    const isMatch = tab.dataset.aboutTab === tabId;
+    tab.classList.toggle("active", isMatch);
+    tab.setAttribute("aria-selected", isMatch ? "true" : "false");
+  });
+  aboutPanels.forEach((panel) => {
+    const isMatch = panel.dataset.aboutPanel === tabId;
+    panel.classList.toggle("active", isMatch);
+    panel.hidden = !isMatch;
+  });
+}
+
+function cycleAboutTab(delta) {
+  const order = ["profile", "experience", "education", "tools"];
+  const idx = order.indexOf(currentAboutTab);
+  const nextIdx = (idx + delta + order.length) % order.length;
+  setAboutTab(order[nextIdx]);
+}
+
 function openAboutPage(clickEvent) {
   if (isAboutPageOpen || isWavyTransitionRunning) return;
   isAboutPageOpen = true;
-  playSFX();
+  pushNavState("about");
+  playConfirmSFX();
 
   executeWavyReveal({
     pageEl: aboutPage,
@@ -1128,6 +1398,7 @@ function openAboutPage(clickEvent) {
     bodyClass: "about-screen-active",
     videoEl: aboutBgVideo,
     onStart: () => {
+      setAboutTab("profile", true);
       triggerAboutTitleAnimation();
     }
   });
@@ -1136,6 +1407,7 @@ function openAboutPage(clickEvent) {
 function closeAboutPage() {
   if (!isAboutPageOpen || isWavyTransitionRunning) return;
   isAboutPageOpen = false;
+  syncCloseToMainState();
 
   executeWavyClose({
     pageEl: aboutPage,
@@ -1148,7 +1420,7 @@ function closeAboutPage() {
 // --------------------------------------------------------------------------
 // 9. Subpage: CONTACT (Mail / Phone Messaging UI)
 // --------------------------------------------------------------------------
-function selectContactRow(index) {
+function selectContactRow(index, silent = false) {
   if (!contactMailRows || contactMailRows.length === 0) return;
   selectedContactIndex = Math.max(0, Math.min(index, contactMailRows.length - 1));
   contactMailRows.forEach((row, i) => {
@@ -1158,7 +1430,7 @@ function selectContactRow(index) {
       row.classList.remove("active");
     }
   });
-  playSFX();
+  if (!silent) playSFX();
 }
 
 function triggerContactPhoneAnimation() {
@@ -1173,7 +1445,8 @@ function triggerContactPhoneAnimation() {
 function openContactPage(clickEvent) {
   if (isContactPageOpen || isWavyTransitionRunning) return;
   isContactPageOpen = true;
-  playSFX();
+  pushNavState("contact");
+  playConfirmSFX();
 
   executeWavyReveal({
     pageEl: contactPage,
@@ -1182,7 +1455,7 @@ function openContactPage(clickEvent) {
     videoEl: contactBgVideo,
     onStart: () => {
       triggerContactPhoneAnimation();
-      selectContactRow(0);
+      selectContactRow(0, true);
     }
   });
 }
@@ -1190,6 +1463,7 @@ function openContactPage(clickEvent) {
 function closeContactPage() {
   if (!isContactPageOpen || isWavyTransitionRunning) return;
   isContactPageOpen = false;
+  syncCloseToMainState();
 
   executeWavyClose({
     pageEl: contactPage,
@@ -1234,7 +1508,7 @@ function openModal(index) {
   isModalOpen = true;
   portfolioModal.classList.add("active");
   portfolioModal.setAttribute("aria-hidden", "false");
-  playSFX();
+  playOpenDetailSFX();
 
   const origin = getOptionCenter(index);
   const targetRadius = calculateTargetRadius(origin);
@@ -1255,7 +1529,7 @@ function openModal(index) {
 function closeModal() {
   if (!isModalOpen) return;
   isModalOpen = false;
-  playCloseMenuSFX();
+  playCloseDetailSFX();
 
   const exitOrigin = getModalExitOrigin();
   const targetRadius = calculateTargetRadius(exitOrigin);
@@ -1343,44 +1617,65 @@ if (bgVideoIntro) {
 // --------------------------------------------------------------------------
 // 12. Loading Screen & Experience Entry Sequence
 // --------------------------------------------------------------------------
-let currentProgress = 0;
-let targetProgress = 15;
-let progressTimer = null;
+let isStartPromptShown = false;
 
-function setProgress(val) {
-  targetProgress = Math.min(100, Math.max(targetProgress, Math.round(val)));
-}
-
-function updateProgressUI(val) {
-  const rounded = Math.min(100, Math.max(0, Math.round(val)));
-  if (loadingBar) loadingBar.style.width = `${rounded}%`;
-  if (loadingPercent) loadingPercent.textContent = `${rounded}%`;
-  if (loadingScreen) loadingScreen.setAttribute("aria-valuenow", rounded);
-}
-
-function runProgressTicker() {
+function waitForMenuVideoReady(timeoutMs = 12000) {
   return new Promise((resolve) => {
-    function tick() {
-      if (currentProgress < targetProgress) {
-        const step = Math.max(1, Math.ceil((targetProgress - currentProgress) * 0.35));
-        currentProgress = Math.min(targetProgress, currentProgress + step);
-        updateProgressUI(currentProgress);
-      }
+    if (loadingStatusText) loadingStatusText.textContent = "Loading...";
 
-      if (currentProgress >= 100) {
-        updateProgressUI(100);
-        resolve();
-      } else {
-        requestAnimationFrame(tick);
-      }
+    if (!bgVideoLoop) {
+      resolve();
+      return;
     }
-    requestAnimationFrame(tick);
+
+    if (bgVideoLoop.preload !== "auto") {
+      bgVideoLoop.preload = "auto";
+    }
+
+    let settled = false;
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      clearInterval(pollId);
+      clearTimeout(fallbackId);
+      bgVideoLoop.removeEventListener("canplaythrough", checkReady);
+      bgVideoLoop.removeEventListener("loadeddata", checkReady);
+      bgVideoLoop.removeEventListener("error", finish);
+      if (loadingStatusText) loadingStatusText.textContent = "Loading...";
+      if (loadingScreen) loadingScreen.setAttribute("aria-valuenow", "100");
+      resolve();
+    };
+
+    const checkReady = () => {
+      if (isStarted || bgVideoLoop.readyState === 4) {
+        finish();
+      }
+    };
+
+    bgVideoLoop.addEventListener("canplaythrough", checkReady);
+    bgVideoLoop.addEventListener("loadeddata", checkReady);
+    bgVideoLoop.addEventListener("error", finish);
+    const pollId = setInterval(checkReady, 700);
+    const fallbackId = setTimeout(finish, timeoutMs);
+    checkReady();
+  });
+}
+
+function waitAbortable(ms) {
+  return new Promise((resolve) => {
+    const step = 100;
+    let elapsed = 0;
+    const timer = setInterval(() => {
+      elapsed += step;
+      if (isStarted || elapsed >= ms) {
+        clearInterval(timer);
+        resolve();
+      }
+    }, step);
   });
 }
 
 async function startLoadingSequence() {
-  const tickerPromise = runProgressTicker();
-
   if (bgVideoIntro) {
     bgVideoIntro.muted = true;
     bgVideoIntro.defaultMuted = true;
@@ -1390,40 +1685,51 @@ async function startLoadingSequence() {
     bgVideoLoop.defaultMuted = true;
   }
 
-  // Preload audio and fonts with minimal latency
+  // Preload audio and fonts while running initial loading display
   loadAudioBuffers();
-  setProgress(55);
 
-  try {
-    if (document.fonts && document.fonts.ready) {
-      await Promise.race([
-        document.fonts.ready,
-        new Promise((r) => setTimeout(r, 120))
-      ]);
-    }
-  } catch (_) {}
+  if (loadingStatusText) loadingStatusText.textContent = "Loading...";
+  if (loadingIndicatorWrap) loadingIndicatorWrap.style.display = "flex";
+  if (loadingStateText) loadingStateText.style.display = "none";
 
-  setProgress(100);
-  await tickerPromise;
-  updateProgressUI(100);
+  const fontPromise = (document.fonts && document.fonts.ready)
+    ? Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 800))]).catch(() => {})
+    : Promise.resolve();
+
+  await Promise.all([waitAbortable(2600), waitForMenuVideoReady(12000), fontPromise]);
+  if (isStarted) return;
+
   isLoaded = true;
-
-  await new Promise((r) => setTimeout(r, 60));
+  playConfirmSFX();
 
   const ctx = getAudioContext();
   if (ctx && ctx.state !== "running") {
     ctx.resume().catch(() => {});
   }
 
+  await waitAbortable(300);
+  if (isStarted) return;
+
   enterExperience();
+}
+
+if (loadingScreen) {
+  const handleStartTap = (e) => {
+    if (isStarted) return;
+    if (e && e.cancelable) e.preventDefault();
+    isLoaded = true;
+    playConfirmSFX();
+    enterExperience();
+  };
+  loadingScreen.addEventListener("click", handleStartTap);
+  loadingScreen.addEventListener("touchend", handleStartTap);
 }
 
 function enterExperience() {
   if (isStarted) return;
   isStarted = true;
-  experienceEntryTime = Date.now();
 
-  playMenuUtamaSFX();
+  ensureBGM();
 
   if (loadingScreen) {
     loadingScreen.classList.add("dismissed");
@@ -1432,6 +1738,8 @@ function enterExperience() {
     }, 450);
   }
 
+  const menuLeftDock = document.getElementById("menu-left-dock");
+  if (menuLeftDock) menuLeftDock.classList.add("menu-entered");
   const menuColumn = document.getElementById("menu-column");
   if (menuColumn) menuColumn.classList.add("menu-entered");
   const menuProfileHeader = document.getElementById("menu-profile-header");
@@ -1448,6 +1756,8 @@ function enterExperience() {
         switchToLoopVideo();
       });
     }
+  } else {
+    switchToLoopVideo();
   }
 }
 
@@ -1463,17 +1773,65 @@ if (portfolioModal) {
 }
 
 if (slinkConfirmBtn) slinkConfirmBtn.addEventListener("click", confirmSlinkSelection);
+if (slinkPreviewOpenBtn) slinkPreviewOpenBtn.addEventListener("click", confirmSlinkSelection);
 if (slinkBackBtn) slinkBackBtn.addEventListener("click", closeProjectPage);
 if (skillBackBtn) skillBackBtn.addEventListener("click", closeSkillPage);
 if (skillTabPrevBtn) skillTabPrevBtn.addEventListener("click", prevSkillTab);
 if (skillTabNextBtn) skillTabNextBtn.addEventListener("click", nextSkillTab);
 if (aboutBackBtn) aboutBackBtn.addEventListener("click", closeAboutPage);
+if (aboutTabs && aboutTabs.length > 0) {
+  aboutTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      if (tab.dataset.aboutTab && currentAboutTab !== tab.dataset.aboutTab) {
+        setAboutTab(tab.dataset.aboutTab);
+      }
+    });
+  });
+}
 if (contactBackBtn) contactBackBtn.addEventListener("click", closeContactPage);
+
+const hudConfirmBtn = document.getElementById("hud-confirm-btn");
+if (hudConfirmBtn) {
+  hudConfirmBtn.addEventListener("mouseenter", () => {
+    playSFX();
+  });
+  hudConfirmBtn.addEventListener("click", (e) => {
+    playConfirmSFX();
+    handleOptionConfirm(selectedIndex, e);
+  });
+}
+
+const hudSelectItem = document.querySelector(".hud-select-item");
+if (hudSelectItem) {
+  hudSelectItem.addEventListener("mouseenter", () => {
+    playSFX();
+  });
+  hudSelectItem.addEventListener("click", (e) => {
+    e.preventDefault();
+    // Pure visual HUD indicator - no event triggered!
+  });
+}
+if (toggleBgmBtn) {
+  toggleBgmBtn.addEventListener("mouseenter", () => {
+    playSFX();
+  });
+  toggleBgmBtn.addEventListener("click", toggleBGM);
+}
+if (toggleSfxBtn) {
+  toggleSfxBtn.addEventListener("mouseenter", () => {
+    playSFX();
+  });
+  toggleSfxBtn.addEventListener("click", toggleSFX);
+}
+updateAudioToggleUI();
 
 if (contactMailRows && contactMailRows.length > 0) {
   contactMailRows.forEach((row, idx) => {
     row.addEventListener("mouseenter", () => {
       selectContactRow(idx);
+    });
+    row.addEventListener("click", () => {
+      playConfirmSFX();
     });
   });
 }
@@ -1483,6 +1841,27 @@ document.addEventListener("keydown", (e) => {
   if (!isStarted) {
     if (isLoaded || e.key === "Enter" || e.key === " ") {
       enterExperience();
+    }
+    return;
+  }
+
+  // Global Audio Hotkeys (M = Music, F = SFX)
+  if (e.key.toLowerCase() === "m") {
+    e.preventDefault();
+    toggleBGM();
+    return;
+  }
+  if (e.key.toLowerCase() === "f") {
+    e.preventDefault();
+    toggleSFX();
+    return;
+  }
+
+  // Active Screen: Modal (must be checked first so Escape closes modal over subpages)
+  if (isModalOpen) {
+    if (e.key === "Escape" || e.key.toLowerCase() === "b" || e.key.toLowerCase() === "backspace" || e.key.toLowerCase() === "a") {
+      e.preventDefault();
+      closeModal();
     }
     return;
   }
@@ -1505,7 +1884,7 @@ document.addEventListener("keydown", (e) => {
     return;
   }
 
-  // Active Screen: Skill
+  // Active Screen: Certificate
   if (isSkillPageOpen) {
     if (e.key === "Escape" || e.key.toLowerCase() === "b" || e.key.toLowerCase() === "backspace") {
       e.preventDefault();
@@ -1525,6 +1904,12 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" || e.key.toLowerCase() === "b" || e.key.toLowerCase() === "backspace") {
       e.preventDefault();
       closeAboutPage();
+    } else if (e.key.toLowerCase() === "q" || e.key === "ArrowLeft") {
+      e.preventDefault();
+      cycleAboutTab(-1);
+    } else if (e.key.toLowerCase() === "e" || e.key === "ArrowRight") {
+      e.preventDefault();
+      cycleAboutTab(1);
     }
     return;
   }
@@ -1548,14 +1933,6 @@ document.addEventListener("keydown", (e) => {
     return;
   }
 
-  // Active Screen: Modal
-  if (isModalOpen) {
-    if (e.key === "Escape" || e.key.toLowerCase() === "a") {
-      closeModal();
-    }
-    return;
-  }
-
   // Main Menu Navigation
   if (e.key === "ArrowDown" || e.key.toLowerCase() === "s") {
     e.preventDefault();
@@ -1567,14 +1944,95 @@ document.addEventListener("keydown", (e) => {
     e.preventDefault();
     handleOptionConfirm(selectedIndex);
   } else if (e.key === "Escape" || e.key.toLowerCase() === "a") {
-    playSFX();
+    playCloseMenuSFX();
   }
 });
+
+// Tactile Mouse Wheel Menu Navigation (Persona 3 Responsive Blade Cycling)
+let lastWheelNavTime = 0;
+window.addEventListener("wheel", (e) => {
+  if (!isStarted || isModalOpen || isProjectPageOpen || isSkillPageOpen || isAboutPageOpen || isContactPageOpen) {
+    return;
+  }
+  // Prevent menu scrolling when mouse wheel is inside the music player deck
+  if (e.target && e.target.closest && e.target.closest("#p3r-music-modal, .p3r-music-launcher, .music-floating-dialog")) {
+    return;
+  }
+  const now = performance.now();
+  if (now - lastWheelNavTime < 180) return; // Debounce for clean single-step navigation
+  
+  if (e.deltaY > 15) {
+    lastWheelNavTime = now;
+    setIndex((selectedIndex + 1) % options.length);
+  } else if (e.deltaY < -15) {
+    lastWheelNavTime = now;
+    setIndex((selectedIndex - 1 + options.length) % options.length);
+  }
+}, { passive: true });
+
+// Touch Swipe Navigation for Mobile & Tablet (iOS & Android)
+let touchStartY = 0;
+let touchStartX = 0;
+let lastTouchNavTime = 0;
+window.addEventListener("touchstart", (e) => {
+  if (e.touches && e.touches.length === 1) {
+    touchStartY = e.touches[0].clientY;
+    touchStartX = e.touches[0].clientX;
+  }
+}, { passive: true });
+
+window.addEventListener("touchend", (e) => {
+  if (!isStarted || isModalOpen || isProjectPageOpen || isSkillPageOpen || isAboutPageOpen || isContactPageOpen) {
+    return;
+  }
+  if (e.changedTouches && e.changedTouches.length === 1) {
+    const deltaY = e.changedTouches[0].clientY - touchStartY;
+    const deltaX = e.changedTouches[0].clientX - touchStartX;
+    const now = performance.now();
+    if (now - lastTouchNavTime < 220) return;
+
+    if (Math.abs(deltaY) > 35 && Math.abs(deltaY) > Math.abs(deltaX)) {
+      lastTouchNavTime = now;
+      if (deltaY < 0) {
+        // Swipe Up -> Next option
+        setIndex((selectedIndex + 1) % options.length);
+      } else {
+        // Swipe Down -> Previous option
+        setIndex((selectedIndex - 1 + options.length) % options.length);
+      }
+    }
+  }
+}, { passive: true });
 
 // --------------------------------------------------------------------------
 // 14. Initialization & Window Exports
 // --------------------------------------------------------------------------
 renderOptions();
+
+// Render Profile Header Name & About Page Name in Cutout Ransom Style
+const profileNameContainer = document.getElementById("profile-name-container");
+if (profileNameContainer) {
+  profileNameContainer.innerHTML = `
+    <div class="profile-name-stacked">
+      ${createCutoutHtml("FATKHUL", 0)}
+      ${createCutoutHtml("BARRI", 3)}
+    </div>
+  `;
+}
+
+// Render Subpage Headlines in Cutout Ransom Style (PROJECT, CERTIFICATE, ABOUT, MAIL)
+// (Note: About Name "FATKHUL BARRI" is kept as clean normal text as requested)
+const projHeader = document.getElementById("slink-project-text");
+if (projHeader) projHeader.innerHTML = createCutoutHtml("PROJECT", 1);
+
+const skillHeader = document.getElementById("skill-header-text");
+if (skillHeader) skillHeader.innerHTML = createCutoutHtml("CERTIFICATE", 2);
+
+const aboutHeader = document.getElementById("about-header-text");
+if (aboutHeader) aboutHeader.innerHTML = createCutoutHtml("ABOUT", 3);
+
+const contactHeader = document.querySelector(".p3r-mail-watermark");
+if (contactHeader) contactHeader.innerHTML = createCutoutHtml("CONTACT", 4);
 
 const urlParams = new URLSearchParams(window.location.search);
 const initialSelect = parseInt(urlParams.get("select"), 10);
@@ -1596,28 +2054,96 @@ window.closeContactPage = closeContactPage;
 window.triggerContactPhoneAnimation = triggerContactPhoneAnimation;
 window.playWavyCircleTransition = playWavyCircleTransition;
 
-// URL Navigation Shortcuts & Responsive Init
-if (window.innerWidth < 1024) {
-  // Mobile / Small screen mode: cleanly dismiss loading HUD and exit immediately
-  if (loadingScreen) loadingScreen.style.display = "none";
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 1024 && !isStarted) {
-      loadAudioBuffers();
-      startLoadingSequence();
+// Mobile Corner Back Buttons (Pojok Kiri Atas Tiap Submenu)
+const mobileBackButtons = [
+  { id: "project-mobile-back-btn", fn: closeProjectPage },
+  { id: "skill-mobile-back-btn", fn: closeSkillPage },
+  { id: "about-mobile-back-btn", fn: closeAboutPage },
+  { id: "contact-mobile-back-btn", fn: closeContactPage }
+];
+mobileBackButtons.forEach(({ id, fn }) => {
+  const btn = document.getElementById(id);
+  if (btn) {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      playBackSFX();
+      fn();
+    });
+  }
+});
+
+// Popstate Listener: Browser Back/Forward Navigation without about:blank
+window.addEventListener("popstate", (e) => {
+  isHistoryNavigating = true;
+  try {
+    // If any modal is active, dismiss it first
+    if (typeof certModal !== "undefined" && certModal && certModal.classList.contains("active")) {
+      closeCertModal();
+      return;
     }
-  }, { once: true });
-} else if (urlParams.get("page") === "project") {
+    if (typeof projectModal !== "undefined" && projectModal && projectModal.classList.contains("active")) {
+      closeProjectModal();
+      return;
+    }
+    if (typeof p3rMusicModal !== "undefined" && p3rMusicModal && p3rMusicModal.classList.contains("active")) {
+      closeMusicModal();
+      return;
+    }
+
+    const targetPage = (e.state && e.state.page) || window.location.hash.replace("#", "") || "main";
+
+    if (targetPage === "main" || !targetPage) {
+      if (isProjectPageOpen) closeProjectPage();
+      if (isSkillPageOpen) closeSkillPage();
+      if (isAboutPageOpen) closeAboutPage();
+      if (isContactPageOpen) closeContactPage();
+    } else if (targetPage === "project") {
+      if (isSkillPageOpen) closeSkillPage();
+      if (isAboutPageOpen) closeAboutPage();
+      if (isContactPageOpen) closeContactPage();
+      if (!isProjectPageOpen) openProjectPage();
+    } else if (targetPage === "certificate" || targetPage === "skill" || targetPage === "skills") {
+      if (isProjectPageOpen) closeProjectPage();
+      if (isAboutPageOpen) closeAboutPage();
+      if (isContactPageOpen) closeContactPage();
+      if (!isSkillPageOpen) openSkillPage();
+    } else if (targetPage === "about") {
+      if (isProjectPageOpen) closeProjectPage();
+      if (isSkillPageOpen) closeSkillPage();
+      if (isContactPageOpen) closeContactPage();
+      if (!isAboutPageOpen) openAboutPage();
+    } else if (targetPage === "contact") {
+      if (isProjectPageOpen) closeProjectPage();
+      if (isSkillPageOpen) closeSkillPage();
+      if (isAboutPageOpen) closeAboutPage();
+      if (!isContactPageOpen) openContactPage();
+    }
+  } finally {
+    setTimeout(() => { isHistoryNavigating = false; }, 350);
+  }
+});
+
+// Initial history state check
+try {
+  if (!history.state) {
+    const initialHash = window.location.hash.replace("#", "");
+    history.replaceState({ page: initialHash || "main" }, "", initialHash ? ("#" + initialHash) : "#main");
+  }
+} catch (err) {}
+
+// URL Navigation Shortcuts & Responsive Init (Runs seamlessly on Desktop, iPad, Tablet, Mobile)
+if (urlParams.get("page") === "project") {
   if (loadingScreen) loadingScreen.style.display = "none";
   isStarted = true;
   isLoaded = true;
   openProjectPage();
   triggerProjectTitleAnimation();
-} else if (urlParams.get("page") === "skill" || urlParams.get("page") === "skills") {
+} else if (["skill", "skills", "certificate", "certificates", "cert"].includes(urlParams.get("page"))) {
   if (loadingScreen) loadingScreen.style.display = "none";
   isStarted = true;
   isLoaded = true;
   const tabParam = urlParams.get("tab") || urlParams.get("cat");
-  if (tabParam && skillTabsList.some((t) => t.id === tabParam)) {
+  if (tabParam && certTabsList.some((t) => t.id === tabParam)) {
     currentSkillTab = tabParam;
   }
   openSkillPage();
@@ -1640,3 +2166,365 @@ if (window.innerWidth < 1024) {
 } else {
   startLoadingSequence();
 }
+
+// ==========================================================================
+// 15. Persona 3 Reload - Interactive Floating Music Player & Playlist (Image 5)
+// ==========================================================================
+const p3rPlaylist = [
+  {
+    id: "color-your-night",
+    title: "Color Your Night",
+    artist: "Persona 3 Reload",
+    badge: "P3R",
+    src: "assets/Music/Color Your Night.mp3"
+  },
+  {
+    id: "battle-hymn-of-the-soul",
+    title: "Battle Hymn of the Soul",
+    artist: "Persona 3 Reload",
+    badge: "P3R",
+    src: "assets/Music/Battle Hymn of the Soul.mp3"
+  },
+  {
+    id: "burn-my-dread",
+    title: "Burn My Dread",
+    artist: "Persona 3 Reload",
+    badge: "P3R",
+    src: "assets/Music/Burn My Dread.mp3"
+  },
+  {
+    id: "full-moon-full-life",
+    title: "Full Moon Full Life",
+    artist: "Persona 3 Reload",
+    badge: "P3R",
+    src: "assets/Music/Full Moon Full Life.mp3"
+  },
+  {
+    id: "memories-of-you",
+    title: "Memories of You",
+    artist: "Persona 3 Reload",
+    badge: "P3R",
+    src: "assets/Music/Memories of You.mp3"
+  },
+  {
+    id: "paulownia-mall",
+    title: "Paulownia Mall",
+    artist: "Persona 3 Reload",
+    badge: "P3R",
+    src: "assets/Music/Paulownia Mall.mp3"
+  },
+  {
+    id: "this-mysterious-feeling",
+    title: "This Mysterious Feeling",
+    artist: "Persona 3 Reload",
+    badge: "P3R",
+    src: "assets/Music/This Mysterious Feeling.mp3"
+  },
+  {
+    id: "when-the-moons-reaching-out-stars",
+    title: "When The Moon's Reaching Out Stars",
+    artist: "Persona 3 Reload",
+    badge: "P3R",
+    src: "assets/Music/When The Moon's Reaching Out Stars.mp3"
+  }
+];
+
+let currentTrackIndex = 0;
+
+function setupP3RMusicPlayer() {
+  const launcher = document.getElementById("p3r-music-launcher");
+  const modal = document.getElementById("p3r-music-modal");
+  const backdrop = document.getElementById("music-modal-backdrop");
+  const closeBtn = document.getElementById("music-window-close-btn");
+  const audioToggleBtn = document.getElementById("music-audio-toggle-btn");
+  const audioToggleText = document.getElementById("music-audio-toggle-text");
+  
+  const playPauseBtn = document.getElementById("music-play-pause-btn");
+  const playIcon = document.getElementById("music-play-icon");
+  const heroBadge = document.getElementById("music-hero-badge");
+  const activeTitle = document.getElementById("music-active-title");
+  const activeArtist = document.getElementById("music-active-artist");
+  
+  const prevTitle = document.getElementById("music-prev-title");
+  const prevArtist = document.getElementById("music-prev-artist");
+  const nextTitle = document.getElementById("music-next-title");
+  const nextArtist = document.getElementById("music-next-artist");
+  
+  const currentTimeEl = document.getElementById("music-current-time");
+  const durationTimeEl = document.getElementById("music-duration-time");
+  const timelineTrack = document.getElementById("music-timeline-track");
+  const timelineFill = document.getElementById("music-timeline-fill");
+  const timelineThumb = document.getElementById("music-timeline-thumb");
+  
+  const chevronPrev = document.getElementById("music-chevron-prev");
+  const chevronNext = document.getElementById("music-chevron-next");
+  const cardPrev = document.getElementById("music-card-prev");
+  const cardNext = document.getElementById("music-card-next");
+  const navPrevBtn = document.getElementById("music-nav-prev-btn");
+  const navNextBtn = document.getElementById("music-nav-next-btn");
+  const deckStack = document.getElementById("music-deck-stack");
+
+  function formatTime(seconds) {
+    if (isNaN(seconds) || seconds < 0) return "0:00";
+    const m = Math.floor(seconds / 60);
+    const s = Math.floor(seconds % 60);
+    return `${m}:${s < 10 ? "0" : ""}${s}`;
+  }
+
+  function updatePlayerDeckUI() {
+    const cur = p3rPlaylist[currentTrackIndex];
+    const prevIdx = (currentTrackIndex - 1 + p3rPlaylist.length) % p3rPlaylist.length;
+    const nextIdx = (currentTrackIndex + 1) % p3rPlaylist.length;
+    const prevTrack = p3rPlaylist[prevIdx];
+    const nextTrack = p3rPlaylist[nextIdx];
+
+    if (activeTitle) activeTitle.textContent = cur.title;
+    if (activeArtist) activeArtist.textContent = cur.artist;
+    if (heroBadge) heroBadge.textContent = cur.badge;
+
+    if (prevTitle) prevTitle.textContent = prevTrack.title;
+    if (prevArtist) prevArtist.textContent = prevTrack.artist;
+
+    if (nextTitle) nextTitle.textContent = nextTrack.title;
+    if (nextArtist) nextArtist.textContent = nextTrack.artist;
+
+    const isPlaying = bgmLobbyEl && !bgmLobbyEl.paused && !isBgmMuted;
+    if (playIcon) playIcon.textContent = isPlaying ? "❚❚" : "▶";
+    if (launcher) launcher.classList.toggle("is-playing", isPlaying);
+
+    if (audioToggleText) audioToggleText.textContent = isBgmMuted ? "AUDIO OFF" : "AUDIO ON";
+    if (audioToggleBtn) audioToggleBtn.classList.toggle("is-muted", isBgmMuted);
+  }
+
+  function playTrack(idx) {
+    currentTrackIndex = idx;
+    if (bgmLobbyEl) {
+      bgmLobbyEl.src = p3rPlaylist[currentTrackIndex].src;
+      bgmLobbyEl.currentTime = 0;
+      if (!isBgmMuted) {
+        bgmLobbyEl.play().catch(() => {});
+      }
+    }
+    updatePlayerDeckUI();
+    if (!isSfxMuted) playConfirmSFX();
+  }
+
+  function nextTrack() {
+    playTrack((currentTrackIndex + 1) % p3rPlaylist.length);
+  }
+
+  function prevTrack() {
+    playTrack((currentTrackIndex - 1 + p3rPlaylist.length) % p3rPlaylist.length);
+  }
+
+  function togglePlayPause() {
+    if (!bgmLobbyEl) return;
+    if (bgmLobbyEl.paused || isBgmMuted) {
+      if (isBgmMuted) {
+        isBgmMuted = false;
+        updateAudioToggleUI();
+      }
+      bgmLobbyEl.play().catch(() => {});
+    } else {
+      bgmLobbyEl.pause();
+    }
+    updatePlayerDeckUI();
+    if (!isSfxMuted) playConfirmSFX();
+  }
+
+  function openMusicModal() {
+    if (modal) modal.style.display = "flex";
+    updatePlayerDeckUI();
+    if (!isSfxMuted) playSFX();
+  }
+
+  function closeMusicModal() {
+    if (modal) modal.style.display = "none";
+    if (!isSfxMuted) playCloseMenuSFX();
+  }
+
+  // Hook launcher & modal controls
+  if (launcher) launcher.addEventListener("click", openMusicModal);
+  if (closeBtn) closeBtn.addEventListener("click", closeMusicModal);
+  if (backdrop) backdrop.addEventListener("click", closeMusicModal);
+  
+  if (audioToggleBtn) {
+    audioToggleBtn.addEventListener("click", () => {
+      toggleBGM();
+      updatePlayerDeckUI();
+    });
+  }
+
+  if (playPauseBtn) playPauseBtn.addEventListener("click", togglePlayPause);
+  if (cardPrev) cardPrev.addEventListener("click", prevTrack);
+  if (cardNext) cardNext.addEventListener("click", nextTrack);
+  if (chevronPrev) chevronPrev.addEventListener("click", (e) => { e.stopPropagation(); prevTrack(); });
+  if (chevronNext) chevronNext.addEventListener("click", (e) => { e.stopPropagation(); nextTrack(); });
+  if (navPrevBtn) navPrevBtn.addEventListener("click", prevTrack);
+  if (navNextBtn) navNextBtn.addEventListener("click", nextTrack);
+
+  // Skip -10s and +10s controls
+  const replay10Btn = document.getElementById("music-replay-10s-btn");
+  const forward10Btn = document.getElementById("music-forward-10s-btn");
+
+  if (replay10Btn) {
+    replay10Btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (bgmLobbyEl) {
+        bgmLobbyEl.currentTime = Math.max(0, bgmLobbyEl.currentTime - 10);
+        updateTimelineUI();
+        playNavSFX();
+      }
+    });
+  }
+
+  if (forward10Btn) {
+    forward10Btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (bgmLobbyEl) {
+        bgmLobbyEl.currentTime = Math.min(bgmLobbyEl.duration || 9999, bgmLobbyEl.currentTime + 10);
+        updateTimelineUI();
+        playNavSFX();
+      }
+    });
+  }
+
+  // Mouse wheel track switching inside playlist deck (stops propagation so main menu doesn't scroll)
+  if (deckStack) {
+    deckStack.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (e.deltaY > 0) nextTrack();
+      else if (e.deltaY < 0) prevTrack();
+    }, { passive: false });
+  }
+
+  const musicFloatingDialog = document.querySelector(".music-floating-dialog");
+  if (musicFloatingDialog) {
+    musicFloatingDialog.addEventListener("wheel", (e) => {
+      e.stopPropagation();
+    }, { passive: false });
+  }
+
+  // Interactive Timeline Scrubber (Seeker)
+  if (timelineTrack && bgmLobbyEl) {
+    let isDragging = false;
+
+    function seekFromEvent(e) {
+      const rect = timelineTrack.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+      if (bgmLobbyEl.duration) {
+        bgmLobbyEl.currentTime = ratio * bgmLobbyEl.duration;
+      }
+    }
+
+    timelineTrack.addEventListener("click", seekFromEvent);
+
+    timelineTrack.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      seekFromEvent(e);
+      const onMove = (ev) => { if (isDragging) seekFromEvent(ev); };
+      const onUp = () => {
+        isDragging = false;
+        window.removeEventListener("mousemove", onMove);
+        window.removeEventListener("mouseup", onUp);
+      };
+      window.addEventListener("mousemove", onMove);
+      window.addEventListener("mouseup", onUp);
+    });
+
+    timelineTrack.addEventListener("touchstart", (e) => {
+      isDragging = true;
+      seekFromEvent(e);
+    }, { passive: true });
+
+    timelineTrack.addEventListener("touchmove", (e) => {
+      if (isDragging) seekFromEvent(e);
+    }, { passive: true });
+
+    timelineTrack.addEventListener("touchend", () => {
+      isDragging = false;
+    });
+  }
+
+  // Hook bgmLobbyEl timeupdate & loadedmetadata
+  if (bgmLobbyEl) {
+    bgmLobbyEl.addEventListener("timeupdate", () => {
+      const cur = bgmLobbyEl.currentTime || 0;
+      const dur = bgmLobbyEl.duration || 0;
+      if (currentTimeEl) currentTimeEl.textContent = formatTime(cur);
+      if (durationTimeEl) durationTimeEl.textContent = formatTime(dur);
+      if (dur > 0) {
+        const pct = (cur / dur) * 100;
+        if (timelineFill) timelineFill.style.width = `${pct}%`;
+        if (timelineThumb) timelineThumb.style.left = `${pct}%`;
+      }
+      updatePlayerDeckUI();
+    });
+
+    bgmLobbyEl.addEventListener("loadedmetadata", () => {
+      if (durationTimeEl) durationTimeEl.textContent = formatTime(bgmLobbyEl.duration);
+    });
+
+    bgmLobbyEl.addEventListener("ended", () => {
+      nextTrack();
+    });
+
+    bgmLobbyEl.addEventListener("play", updatePlayerDeckUI);
+    bgmLobbyEl.addEventListener("pause", updatePlayerDeckUI);
+  }
+
+  // Update deck once initially
+  updatePlayerDeckUI();
+
+  // Expose global controller
+  window.p3rMusicPlayer = {
+    open: openMusicModal,
+    close: closeMusicModal,
+    next: nextTrack,
+    prev: prevTrack,
+    playTrack: playTrack,
+    togglePlayPause: togglePlayPause,
+    updateUI: updatePlayerDeckUI
+  };
+}
+
+// Initialize Music Player
+setupP3RMusicPlayer();
+
+// ==========================================================================
+// 16. Persona 3 Reload - Mobile Portrait Blocker & Orientation Helper
+// ==========================================================================
+function setupOrientationBlocker() {
+  const rotateOverlay = document.getElementById("p3r-rotate-overlay");
+  if (!rotateOverlay) return;
+
+  function updateOrientationState() {
+    const isPortrait = (window.innerHeight > window.innerWidth) && (window.innerWidth <= 1024);
+    if (isPortrait) {
+      document.body.classList.add("portrait-locked");
+    } else {
+      document.body.classList.remove("portrait-locked");
+    }
+  }
+
+  // Listen to orientation and resize events
+  window.addEventListener("resize", updateOrientationState, { passive: true });
+  window.addEventListener("orientationchange", () => {
+    setTimeout(updateOrientationState, 150);
+  }, { passive: true });
+
+  // Optional tap on overlay: try requesting fullscreen or landscape lock if supported
+  rotateOverlay.addEventListener("click", () => {
+    try {
+      if (screen.orientation && typeof screen.orientation.lock === "function") {
+        screen.orientation.lock("landscape").catch(() => {});
+      }
+    } catch (_) {}
+  });
+
+  updateOrientationState();
+}
+
+setupOrientationBlocker();
