@@ -20,3 +20,4 @@ Interactive web portfolio inspired by the signature UI/UX aesthetic of **Persona
 - Mathematics Student at Institut Teknologi Sepuluh Nopember (ITS)
 - GitHub: [FatkhulB](https://github.com/FatkhulB)
 - LinkedIn: [fatkhulbarrii](https://linkedin.com/in/fatkhulbarrii)
+

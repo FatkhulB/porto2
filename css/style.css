@@ -1110,48 +1110,53 @@ body.project-screen-active .side-number {
   display: none !important;
 }
 
-/* Persona 3 Reload Mobile Corner Back / Close Button (Pojok Kiri Atas) */
-.p3r-mobile-corner-back {
-  position: absolute;
-  top: clamp(14px, 2.4vh, 24px);
-  left: clamp(14px, 2.2vw, 24px);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(2, 11, 24, 0.94);
-  border: 2px solid #16cffb;
-  box-shadow: 0 0 14px rgba(22, 207, 251, 0.75), 0 4px 12px rgba(0, 0, 0, 0.85);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 100;
-  pointer-events: auto;
-  transition: transform 0.16s ease, background-color 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+/* Persona 3 Reload Corner Back / Close Button (Pojok Kiri Atas - PC & Mobile) */
+.p3r-mobile-corner-back,
+.p3r-corner-back {
+  position: fixed !important;
+  top: clamp(16px, 2.5vh, 28px) !important;
+  left: clamp(16px, 2.2vw, 28px) !important;
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 50% !important;
+  background: rgba(2, 11, 24, 0.94) !important;
+  border: 2px solid #16cffb !important;
+  box-shadow: 0 0 16px rgba(22, 207, 251, 0.8), 0 4px 12px rgba(0, 0, 0, 0.9) !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+  transition: transform 0.16s ease, background-color 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease !important;
+  user-select: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation !important;
 }
 
-.p3r-mobile-corner-back:hover {
-  background: #16cffb;
-  color: #020b18;
-  border-color: #ffffff;
-  transform: scale(1.12);
-  box-shadow: 0 0 20px rgba(22, 207, 251, 1);
+.p3r-mobile-corner-back:hover,
+.p3r-corner-back:hover {
+  background: #16cffb !important;
+  color: #020b18 !important;
+  border-color: #ffffff !important;
+  transform: scale(1.12) !important;
+  box-shadow: 0 0 22px rgba(22, 207, 251, 1) !important;
 }
 
-.p3r-mobile-corner-back:active {
-  transform: scale(0.92);
+.p3r-mobile-corner-back:active,
+.p3r-corner-back:active {
+  transform: scale(0.92) !important;
 }
 
-.p3r-mobile-corner-back svg {
+.p3r-mobile-corner-back svg,
+.p3r-corner-back svg {
   stroke-width: 3.5;
   transition: transform 0.15s ease;
 }
 
-.p3r-mobile-corner-back:hover svg {
+.p3r-mobile-corner-back:hover svg,
+.p3r-corner-back:hover svg {
   transform: translateX(-2px);
 }
 
@@ -1195,10 +1200,10 @@ body.project-screen-active .side-number {
    ========================================================================== */
 .p3r-geometric-header {
   position: relative;
-  width: clamp(480px, 35vw, 580px);
-  height: clamp(120px, 14.2vh, 144px);
+  width: clamp(500px, 36vw, 620px);
+  height: clamp(134px, 15.6vh, 158px);
   margin-top: 0;
-  margin-bottom: clamp(20px, 2.8vh, 32px);
+  margin-bottom: clamp(18px, 2.4vh, 28px);
   overflow: visible;
   z-index: 10;
   display: flex;
@@ -1209,31 +1214,31 @@ body.project-screen-active .side-number {
   user-select: none;
 }
 
-/* Custom Proportional Sizing per Headline */
+/* Custom Proportional Sizing per Headline - Matching ABOUT Aspect Ratio Formula */
 #about-header-div {
-  width: clamp(380px, 27vw, 460px);
-  height: clamp(120px, 14.2vh, 144px);
+  width: clamp(430px, 30.5vw, 520px);
+  height: clamp(134px, 15.6vh, 158px);
 }
 #about-header-text .p3r-cutout-char {
-  font-size: clamp(2.65rem, 3.5vw, 4.1rem);
+  font-size: clamp(2.60rem, 3.4vw, 4.0rem);
 }
 
 #slink-project-div {
-  width: clamp(470px, 33vw, 560px);
-  height: clamp(120px, 14.2vh, 144px);
+  width: clamp(520px, 37.5vw, 640px);
+  height: clamp(134px, 15.6vh, 158px);
 }
 #slink-project-text .p3r-cutout-char {
-  font-size: clamp(2.55rem, 3.3vw, 3.9rem);
+  font-size: clamp(2.35rem, 3.0vw, 3.5rem);
 }
 
 #skill-header-div {
-  width: clamp(560px, 41vw, 680px);
-  height: clamp(118px, 14.0vh, 140px);
+  width: clamp(670px, 48vw, 810px);
+  height: clamp(134px, 15.6vh, 158px);
   margin-bottom: clamp(12px, 1.6vh, 18px);
 }
 #skill-header-text .p3r-cutout-char {
-  font-size: clamp(1.75rem, 2.2vw, 2.55rem);
-  padding: 0.08em 0.15em 0.1em;
+  font-size: clamp(1.85rem, 2.35vw, 2.75rem);
+  padding: 0.08em 0.16em 0.1em;
   margin: 0 0.02em;
 }
 

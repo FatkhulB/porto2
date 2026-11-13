@@ -2054,21 +2054,29 @@ window.closeContactPage = closeContactPage;
 window.triggerContactPhoneAnimation = triggerContactPhoneAnimation;
 window.playWavyCircleTransition = playWavyCircleTransition;
 
-// Mobile Corner Back Buttons (Pojok Kiri Atas Tiap Submenu)
-const mobileBackButtons = [
+// Corner Back Buttons (Pojok Kiri Atas Tiap Submenu - PC & Mobile)
+function playBackSFX() {
+  playCloseMenuSFX();
+}
+
+const cornerBackButtons = [
   { id: "project-mobile-back-btn", fn: closeProjectPage },
   { id: "skill-mobile-back-btn", fn: closeSkillPage },
   { id: "about-mobile-back-btn", fn: closeAboutPage },
   { id: "contact-mobile-back-btn", fn: closeContactPage }
 ];
-mobileBackButtons.forEach(({ id, fn }) => {
+
+cornerBackButtons.forEach(({ id, fn }) => {
   const btn = document.getElementById(id);
   if (btn) {
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      playBackSFX();
+    btn.onclick = (e) => {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      playCloseMenuSFX();
       fn();
-    });
+    };
   }
 });
 
