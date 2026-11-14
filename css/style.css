@@ -4540,14 +4540,14 @@ html, body {
     display: none !important;
   }
 
-  /* 7. PROJECT Subpage: Clean Side-by-Side (42% Left : 53% Right, Zero Overlap, Zero Horizontal Scrollbar!) */
+  /* 7. PROJECT Subpage: Clean Side-by-Side (38% Left : 48% Right, Perfectly Aligned, Generous Air Gap!) */
   #project-page .slink-viewport {
     display: flex !important;
     flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    gap: clamp(14px, 2.5vw, 32px) !important;
-    padding: clamp(6px, 1.4vh, 14px) clamp(12px, 2vw, 24px) !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: clamp(28px, 4.5vw, 56px) !important;
+    padding: clamp(10px, 2vh, 18px) clamp(16px, 2.5vw, 32px) !important;
     height: 100vh !important;
     height: 100dvh !important;
     box-sizing: border-box !important;
@@ -4555,23 +4555,30 @@ html, body {
   }
 
   #project-page .slink-left-column {
-    flex: 0 0 42% !important;
-    width: 42% !important;
-    max-width: 42% !important;
+    flex: 0 0 38% !important;
+    width: 38% !important;
+    max-width: 38% !important;
     display: flex !important;
     flex-direction: column !important;
     min-width: 0 !important;
     overflow: visible !important;
   }
 
+  #project-page .p3r-geometric-header {
+    transform: scale(clamp(0.66, 1.0vw, 0.76)) !important;
+    transform-origin: left center !important;
+    margin-top: 0 !important;
+    margin-bottom: clamp(6px, 1.2vh, 12px) !important;
+  }
+
   #project-page .slink-cards-container {
     display: flex !important;
     flex-direction: column !important;
     gap: clamp(4px, 0.8vh, 7px) !important;
-    max-height: calc(100vh - clamp(75px, 12vh, 100px)) !important;
-    max-height: calc(100dvh - clamp(75px, 12vh, 100px)) !important;
+    max-height: calc(100vh - clamp(75px, 12vh, 95px)) !important;
+    max-height: calc(100dvh - clamp(75px, 12vh, 95px)) !important;
     overflow-y: auto !important;
-    overflow-x: hidden !important; /* CRITICAL: Banish horizontal scrollbar */
+    overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
     padding: 2px 6px 12px 2px !important;
     margin-left: 0 !important;
@@ -4587,7 +4594,7 @@ html, body {
   }
 
   #project-page .slink-card {
-    height: clamp(38px, 5.4vh, 48px) !important;
+    height: clamp(36px, 5.0vh, 44px) !important;
     width: 100% !important;
     max-width: 100% !important;
     margin-left: 0 !important;
@@ -4607,85 +4614,86 @@ html, body {
   }
 
   #project-page .card-numeral-box {
-    width: clamp(38px, 4.8vw, 50px) !important;
+    width: clamp(34px, 4.2vw, 44px) !important;
   }
 
   #project-page .card-numeral-text {
-    font-size: clamp(1.1rem, 1.7vw, 1.42rem) !important;
+    font-size: clamp(1.0rem, 1.5vw, 1.3rem) !important;
   }
 
   #project-page .card-main-body {
-    padding: 0 clamp(8px, 1.2vw, 14px) !important;
+    padding: 0 clamp(8px, 1.1vw, 12px) !important;
     overflow: hidden !important;
   }
 
   #project-page .card-title-text {
-    font-size: clamp(0.78rem, 1.2vw, 1.0rem) !important;
+    font-size: clamp(0.76rem, 1.1vw, 0.94rem) !important;
   }
 
   #project-page .card-subtitle-text {
-    font-size: clamp(0.56rem, 0.8vw, 0.70rem) !important;
+    font-size: clamp(0.52rem, 0.74vw, 0.64rem) !important;
     margin-top: 1px !important;
   }
 
   #project-page .card-red-accent {
-    width: 18px !important;
+    width: 16px !important;
   }
 
   #project-page .slink-preview-panel {
-    flex: 0 0 53% !important;
-    width: 53% !important;
-    max-width: 53% !important;
-    align-self: center !important;
+    flex: 0 0 48% !important;
+    width: 48% !important;
+    max-width: 48% !important;
+    align-self: flex-start !important;
+    margin-top: clamp(68px, 9.5vh, 92px) !important; /* Perfectly aligns top of preview with top of Card I! */
     padding: 0 !important;
-    max-height: calc(100vh - clamp(20px, 3vh, 36px)) !important;
-    max-height: calc(100dvh - clamp(20px, 3vh, 36px)) !important;
+    max-height: calc(100vh - clamp(85px, 12vh, 115px)) !important;
+    max-height: calc(100dvh - clamp(85px, 12vh, 115px)) !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
   }
 
   #project-page .slink-preview-card {
-    padding: clamp(8px, 1.3vh, 13px) clamp(10px, 1.5vw, 15px) !important;
+    padding: clamp(6px, 1.0vh, 10px) clamp(8px, 1.2vw, 14px) !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
 
   #project-page .slink-preview-image-wrap {
-    max-height: clamp(100px, 17vh, 150px) !important;
+    max-height: clamp(80px, 14vh, 120px) !important;
     border-radius: 4px !important;
     overflow: hidden !important;
   }
 
   #project-page .slink-preview-img {
-    max-height: clamp(100px, 17vh, 150px) !important;
+    max-height: clamp(80px, 14vh, 120px) !important;
     object-fit: cover !important;
   }
 
   #project-page .slink-preview-title {
-    font-size: clamp(0.96rem, 1.45vw, 1.22rem) !important;
-    margin: 4px 0 2px !important;
+    font-size: clamp(0.88rem, 1.3vw, 1.08rem) !important;
+    margin: 3px 0 2px !important;
   }
 
   #project-page .slink-preview-desc {
-    font-size: clamp(0.70rem, 0.98vw, 0.82rem) !important;
-    line-height: 1.3 !important;
-    margin-bottom: 5px !important;
+    font-size: clamp(0.66rem, 0.9vw, 0.76rem) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 4px !important;
   }
 
   #project-page .slink-preview-tools {
     gap: 3px !important;
-    margin-bottom: 5px !important;
+    margin-bottom: 4px !important;
   }
 
   #project-page .slink-preview-tool-tag {
-    font-size: clamp(0.60rem, 0.85vw, 0.70rem) !important;
-    padding: 1.5px 6px !important;
+    font-size: clamp(0.56rem, 0.78vw, 0.66rem) !important;
+    padding: 1px 5px !important;
   }
 
   #project-page .slink-preview-open-btn {
-    padding: clamp(4px, 0.7vh, 7px) clamp(10px, 1.3vw, 15px) !important;
-    font-size: clamp(0.72rem, 1.0vw, 0.84rem) !important;
+    padding: clamp(3.5px, 0.6vh, 5.5px) clamp(8px, 1.1vw, 12px) !important;
+    font-size: clamp(0.68rem, 0.9vw, 0.78rem) !important;
   }
 
   /* 8. CERTIFICATE Subpage: Single-Line Horizontal Tabs + Balanced Grid */
