@@ -1197,11 +1197,23 @@ body.project-screen-active .side-number {
 
 /* Custom Proportional Sizing per Headline */
 #about-header-div {
-  width: clamp(430px, 30.5vw, 520px);
-  height: clamp(134px, 15.6vh, 158px);
+  width: clamp(300px, 21vw, 360px);
+  height: clamp(110px, 12.8vh, 128px);
+}
+#about-header-div .p3r-header-slash-main,
+#about-header-div .p3r-shard-back-band {
+  clip-path: polygon(0 0, 50% 10%, 53% 0%, 100% 0%, calc(100% - 32px) 100%, 0 100%);
+}
+#about-header-div #about-header-text {
+  margin-left: clamp(14px, 1.4vw, 22px);
+}
+#about-header-text .p3r-cutout-group {
+  gap: clamp(0.06rem, 0.16vw, 0.20rem);
 }
 #about-header-text .p3r-cutout-char {
-  font-size: clamp(2.60rem, 3.4vw, 4.0rem);
+  font-size: clamp(2.85rem, 3.65vw, 4.35rem);
+  padding: 0.06em 0.12em 0.08em;
+  margin: 0 0.015em;
 }
 
 #slink-project-div {
