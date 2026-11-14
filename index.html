@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap"></noscript>
-  <link rel="stylesheet" href="css/style.css?v=70">
+  <link rel="stylesheet" href="css/style.css?v=71">
 </head>
 <body>
   <!-- Persona 3 Style Initial Loading Screen -->
@@ -737,26 +737,13 @@
         </button>
       </div>
 
-      <!-- Slanted Playlist Carousel Stack (Persona 3 Slanted Geometry) -->
+      <!-- Slanted Playlist Deck (Single Compact Hero Card matching user request) -->
       <div class="music-deck-stack" id="music-deck-stack">
-        
-        <!-- Slot 0: Previous Track Card -->
-        <div class="music-deck-card card-prev" id="music-card-prev" role="button" tabindex="0" title="Click to play previous track">
-          <div class="deck-card-slanted">
-            <span class="deck-card-sym">△</span>
-            <div class="deck-card-details">
-              <div class="deck-card-title" id="music-prev-title">When The Moon's Reaching Out Stars</div>
-              <div class="deck-card-artist" id="music-prev-artist">Persona 3 Reload</div>
-            </div>
-            <button class="deck-chevron-btn" id="music-chevron-prev" type="button" aria-label="Previous Track">▲</button>
-          </div>
-        </div>
-
-        <!-- Slot 1: Currently Playing Active Hero Track Card -->
+        <!-- Slot: Currently Playing Active Hero Track Card -->
         <div class="music-deck-card card-active" id="music-card-active">
           <div class="deck-card-slanted deck-hero-slanted">
             
-            <!-- Hero Top Header: Disc Badge, Title, Chevron -->
+            <!-- Hero Top Header: Disc Badge, Title & Artist -->
             <div class="deck-hero-header">
               <div class="deck-disc-badge" aria-hidden="true">
                 <span class="deck-disc-p3" id="music-hero-badge">P3R</span>
@@ -765,7 +752,6 @@
                 <div class="deck-hero-title" id="music-active-title">Color Your Night</div>
                 <div class="deck-hero-artist" id="music-active-artist">Persona 3 Reload</div>
               </div>
-              <button class="deck-chevron-btn" id="music-chevron-next" type="button" aria-label="Next Track">▼</button>
             </div>
 
             <!-- Timeline Scrubber with Dynamic Seconds -->
@@ -778,8 +764,13 @@
               <span class="deck-time-label" id="music-duration-time">3:45</span>
             </div>
 
-            <!-- Centered Playback Controls: Replay 10s, Pause/Play, Skip 10s -->
+            <!-- Centered Playback Controls: Prev Track, Rewind 10s, Pause/Play, Skip 10s, Next Track -->
             <div class="deck-center-controls">
+              <button id="music-ctrl-prev-btn" class="deck-ctrl-track-btn" type="button" aria-label="Previous Track" title="Previous Track">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                  <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+                </svg>
+              </button>
               <button id="music-replay-10s-btn" class="deck-seek-btn" type="button" aria-label="Rewind 10 seconds" title="Rewind 10s">
                 <span class="deck-seek-arrow">↺</span>
                 <span class="deck-seek-sec">10s</span>
@@ -791,35 +782,18 @@
                 <span class="deck-seek-sec">10s</span>
                 <span class="deck-seek-arrow">↻</span>
               </button>
+              <button id="music-ctrl-next-btn" class="deck-ctrl-track-btn" type="button" aria-label="Next Track" title="Next Track">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                  <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
-
-        <!-- Slot 2: Next Track Card -->
-        <div class="music-deck-card card-next" id="music-card-next" role="button" tabindex="0" title="Click to play next track">
-          <div class="deck-card-slanted">
-            <span class="deck-card-sym">✕</span>
-            <div class="deck-card-details">
-              <div class="deck-card-title" id="music-next-title">Battle Hymn of the Soul</div>
-              <div class="deck-card-artist" id="music-next-artist">Persona 3 Reload</div>
-            </div>
-            <span class="deck-card-next-label">NEXT</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Quick Navigation Buttons -->
-      <div class="music-bottom-nav">
-        <button id="music-nav-prev-btn" class="music-nav-pill" type="button">
-          &lt; PREV
-        </button>
-        <button id="music-nav-next-btn" class="music-nav-pill" type="button">
-          NEXT &gt;
-        </button>
       </div>
     </div>
   </aside>
 
-  <script src="js/main.js?v=70" defer></script>
+  <script src="js/main.js?v=71" defer></script>
 </body>
 </html>

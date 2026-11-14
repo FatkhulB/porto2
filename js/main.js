@@ -2408,12 +2408,12 @@ function setupP3RMusicPlayer() {
 
     // Responsive width based on screen width
     const isMobileLandscape = vh <= 550 || vw <= 900;
-    const dialogWidth = Math.min(isMobileLandscape ? 340 : 420, vw - 16);
+    const dialogWidth = Math.min(isMobileLandscape ? 320 : 360, vw - 16);
     dialog.style.setProperty("width", `${dialogWidth}px`, "important");
     dialog.style.setProperty("max-width", `${vw - 16}px`, "important");
 
-    // Dialog rendered height or estimated fallback
-    const dialogHeight = dialog.offsetHeight || (isMobileLandscape ? 220 : 320);
+    // Dialog rendered height or estimated fallback (single card player is sleek & compact)
+    const dialogHeight = dialog.offsetHeight || (isMobileLandscape ? 160 : 180);
 
     // Horizontal placement: anchor near launcher and clamp within screen bounds
     let left;
@@ -2619,6 +2619,12 @@ function setupP3RMusicPlayer() {
   }
 
   if (playPauseBtn) playPauseBtn.addEventListener("click", togglePlayPause);
+  
+  const ctrlPrevBtn = document.getElementById("music-ctrl-prev-btn");
+  const ctrlNextBtn = document.getElementById("music-ctrl-next-btn");
+  if (ctrlPrevBtn) ctrlPrevBtn.addEventListener("click", (e) => { e.stopPropagation(); prevTrack(); });
+  if (ctrlNextBtn) ctrlNextBtn.addEventListener("click", (e) => { e.stopPropagation(); nextTrack(); });
+
   if (cardPrev) cardPrev.addEventListener("click", prevTrack);
   if (cardNext) cardNext.addEventListener("click", nextTrack);
   if (chevronPrev) chevronPrev.addEventListener("click", (e) => { e.stopPropagation(); prevTrack(); });
