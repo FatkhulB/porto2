@@ -598,38 +598,45 @@ function playAudioChannel({
 }
 
 // --------------------------------------------------------------------------
-// Persona 3 Reload Haptic Vibration & Screen Shake Triggers
+// Persona 3 Reload Haptic Vibration & Screen Shake Triggers (MAIN MENU ONLY)
 // --------------------------------------------------------------------------
+function isMainMenuActive() {
+  return isStarted && !isModalOpen && !isProjectPageOpen && !isSkillPageOpen && !isAboutPageOpen && !isContactPageOpen && !isWavyTransitionRunning;
+}
+
 function triggerSelectVibration() {
+  if (!isMainMenuActive()) return;
   if (typeof navigator !== "undefined" && navigator.vibrate) {
     try { navigator.vibrate(15); } catch (_) {}
   }
-  if (document.body) {
-    document.body.classList.remove("p3r-select-shake");
-    void document.body.offsetWidth;
-    document.body.classList.add("p3r-select-shake");
+  const mainEl = document.querySelector(".p3r-main");
+  if (mainEl) {
+    mainEl.classList.remove("p3r-select-shake");
+    void mainEl.offsetWidth;
+    mainEl.classList.add("p3r-select-shake");
     setTimeout(() => {
-      document.body.classList.remove("p3r-select-shake");
+      mainEl.classList.remove("p3r-select-shake");
     }, 130);
   }
 }
 
 function triggerConfirmVibration() {
+  if (!isMainMenuActive()) return;
   if (typeof navigator !== "undefined" && navigator.vibrate) {
     try { navigator.vibrate([25, 35, 45]); } catch (_) {}
   }
-  if (document.body) {
-    document.body.classList.remove("p3r-select-shake", "p3r-confirm-shake");
-    void document.body.offsetWidth;
-    document.body.classList.add("p3r-confirm-shake");
+  const mainEl = document.querySelector(".p3r-main");
+  if (mainEl) {
+    mainEl.classList.remove("p3r-select-shake", "p3r-confirm-shake");
+    void mainEl.offsetWidth;
+    mainEl.classList.add("p3r-confirm-shake");
     setTimeout(() => {
-      document.body.classList.remove("p3r-confirm-shake");
+      mainEl.classList.remove("p3r-confirm-shake");
     }, 300);
   }
 }
 
 function playSFX() {
-  triggerSelectVibration();
   if (!isStarted) return;
   playAudioChannel({
     buffer: sfxAudioBuffer,
@@ -642,7 +649,6 @@ function playSFX() {
 }
 
 function playConfirmSFX() {
-  triggerConfirmVibration();
   playAudioChannel({
     buffer: confirmAudioBuffer,
     staticElId: "sfx-confirm-el",
@@ -800,6 +806,7 @@ function setIndex(index) {
   selectedIndex = index;
 
   playSFX();
+  triggerSelectVibration();
 
   if (sideNumber) {
     sideNumber.textContent = (selectedIndex + 1).toString().padStart(2, "0");
@@ -1632,6 +1639,7 @@ function closeModal() {
 
 // Option Confirmation Dispatcher (Strictly 4 Options: PROJECT, SKILLS, ABOUT, CONTACT)
 function handleOptionConfirm(index, clickEvent) {
+  triggerConfirmVibration();
   if (index === 0) {
     openProjectPage(clickEvent);
   } else if (index === 1) {

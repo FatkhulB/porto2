@@ -1314,11 +1314,11 @@ body.project-screen-active .side-number {
   100% { transform: translate3d(0, 0, 0) scale(1); }
 }
 
-body.p3r-select-shake {
+.p3r-main.p3r-select-shake {
   animation: p3rSelectMicroShake 0.12s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
-body.p3r-confirm-shake {
+.p3r-main.p3r-confirm-shake {
   animation: p3rConfirmImpactShake 0.28s cubic-bezier(0.25, 1, 0.5, 1) both;
 }
 
