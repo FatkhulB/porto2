@@ -101,13 +101,16 @@
 /* --------------------------------------------------------------------------
    Reset & Base Styles
    -------------------------------------------------------------------------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -260,9 +263,12 @@ body.project-screen-active .side-number {
 }
 
 @keyframes p3LoadingPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
@@ -301,10 +307,12 @@ body.project-screen-active .side-number {
     opacity: 0;
     transform: translateX(-40px) skewX(-4deg);
   }
+
   70% {
     opacity: 1;
     transform: translateX(4px) skewX(1deg);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0) skewX(0);
@@ -469,7 +477,7 @@ body.project-screen-active .side-number {
   color: #ffffff;
   letter-spacing: 0.035em;
   text-transform: uppercase;
-  text-shadow: 
+  text-shadow:
     0 2px 4px rgba(0, 0, 0, 0.95),
     0 0 10px rgba(0, 0, 0, 0.85);
   transition: transform 0.15s ease, color 0.15s ease;
@@ -501,10 +509,12 @@ body.project-screen-active .side-number {
     opacity: 0;
     transform: scale(0.92) translateX(-8px);
   }
+
   60% {
     opacity: 1;
     transform: scale(1.05) translateX(6px);
   }
+
   100% {
     opacity: 1;
     transform: scale(1) translateX(3px);
@@ -518,18 +528,16 @@ body.project-screen-active .side-number {
   align-items: center;
   background: #ffffff;
   padding: 2px;
-  clip-path: polygon(
-    0% 16%, 
-    4% 0%, 
-    95% 0%, 
-    100% 22%, 
-    97% 50%, 
-    100% 78%, 
-    95% 100%, 
-    5% 100%, 
-    0% 76%, 
-    3% 48%
-  );
+  clip-path: polygon(0% 16%,
+      4% 0%,
+      95% 0%,
+      100% 22%,
+      97% 50%,
+      100% 78%,
+      95% 100%,
+      5% 100%,
+      0% 76%,
+      3% 48%);
   filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 16px rgba(22, 207, 251, 0.45));
 }
 
@@ -540,18 +548,16 @@ body.project-screen-active .side-number {
   gap: 0.75rem;
   background: #000000;
   padding: 0.36rem 1.6rem 0.36rem 1.2rem;
-  clip-path: polygon(
-    0% 16%, 
-    4% 0%, 
-    95% 0%, 
-    100% 22%, 
-    97% 50%, 
-    100% 78%, 
-    95% 100%, 
-    5% 100%, 
-    0% 76%, 
-    3% 48%
-  );
+  clip-path: polygon(0% 16%,
+      4% 0%,
+      95% 0%,
+      100% 22%,
+      97% 50%,
+      100% 78%,
+      95% 100%,
+      5% 100%,
+      0% 76%,
+      3% 48%);
 }
 
 /* Cutout tile sizing inside selected banner */
@@ -578,6 +584,7 @@ body.project-screen-active .side-number {
     transform: translateX(0);
     opacity: 0.85;
   }
+
   100% {
     transform: translateX(4px);
     opacity: 1;
@@ -692,10 +699,12 @@ body.project-screen-active .side-number {
     opacity: 0;
     transform: translateX(-70px) skewX(-10deg) scale(0.96);
   }
+
   70% {
     opacity: 1;
     transform: translateX(6px) skewX(2deg) scale(1.01);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0) skewX(0) scale(1);
@@ -1195,21 +1204,25 @@ body.project-screen-active .side-number {
   user-select: none;
 }
 
-/* Custom Proportional Sizing per Headline - ABOUT (Compact Border, Enlarged Cutout Text) */
+/* Custom Proportional Sizing per Headline - ABOUT (Extended Border to Right, Enlarged Cutout Text) */
 #about-header-div {
-  width: clamp(280px, 20vw, 360px);
+  width: clamp(345px, 24vw, 440px);
   height: clamp(86px, 10.4vh, 104px);
 }
+
 #about-header-div .p3r-header-slash-main,
 #about-header-div .p3r-shard-back-band {
-  clip-path: polygon(0 0, 50% 10%, 53% 0%, 100% 0%, calc(100% - 32px) 100%, 0 100%);
+  clip-path: polygon(0 0, 48% 10%, 51% 0%, 100% 0%, calc(100% - 36px) 100%, 0 100%);
 }
+
 #about-header-div #about-header-text {
   margin-left: clamp(56px, 5.0vw, 72px);
 }
+
 #about-header-text .p3r-cutout-group {
   gap: clamp(0.06rem, 0.16vw, 0.20rem);
 }
+
 #about-header-text .p3r-cutout-char {
   font-size: clamp(2.85rem, 3.8vw, 4.3rem);
   padding: 0.06em 0.14em 0.08em;
@@ -1220,9 +1233,11 @@ body.project-screen-active .side-number {
   width: clamp(400px, 28vw, 480px);
   height: clamp(106px, 12.4vh, 124px);
 }
+
 #slink-project-div #slink-project-text {
   margin-left: clamp(68px, 6.2vw, 84px);
 }
+
 #slink-project-text .p3r-cutout-char {
   font-size: clamp(2.15rem, 2.7vw, 3.1rem);
 }
@@ -1232,16 +1247,20 @@ body.project-screen-active .side-number {
   height: clamp(106px, 12.6vh, 125px);
   margin-bottom: clamp(10px, 1.4vh, 16px);
 }
+
 #skill-header-div .p3r-header-slash-main,
 #skill-header-div .p3r-shard-back-band {
   clip-path: polygon(0 0, 50% 10%, 53% 0%, 100% 0%, calc(100% - 32px) 100%, 0 100%);
 }
+
 #skill-header-div #skill-header-text {
   margin-left: clamp(68px, 6.2vw, 84px);
 }
+
 #skill-header-div #skill-header-text .p3r-cutout-group {
   gap: clamp(0.04rem, 0.12vw, 0.16rem);
 }
+
 #skill-header-text .p3r-cutout-char {
   font-size: clamp(2.05rem, 2.6vw, 3.0rem);
   padding: 0.06em 0.10em 0.08em;
@@ -1260,14 +1279,47 @@ body.project-screen-active .side-number {
     opacity: 0;
     transform: translateX(-150px) rotate(-4.2deg);
   }
+
   68% {
     opacity: 1;
     transform: translateX(12px) rotate(-4.2deg);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0) rotate(-4.2deg);
   }
+}
+
+/* ==========================================================================
+   Persona 3 Reload Dynamic Screen Shake & Vibration FX
+   ========================================================================== */
+@keyframes p3rSelectMicroShake {
+  0% { transform: translate3d(0, 0, 0); }
+  20% { transform: translate3d(-2px, 1.5px, 0) rotate(-0.12deg); }
+  40% { transform: translate3d(2.5px, -1.5px, 0) rotate(0.12deg); }
+  60% { transform: translate3d(-1.5px, -1px, 0); }
+  80% { transform: translate3d(1px, 0.5px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes p3rConfirmImpactShake {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  15% { transform: translate3d(-4px, 3px, 0) rotate(-0.3deg) scale(1.006); }
+  30% { transform: translate3d(5px, -3.5px, 0) rotate(0.25deg) scale(1.004); }
+  45% { transform: translate3d(-3.5px, 2px, 0) rotate(-0.15deg); }
+  60% { transform: translate3d(2.5px, -1.5px, 0) rotate(0.1deg); }
+  75% { transform: translate3d(-1px, 1px, 0); }
+  90% { transform: translate3d(0.8px, -0.5px, 0); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+body.p3r-select-shake {
+  animation: p3rSelectMicroShake 0.12s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+body.p3r-confirm-shake {
+  animation: p3rConfirmImpactShake 0.28s cubic-bezier(0.25, 1, 0.5, 1) both;
 }
 
 /* Solid Light-Blue Hard Shadow Band Behind PROJECT Banner */
@@ -1277,7 +1329,8 @@ body.project-screen-active .side-number {
   top: -8px;
   width: calc(100% + 120px);
   height: 100%;
-  background: #16cffb; /* Solid Light Blue (Persona 3 Reload Cyan) */
+  background: #16cffb;
+  /* Solid Light Blue (Persona 3 Reload Cyan) */
   clip-path: polygon(0 0, 50% 10%, 53% 0%, 100% 0%, calc(100% - 48px) 100%, 0 100%);
   z-index: 1;
   pointer-events: none;
@@ -1359,21 +1412,42 @@ body.project-screen-active .side-number {
   animation: slinkCardSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.slink-card:nth-child(1) { --card-delay: 0ms;   animation-delay: calc(var(--card-delay) + 90ms); }
-.slink-card:nth-child(2) { --card-delay: 50ms;  animation-delay: calc(var(--card-delay) + 90ms); }
-.slink-card:nth-child(3) { --card-delay: 100ms; animation-delay: calc(var(--card-delay) + 90ms); }
-.slink-card:nth-child(4) { --card-delay: 150ms; animation-delay: calc(var(--card-delay) + 90ms); }
-.slink-card:nth-child(5) { --card-delay: 200ms; animation-delay: calc(var(--card-delay) + 90ms); }
+.slink-card:nth-child(1) {
+  --card-delay: 0ms;
+  animation-delay: calc(var(--card-delay) + 90ms);
+}
+
+.slink-card:nth-child(2) {
+  --card-delay: 50ms;
+  animation-delay: calc(var(--card-delay) + 90ms);
+}
+
+.slink-card:nth-child(3) {
+  --card-delay: 100ms;
+  animation-delay: calc(var(--card-delay) + 90ms);
+}
+
+.slink-card:nth-child(4) {
+  --card-delay: 150ms;
+  animation-delay: calc(var(--card-delay) + 90ms);
+}
+
+.slink-card:nth-child(5) {
+  --card-delay: 200ms;
+  animation-delay: calc(var(--card-delay) + 90ms);
+}
 
 @keyframes slinkCardSlideIn {
   0% {
     opacity: 0;
     transform: skewX(var(--card-skew, -22deg)) translateX(-140px);
   }
+
   70% {
     opacity: 1;
     transform: skewX(var(--card-skew, -22deg)) translateX(10px);
   }
+
   100% {
     opacity: 1;
     transform: skewX(var(--card-skew, -22deg)) translateX(0px);
@@ -1562,19 +1636,24 @@ body.project-screen-active .side-number {
   .slink-viewport {
     padding: 3.5vh 0 2.5vh 4.5vw;
   }
+
   .p3r-geometric-header {
     height: clamp(96px, 12vh, 112px);
   }
+
   .p3r-banner-title .p3r-cutout-char {
     font-size: clamp(1.6rem, 2.3vw, 2.2rem);
   }
+
   .slink-card {
     height: 50px;
     width: clamp(420px, 42vw, 540px);
   }
+
   .card-title-text {
     font-size: 1.15rem;
   }
+
   .card-subtitle-text {
     font-size: 0.72rem;
   }
@@ -1700,9 +1779,11 @@ body.about-screen-active .character-viewport {
 .p3r-skills-container::-webkit-scrollbar {
   width: 6px;
 }
+
 .p3r-skills-container::-webkit-scrollbar-track {
   background: rgba(2, 11, 24, 0.6);
 }
+
 .p3r-skills-container::-webkit-scrollbar-thumb {
   background: #16cffb;
   border-radius: 3px;
@@ -1783,10 +1864,12 @@ body.about-screen-active .character-viewport {
     opacity: 0;
     transform: translate3d(-35px, 0, 0) skewX(-14deg);
   }
+
   70% {
     opacity: 1;
     transform: translate3d(3px, 0, 0) skewX(-14deg);
   }
+
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0) skewX(-14deg);
@@ -1803,7 +1886,8 @@ body.about-screen-active .character-viewport {
 .p3r-stat-name-col {
   width: clamp(280px, 24vw, 410px);
   flex-shrink: 0;
-  transform: skewX(14deg); /* Unskew text for crisp readability */
+  transform: skewX(14deg);
+  /* Unskew text for crisp readability */
   overflow: hidden;
 }
 
@@ -1837,9 +1921,11 @@ body.about-screen-active .character-viewport {
 .p3r-stat-bar-fill {
   position: absolute;
   inset: 0;
-  background: #ffffff; /* Indikator Berwarna Putih Murni Bersih Tanpa Glowing */
+  background: #ffffff;
+  /* Indikator Berwarna Putih Murni Bersih Tanpa Glowing */
   background-image: repeating-linear-gradient(90deg, transparent 0 22px, rgba(22, 207, 251, 0.45) 22px 25px);
-  box-shadow: none !important; /* Glowing Dihilangkan Sesuai Permintaan */
+  box-shadow: none !important;
+  /* Glowing Dihilangkan Sesuai Permintaan */
   transition: none !important;
 }
 
@@ -1850,7 +1936,8 @@ body.about-screen-active .character-viewport {
   bottom: 0;
   width: 5px;
   background: #e60024;
-  box-shadow: none !important; /* Glowing Dihilangkan Sesuai Permintaan */
+  box-shadow: none !important;
+  /* Glowing Dihilangkan Sesuai Permintaan */
 }
 
 /* Level Indicator Dihilangkan Sesuai Permintaan */
@@ -1880,7 +1967,8 @@ body.about-screen-active .character-viewport {
 .p3r-about-card {
   margin-left: clamp(24px, 3.8vw, 56px);
   width: min(860px, 64vw);
-  background: #090d14; /* 100% Solid Deep Black - Tanpa Transparansi */
+  background: #090d14;
+  /* 100% Solid Deep Black - Tanpa Transparansi */
   border: 1px solid #1c2433;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.96);
   padding: clamp(22px, 2.6vh, 30px) clamp(28px, 2.8vw, 38px);
@@ -1899,7 +1987,8 @@ body.about-screen-active .character-viewport {
 }
 
 .p3r-about-card::before {
-  display: none; /* Hilangkan segitiga biru di pojok */
+  display: none;
+  /* Hilangkan segitiga biru di pojok */
 }
 
 .p3r-about-card-inner {
@@ -1955,7 +2044,8 @@ body.about-screen-active .character-viewport {
 }
 
 .p3r-about-school {
-  display: none !important; /* Dihilangkan sesuai permintaan user */
+  display: none !important;
+  /* Dihilangkan sesuai permintaan user */
 }
 
 .p3r-about-title {
@@ -2001,8 +2091,10 @@ body.about-screen-active .character-viewport {
   display: flex;
   gap: 16px;
   align-items: flex-start;
-  background: #111722; /* Solid dark charcoal - tanpa transparansi */
-  border-left: 3px solid #334155; /* Soft gray border - tanpa garis biru */
+  background: #111722;
+  /* Solid dark charcoal - tanpa transparansi */
+  border-left: 3px solid #334155;
+  /* Soft gray border - tanpa garis biru */
   padding: 16px 22px;
   border-radius: 0 6px 6px 0;
   margin-top: 4px;
@@ -2012,7 +2104,8 @@ body.about-screen-active .character-viewport {
   font-family: var(--font-poppins), sans-serif;
   font-size: 2.0rem;
   line-height: 1;
-  color: #94a3b8; /* Muted gray - tanpa biru */
+  color: #94a3b8;
+  /* Muted gray - tanpa biru */
   font-weight: 700;
   flex-shrink: 0;
 }
@@ -2047,22 +2140,28 @@ body.about-screen-active .character-viewport {
     width: min(760px, 64vw);
     gap: 14px;
   }
+
   .p3r-photo-box {
     width: 92px;
     height: 92px;
   }
+
   .p3r-about-card-inner {
     gap: 12px;
   }
+
   .p3r-about-bio {
     gap: 10px;
   }
+
   .p3r-about-p {
     font-size: 0.88rem;
   }
+
   .p3r-quote-text {
     font-size: 0.84rem;
   }
+
   .p3r-about-scroll-list {
     max-height: 240px;
   }
@@ -2284,18 +2383,23 @@ body.about-screen-active .character-viewport {
 .p3r-mail-row.is-gmail .p3r-mail-mini-icon {
   color: #ea4335;
 }
+
 .p3r-mail-row.is-github .p3r-mail-mini-icon {
   color: #cbd5e1;
 }
+
 .p3r-mail-row.is-linkedin .p3r-mail-mini-icon {
   color: #3b82f6;
 }
+
 .p3r-mail-row.is-kaggle .p3r-mail-mini-icon {
   color: #20beff;
 }
+
 .p3r-mail-row.is-instagram .p3r-mail-mini-icon {
   color: #e1306c;
 }
+
 .p3r-mail-row.is-whatsapp .p3r-mail-mini-icon {
   color: #25d366;
 }
@@ -2330,13 +2434,15 @@ body.about-screen-active .character-viewport {
 .p3r-mail-row.active {
   background: #ffffff !important;
   border-color: #ffffff !important;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5) !important; /* Glowing Biru Dihilangkan Total */
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5) !important;
+  /* Glowing Biru Dihilangkan Total */
   transform: translateX(10px);
 }
 
 .p3r-mail-row:hover .p3r-mail-sender-row,
 .p3r-mail-row.active .p3r-mail-sender-row {
-  color: #0c182b !important; /* Teks Hitam Pekat Persona, Bukan Biru Glowing */
+  color: #0c182b !important;
+  /* Teks Hitam Pekat Persona, Bukan Biru Glowing */
 }
 
 .p3r-mail-row.is-gmail:hover .p3r-mail-mini-icon,
@@ -2344,26 +2450,31 @@ body.about-screen-active .character-viewport {
   color: #ea4335 !important;
   filter: drop-shadow(0 0 3px rgba(234, 67, 53, 0.35));
 }
+
 .p3r-mail-row.is-github:hover .p3r-mail-mini-icon,
 .p3r-mail-row.is-github.active .p3r-mail-mini-icon {
   color: #24292e !important;
   filter: drop-shadow(0 0 3px rgba(36, 41, 46, 0.35));
 }
+
 .p3r-mail-row.is-linkedin:hover .p3r-mail-mini-icon,
 .p3r-mail-row.is-linkedin.active .p3r-mail-mini-icon {
   color: #0a66c2 !important;
   filter: drop-shadow(0 0 3px rgba(10, 102, 194, 0.35));
 }
+
 .p3r-mail-row.is-kaggle:hover .p3r-mail-mini-icon,
 .p3r-mail-row.is-kaggle.active .p3r-mail-mini-icon {
   color: #20beff !important;
   filter: drop-shadow(0 0 3px rgba(32, 190, 255, 0.45));
 }
+
 .p3r-mail-row.is-instagram:hover .p3r-mail-mini-icon,
 .p3r-mail-row.is-instagram.active .p3r-mail-mini-icon {
   color: #e1306c !important;
   filter: drop-shadow(0 0 3px rgba(225, 48, 108, 0.4));
 }
+
 .p3r-mail-row.is-whatsapp:hover .p3r-mail-mini-icon,
 .p3r-mail-row.is-whatsapp.active .p3r-mail-mini-icon {
   color: #25d366 !important;
@@ -2372,7 +2483,8 @@ body.about-screen-active .character-viewport {
 
 .p3r-mail-row:hover .p3r-mail-row-line,
 .p3r-mail-row.active .p3r-mail-row-line {
-  background: rgba(0, 0, 0, 0.18) !important; /* Garis Pemisah Abu Gelap Bersih */
+  background: rgba(0, 0, 0, 0.18) !important;
+  /* Garis Pemisah Abu Gelap Bersih */
 }
 
 .p3r-mail-row:hover .p3r-mail-msg-text,
@@ -2435,15 +2547,19 @@ body.about-screen-active .character-viewport {
     opacity: 0;
     transform: translate3d(-300px, 0, 0) skewX(var(--mail-skew)) rotate(-15deg);
   }
+
   35% {
     opacity: 1;
   }
+
   74% {
     transform: translate3d(12px, 0, 0) skewX(var(--mail-skew)) rotate(0.6deg);
   }
+
   88% {
     transform: translate3d(-3px, 0, 0) skewX(var(--mail-skew)) rotate(-2.2deg);
   }
+
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0) skewX(var(--mail-skew)) rotate(var(--mail-rot));
@@ -2468,7 +2584,7 @@ body.about-screen-active .character-viewport {
   inset: 0;
   pointer-events: none;
   z-index: 22;
-  background: 
+  background:
     linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.25) 3.5%, transparent 12%, transparent 88%, rgba(0, 0, 0, 0.25) 96.5%, rgba(0, 0, 0, 0.6) 100%),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0%, transparent 5%, transparent 95%, rgba(0, 0, 0, 0.45) 100%);
 }
@@ -2504,6 +2620,7 @@ body.about-screen-active .character-viewport {
     opacity: 0;
     transform: translate3d(28px, 0, 0);
   }
+
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -2651,6 +2768,7 @@ body.about-screen-active .character-viewport {
     opacity: 0;
     transform: translate3d(0, 18px, 0);
   }
+
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -3061,7 +3179,8 @@ body.about-screen-active .character-viewport {
 /* ==========================================================================
    MOBILE, TABLET, IPAD & TOUCH OPTIMIZATIONS (Smooth & High Performance)
    ========================================================================== */
-html, body {
+html,
+body {
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
@@ -3346,6 +3465,7 @@ html, body {
     font-size: clamp(1.5rem, 5.8vw, 2.1rem);
     padding: 0.08em 0.16em 0.1em;
   }
+
   .p3r-mail-watermark .p3r-cutout-char {
     font-size: clamp(1.5rem, 5.8vw, 2.1rem);
     padding: 0.08em 0.16em 0.1em;
@@ -3407,9 +3527,20 @@ html, body {
 }
 
 @keyframes p3LauncherPulse {
-  0% { transform: scale(0.96); opacity: 0.8; }
-  50% { transform: scale(1.08); opacity: 0.2; }
-  100% { transform: scale(1.15); opacity: 0; }
+  0% {
+    transform: scale(0.96);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
 }
 
 .launcher-disc-core {
@@ -3460,13 +3591,27 @@ html, body {
   animation: eqBounce 0.7s ease-in-out infinite alternate;
 }
 
-.eq-bar.bar-1 { animation-delay: 0.1s; }
-.eq-bar.bar-2 { animation-delay: 0.35s; height: 16px; }
-.eq-bar.bar-3 { animation-delay: 0.2s; }
+.eq-bar.bar-1 {
+  animation-delay: 0.1s;
+}
+
+.eq-bar.bar-2 {
+  animation-delay: 0.35s;
+  height: 16px;
+}
+
+.eq-bar.bar-3 {
+  animation-delay: 0.2s;
+}
 
 @keyframes eqBounce {
-  0% { transform: scaleY(0.25); }
-  100% { transform: scaleY(1); }
+  0% {
+    transform: scaleY(0.25);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
 }
 
 .launcher-tag-pill {
@@ -3531,6 +3676,7 @@ html, body {
     opacity: 0;
     transform: translateY(-24px) scale(0.95);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -3985,7 +4131,7 @@ html, body {
 
 /* Portrait Blocker Activation for Mobile & Handheld Devices */
 @media screen and (orientation: portrait) and (max-width: 1024px),
-       screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
+screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   .p3r-rotate-overlay {
     display: flex !important;
     position: fixed;
@@ -4018,7 +4164,7 @@ html, body {
 .rotate-grid-pattern {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(22, 207, 251, 0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(22, 207, 251, 0.07) 1px, transparent 1px);
   background-size: 24px 24px;
@@ -4039,13 +4185,11 @@ html, body {
 .rotate-ambient-lines {
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.2) 0px,
-    rgba(0, 0, 0, 0.2) 2px,
-    transparent 2px,
-    transparent 4px
-  );
+  background: repeating-linear-gradient(0deg,
+      rgba(0, 0, 0, 0.2) 0px,
+      rgba(0, 0, 0, 0.2) 2px,
+      transparent 2px,
+      transparent 4px);
   opacity: 0.6;
 }
 
@@ -4170,7 +4314,7 @@ html, body {
 .phone-screen-grid {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(22, 207, 251, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(22, 207, 251, 0.08) 1px, transparent 1px);
   background-size: 8px 8px;
@@ -4221,17 +4365,23 @@ html, body {
 
 /* Keyframes for Rotating Phone Animation */
 @keyframes p3rPhoneRotateLoop {
-  0%, 12% {
+
+  0%,
+  12% {
     transform: rotate(0deg) scale(1);
     border-color: #16cffb;
     box-shadow: 0 0 16px rgba(22, 207, 251, 0.4), inset 0 0 10px rgba(0, 0, 0, 0.8);
   }
-  28%, 68% {
+
+  28%,
+  68% {
     transform: rotate(-90deg) scale(1.06);
     border-color: #ffffff;
     box-shadow: 0 0 30px rgba(22, 207, 251, 0.95), 0 0 60px rgba(22, 207, 251, 0.45);
   }
-  84%, 100% {
+
+  84%,
+  100% {
     transform: rotate(0deg) scale(1);
     border-color: #16cffb;
     box-shadow: 0 0 16px rgba(22, 207, 251, 0.4), inset 0 0 10px rgba(0, 0, 0, 0.8);
@@ -4239,25 +4389,34 @@ html, body {
 }
 
 @keyframes p3rScreenGlowPulse {
-  0%, 24% {
+
+  0%,
+  24% {
     opacity: 0;
     pointer-events: none;
   }
-  32%, 64% {
+
+  32%,
+  64% {
     opacity: 1;
     pointer-events: auto;
   }
-  74%, 100% {
+
+  74%,
+  100% {
     opacity: 0;
     pointer-events: none;
   }
 }
 
 @keyframes p3rHaloPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(0.92);
     opacity: 0.45;
   }
+
   50% {
     transform: scale(1.15);
     opacity: 0.85;
@@ -4265,10 +4424,13 @@ html, body {
 }
 
 @keyframes p3rOrbitPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1) rotate(0deg);
     opacity: 0.65;
   }
+
   50% {
     transform: scale(1.06) rotate(-10deg);
     opacity: 1;
@@ -4370,8 +4532,13 @@ html, body {
 }
 
 @keyframes p3rSpinSlow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 
@@ -4380,7 +4547,8 @@ html, body {
    Applies STRICTLY to mobile viewports (<= 900px width OR handheld landscape <= 500px height)
    Desktop PCs and Laptops NEVER enter this query, preserving 100% full-size PC layout!
    ========================================================================== */
-@media (max-width: 900px), ((max-height: 500px) and (orientation: landscape)) {
+@media (max-width: 900px),
+((max-height: 500px) and (orientation: landscape)) {
 
   /* 1. Main Canvas & Makoto Yuki Video Placement */
   .p3r-main {
@@ -4564,9 +4732,9 @@ html, body {
     height: 17px !important;
   }
 
-  /* Subpage Headline Clearance: Guarantees Back Button NEVER covers any letters */
+  /* Subpage Headline Clearance: Consistent Persona 3 angled headers without scale jumps */
   .p3r-geometric-header {
-    transform: scale(clamp(0.70, 1.15vw, 0.84)) !important;
+    transform: rotate(-4.2deg) !important;
     transform-origin: left center !important;
     margin-top: 2px !important;
     margin-bottom: 4px !important;
@@ -4576,7 +4744,37 @@ html, body {
   #skill-header-div #skill-header-text,
   #slink-project-div #slink-project-text,
   #about-header-div #about-header-text {
-    margin-left: clamp(66px, 7vw, 82px) !important;
+    margin-left: clamp(54px, 6.0vw, 70px) !important;
+  }
+
+  #skill-header-div {
+    width: clamp(340px, 46vw, 440px) !important;
+    height: clamp(54px, 9.2vh, 68px) !important;
+    margin-top: 0 !important;
+    margin-bottom: clamp(4px, 0.9vh, 8px) !important;
+    transform: rotate(-4.2deg) !important;
+    transform-origin: left center !important;
+  }
+
+  #skill-header-div .p3r-shard-back-band,
+  #skill-header-div .p3r-header-slash-main {
+    left: -40px !important;
+    top: 0 !important;
+    width: calc(100% + 40px) !important;
+    height: 100% !important;
+  }
+
+  #skill-header-div #skill-header-text {
+    margin-left: clamp(52px, 5.8vw, 68px) !important;
+  }
+
+  #skill-header-div #skill-header-text .p3r-cutout-group {
+    gap: clamp(0.02rem, 0.08vw, 0.10rem) !important;
+  }
+
+  #skill-header-text .p3r-cutout-char {
+    font-size: clamp(1.20rem, 2.2vw, 1.55rem) !important;
+    padding: 0.05em 0.10em 0.07em !important;
   }
 
   /* Mobile Corner Back Button on Mobile: Compact & sleek */
@@ -4621,13 +4819,13 @@ html, body {
     display: none !important;
   }
 
-  /* 7. PROJECT Subpage: Clean Side-by-Side (38% Left : 50% Right, Zero Overlap, Zero Cutoff!) */
+  /* 7. PROJECT Subpage: Clean Side-by-Side matching PC layout with -20deg slanted cards */
   #project-page .slink-viewport {
     display: flex !important;
     flex-direction: row !important;
     justify-content: flex-start !important;
     align-items: flex-start !important;
-    gap: clamp(20px, 3.8vw, 42px) !important;
+    gap: clamp(16px, 3.2vw, 36px) !important;
     padding: clamp(8px, 1.5vh, 14px) clamp(14px, 2.2vw, 26px) !important;
     height: 100vh !important;
     height: 100dvh !important;
@@ -4636,24 +4834,24 @@ html, body {
   }
 
   #project-page .slink-left-column {
-    flex: 0 0 38% !important;
-    width: 38% !important;
-    max-width: 38% !important;
+    flex: 0 0 clamp(240px, 38vw, 330px) !important;
+    width: clamp(240px, 38vw, 330px) !important;
+    max-width: 44vw !important;
     display: flex !important;
     flex-direction: column !important;
     min-width: 0 !important;
     overflow: visible !important;
   }
 
-  /* CRITICAL: Constrain PROJECT Geometric Banner strictly inside left column to eliminate collision */
+  /* PROJECT Geometric Banner matching PC angled aesthetic */
   #project-page .p3r-geometric-header {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: clamp(54px, 9.2vh, 70px) !important;
-    transform: none !important;
+    width: clamp(260px, 35vw, 330px) !important;
+    height: clamp(52px, 8.8vh, 64px) !important;
+    transform: rotate(-4.2deg) !important;
+    transform-origin: left center !important;
     margin-top: 0 !important;
     margin-bottom: clamp(3px, 0.8vh, 6px) !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     position: relative !important;
     box-sizing: border-box !important;
   }
@@ -4663,7 +4861,7 @@ html, body {
     top: -4px !important;
     width: calc(100% + 40px) !important;
     height: 100% !important;
-    clip-path: polygon(0 0, 82% 0%, 100% 100%, 0 100%) !important;
+    clip-path: polygon(0 0, 85% 0%, 100% 100%, 0 100%) !important;
   }
 
   #project-page .p3r-header-slash-main {
@@ -4671,11 +4869,11 @@ html, body {
     top: 0 !important;
     width: calc(100% + 40px) !important;
     height: 100% !important;
-    clip-path: polygon(0 0, 82% 0%, 100% 100%, 0 100%) !important;
+    clip-path: polygon(0 0, 85% 0%, 100% 100%, 0 100%) !important;
   }
 
   #project-page .p3r-banner-title {
-    margin-left: clamp(42px, 5.2vw, 58px) !important;
+    margin-left: clamp(48px, 5.5vw, 64px) !important;
     height: 100% !important;
     display: flex !important;
     align-items: center !important;
@@ -4697,7 +4895,7 @@ html, body {
     -webkit-overflow-scrolling: touch !important;
     padding: 2px 6px 12px 2px !important;
     margin-left: 0 !important;
-    --slink-skew: -14deg !important;
+    --slink-skew: -20deg !important;
     width: 100% !important;
     scrollbar-width: thin !important;
   }
@@ -4720,7 +4918,7 @@ html, body {
   #project-page .slink-card.active {
     width: 100% !important;
     max-width: 100% !important;
-    transform: skewX(-14deg) translateX(4px) !important;
+    transform: skewX(-20deg) translateX(4px) !important;
   }
 
   #project-page .card-unified-row {
@@ -4942,12 +5140,12 @@ html, body {
     font-size: clamp(0.64rem, 0.82vw, 0.72rem) !important;
   }
 
-  /* 9. ABOUT Subpage: Vertically Centered Layout with Balanced Proportions */
+  /* 9. ABOUT Subpage: Vertically Centered Layout matching PC aesthetics (left-docked card + slanted header) */
   #about-page .slink-viewport {
     flex-direction: column !important;
     justify-content: center !important;
     align-items: flex-start !important;
-    padding: clamp(14px, 3.2vh, 24px) clamp(16px, 2.8vw, 26px) !important;
+    padding: clamp(12px, 2.8vh, 22px) clamp(16px, 2.8vw, 26px) !important;
     overflow: hidden !important;
     box-sizing: border-box !important;
     height: 100vh !important;
@@ -4964,16 +5162,25 @@ html, body {
   }
 
   #about-header-div {
-    width: clamp(230px, 42vw, 290px) !important;
-    height: clamp(46px, 7.5vh, 56px) !important;
-    transform: none !important;
+    width: clamp(260px, 35vw, 340px) !important;
+    height: clamp(52px, 8.8vh, 64px) !important;
+    transform: rotate(-4.2deg) !important;
+    transform-origin: left center !important;
     margin-top: 0 !important;
     margin-bottom: clamp(6px, 1.2vh, 10px) !important;
     margin-left: clamp(44px, 5.2vw, 56px) !important;
   }
 
+  #about-header-div .p3r-shard-back-band,
+  #about-header-div .p3r-header-slash-main {
+    left: -40px !important;
+    top: 0 !important;
+    width: calc(100% + 40px) !important;
+    height: 100% !important;
+  }
+
   #about-header-div #about-header-text {
-    margin-left: clamp(22px, 2.8vw, 32px) !important;
+    margin-left: clamp(48px, 5.5vw, 64px) !important;
   }
 
   #about-header-text .p3r-cutout-char {
@@ -4982,11 +5189,12 @@ html, body {
   }
 
   #about-page .p3r-about-card {
-    width: min(720px, calc(100vw - clamp(28px, 4.5vw, 44px))) !important;
-    max-height: calc(100vh - clamp(78px, 13vh, 98px)) !important;
-    max-height: calc(100dvh - clamp(78px, 13vh, 98px)) !important;
+    width: clamp(410px, 58vw, 540px) !important;
+    max-width: calc(100vw - clamp(140px, 20vw, 220px)) !important;
+    max-height: calc(100vh - clamp(74px, 12vh, 92px)) !important;
+    max-height: calc(100dvh - clamp(74px, 12vh, 92px)) !important;
     margin: 0 !important;
-    margin-left: clamp(10px, 1.8vw, 18px) !important;
+    margin-left: clamp(16px, 2.5vw, 32px) !important;
     padding: clamp(9px, 1.5vh, 15px) clamp(14px, 2.0vw, 20px) !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
@@ -5105,6 +5313,7 @@ html, body {
       opacity: 0;
       transform: translate3d(0, 14px, 0);
     }
+
     100% {
       opacity: 1;
       transform: translate3d(0, 0, 0);
@@ -5199,7 +5408,3 @@ html, body {
     padding-bottom: 2px !important;
   }
 }
-
-
-
-

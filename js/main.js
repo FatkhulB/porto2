@@ -597,7 +597,39 @@ function playAudioChannel({
   return false;
 }
 
+// --------------------------------------------------------------------------
+// Persona 3 Reload Haptic Vibration & Screen Shake Triggers
+// --------------------------------------------------------------------------
+function triggerSelectVibration() {
+  if (typeof navigator !== "undefined" && navigator.vibrate) {
+    try { navigator.vibrate(15); } catch (_) {}
+  }
+  if (document.body) {
+    document.body.classList.remove("p3r-select-shake");
+    void document.body.offsetWidth;
+    document.body.classList.add("p3r-select-shake");
+    setTimeout(() => {
+      document.body.classList.remove("p3r-select-shake");
+    }, 130);
+  }
+}
+
+function triggerConfirmVibration() {
+  if (typeof navigator !== "undefined" && navigator.vibrate) {
+    try { navigator.vibrate([25, 35, 45]); } catch (_) {}
+  }
+  if (document.body) {
+    document.body.classList.remove("p3r-select-shake", "p3r-confirm-shake");
+    void document.body.offsetWidth;
+    document.body.classList.add("p3r-confirm-shake");
+    setTimeout(() => {
+      document.body.classList.remove("p3r-confirm-shake");
+    }, 300);
+  }
+}
+
 function playSFX() {
+  triggerSelectVibration();
   if (!isStarted) return;
   playAudioChannel({
     buffer: sfxAudioBuffer,
@@ -610,6 +642,7 @@ function playSFX() {
 }
 
 function playConfirmSFX() {
+  triggerConfirmVibration();
   playAudioChannel({
     buffer: confirmAudioBuffer,
     staticElId: "sfx-confirm-el",
