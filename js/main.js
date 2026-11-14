@@ -2404,8 +2404,128 @@ function setupP3RMusicPlayer() {
     if (!isSfxMuted) playCloseMenuSFX();
   }
 
+  // Floating Draggable Launcher Setup (Bisa dipindah kemana saja secara bebas)
+  function setupDraggableLauncher(el, onOpen) {
+    if (!el) return;
+
+    let isPointerDown = false;
+    let isDragging = false;
+    let hasMoved = false;
+    let startX = 0;
+    let startY = 0;
+    let initLeft = 0;
+    let initTop = 0;
+
+    el.style.touchAction = "none";
+
+    function clampVal(v, min, max) {
+      return Math.max(min, Math.min(v, max));
+    }
+
+    function getBounds() {
+      const r = el.getBoundingClientRect();
+      const margin = 8;
+      const maxX = Math.max(margin, window.innerWidth - r.width - margin);
+      const maxY = Math.max(margin, window.innerHeight - r.height - margin);
+      return { minX: margin, minY: margin, maxX, maxY };
+    }
+
+    function onPointerDown(e) {
+      if (e.button !== undefined && e.button !== 0) return;
+      isPointerDown = true;
+      isDragging = false;
+      hasMoved = false;
+      startX = e.clientX;
+      startY = e.clientY;
+
+      const r = el.getBoundingClientRect();
+      initLeft = r.left;
+      initTop = r.top;
+
+      try {
+        el.setPointerCapture(e.pointerId);
+      } catch (_) {}
+    }
+
+    function onPointerMove(e) {
+      if (!isPointerDown) return;
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      const dist = Math.hypot(dx, dy);
+
+      if (!isDragging && dist > 5) {
+        isDragging = true;
+        hasMoved = true;
+        el.classList.add("is-dragging");
+      }
+
+      if (isDragging) {
+        e.preventDefault();
+        const b = getBounds();
+        const newX = clampVal(initLeft + dx, b.minX, b.maxX);
+        const newY = clampVal(initTop + dy, b.minY, b.maxY);
+
+        el.style.setProperty("left", `${Math.round(newX)}px`, "important");
+        el.style.setProperty("top", `${Math.round(newY)}px`, "important");
+        el.style.setProperty("right", "auto", "important");
+        el.style.setProperty("bottom", "auto", "important");
+      }
+    }
+
+    function onPointerUp(e) {
+      if (!isPointerDown) return;
+      isPointerDown = false;
+
+      if (isDragging) {
+        isDragging = false;
+        el.classList.remove("is-dragging");
+        try {
+          el.releasePointerCapture(e.pointerId);
+        } catch (_) {}
+
+        const b = getBounds();
+        const r = el.getBoundingClientRect();
+        const clampedX = clampVal(r.left, b.minX, b.maxX);
+        const clampedY = clampVal(r.top, b.minY, b.maxY);
+
+        el.style.setProperty("left", `${Math.round(clampedX)}px`, "important");
+        el.style.setProperty("top", `${Math.round(clampedY)}px`, "important");
+        el.style.setProperty("right", "auto", "important");
+        el.style.setProperty("bottom", "auto", "important");
+      }
+    }
+
+    el.addEventListener("pointerdown", onPointerDown);
+    el.addEventListener("pointermove", onPointerMove);
+    el.addEventListener("pointerup", onPointerUp);
+    el.addEventListener("pointercancel", onPointerUp);
+
+    el.addEventListener("click", (e) => {
+      if (hasMoved) {
+        e.preventDefault();
+        e.stopPropagation();
+        hasMoved = false;
+        return;
+      }
+      if (typeof onOpen === "function") {
+        onOpen(e);
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (el.style.left && el.style.left !== "auto") {
+        const b = getBounds();
+        const r = el.getBoundingClientRect();
+        const clampedX = clampVal(r.left, b.minX, b.maxX);
+        const clampedY = clampVal(r.top, b.minY, b.maxY);
+        el.style.setProperty("left", `${Math.round(clampedX)}px`, "important");
+        el.style.setProperty("top", `${Math.round(clampedY)}px`, "important");
+      }
+    }, { passive: true });
+  }
+
   // Hook launcher & modal controls
-  if (launcher) launcher.addEventListener("click", openMusicModal);
+  if (launcher) setupDraggableLauncher(launcher, openMusicModal);
   if (closeBtn) closeBtn.addEventListener("click", closeMusicModal);
   if (backdrop) backdrop.addEventListener("click", closeMusicModal);
   

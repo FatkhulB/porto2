@@ -1332,6 +1332,7 @@ body.project-screen-active .side-number {
   gap: var(--card-gap);
   width: fit-content;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* All cards share the EXACT SAME uniform slant (-22deg) with subtle staircase offset */
@@ -3354,12 +3355,12 @@ html, body {
 /* ==========================================================================
    Persona 3 Reload - Interactive Floating Music Player & Playlist (Image 5)
    ========================================================================== */
-/* Collapsed Floating Launcher Icon */
+/* Collapsed Floating Launcher Icon (Draggable floating assistive widget) */
 .p3r-music-launcher {
   position: fixed;
   top: 1.5rem;
   right: 2.2rem;
-  z-index: 350;
+  z-index: 9999;
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -3367,13 +3368,15 @@ html, body {
   border: 2px solid #16cffb;
   border-radius: 9999px;
   padding: 6px 14px 6px 9px;
-  cursor: pointer;
+  cursor: grab;
   outline: none;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.85), 0 0 14px rgba(22, 207, 251, 0.5);
   backdrop-filter: blur(8px);
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
   user-select: none;
+  -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
+  touch-action: none;
 }
 
 .p3r-music-launcher:hover {
@@ -3382,7 +3385,15 @@ html, body {
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.95), 0 0 22px rgba(22, 207, 251, 0.9);
 }
 
-.p3r-music-launcher:active {
+.p3r-music-launcher.is-dragging {
+  cursor: grabbing !important;
+  transform: scale(1.12) !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.98), 0 0 32px rgba(22, 207, 251, 1) !important;
+  transition: none !important;
+}
+
+.p3r-music-launcher:active:not(.is-dragging) {
   transform: scale(0.96);
 }
 
@@ -4245,22 +4256,25 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 3px;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  gap: clamp(2px, 0.6vw, 4px);
   margin-bottom: 0.45rem;
+  max-width: 100%;
 }
 
 .rotate-cutout-title .p3r-cutout-char {
-  font-size: clamp(1.35rem, 4.4vw, 1.8rem);
+  font-size: clamp(1.0rem, 3.8vw, 1.55rem);
   font-family: var(--font-impact), Impact, sans-serif;
   font-weight: 900;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.12em 0.22em 0.1em;
+  padding: 0.08em 0.16em 0.08em;
   line-height: 1;
   text-transform: uppercase;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  flex-shrink: 0;
 }
 
 .rotate-cutout-title .char-white {
@@ -4277,7 +4291,8 @@ html, body {
 
 .rotate-char-space {
   display: inline-block;
-  width: 0.55rem;
+  width: clamp(0.25rem, 1.2vw, 0.48rem);
+  flex-shrink: 0;
 }
 
 .rotate-action-text {
@@ -4525,14 +4540,14 @@ html, body {
     display: none !important;
   }
 
-  /* 7. PROJECT Subpage: Clean Side-by-Side (47% Left : 51% Right, Zero Overlap!) */
+  /* 7. PROJECT Subpage: Clean Side-by-Side (42% Left : 53% Right, Zero Overlap, Zero Horizontal Scrollbar!) */
   #project-page .slink-viewport {
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
-    gap: 2% !important;
-    padding: clamp(6px, 1.4vh, 14px) clamp(10px, 1.8vw, 18px) !important;
+    gap: clamp(14px, 2.5vw, 32px) !important;
+    padding: clamp(6px, 1.4vh, 14px) clamp(12px, 2vw, 24px) !important;
     height: 100vh !important;
     height: 100dvh !important;
     box-sizing: border-box !important;
@@ -4540,12 +4555,13 @@ html, body {
   }
 
   #project-page .slink-left-column {
-    flex: 0 0 47% !important;
-    width: 47% !important;
-    max-width: 47% !important;
+    flex: 0 0 42% !important;
+    width: 42% !important;
+    max-width: 42% !important;
     display: flex !important;
     flex-direction: column !important;
     min-width: 0 !important;
+    overflow: visible !important;
   }
 
   #project-page .slink-cards-container {
@@ -4555,24 +4571,39 @@ html, body {
     max-height: calc(100vh - clamp(75px, 12vh, 100px)) !important;
     max-height: calc(100dvh - clamp(75px, 12vh, 100px)) !important;
     overflow-y: auto !important;
+    overflow-x: hidden !important; /* CRITICAL: Banish horizontal scrollbar */
     -webkit-overflow-scrolling: touch !important;
-    padding-right: 4px !important;
-    margin-left: 8px !important;
+    padding: 2px 6px 12px 2px !important;
+    margin-left: 0 !important;
     --slink-skew: -14deg !important;
-    width: calc(100% - 8px) !important;
+    width: 100% !important;
+    scrollbar-width: thin !important;
+  }
+
+  #project-page .slink-cards-container::-webkit-scrollbar {
+    width: 4px !important;
+    height: 0px !important;
+    display: none !important;
   }
 
   #project-page .slink-card {
     height: clamp(38px, 5.4vh, 48px) !important;
     width: 100% !important;
     max-width: 100% !important;
+    margin-left: 0 !important;
     padding: 0 !important;
+    box-sizing: border-box !important;
   }
 
   #project-page .slink-card.active {
     width: 100% !important;
     max-width: 100% !important;
-    transform: skewX(-14deg) translateX(6px) !important;
+    transform: skewX(-14deg) translateX(4px) !important;
+  }
+
+  #project-page .card-unified-row {
+    overflow: hidden !important;
+    border-radius: 2px !important;
   }
 
   #project-page .card-numeral-box {
@@ -4585,26 +4616,32 @@ html, body {
 
   #project-page .card-main-body {
     padding: 0 clamp(8px, 1.2vw, 14px) !important;
+    overflow: hidden !important;
   }
 
   #project-page .card-title-text {
-    font-size: clamp(0.80rem, 1.25vw, 1.02rem) !important;
+    font-size: clamp(0.78rem, 1.2vw, 1.0rem) !important;
   }
 
   #project-page .card-subtitle-text {
-    font-size: clamp(0.58rem, 0.85vw, 0.72rem) !important;
+    font-size: clamp(0.56rem, 0.8vw, 0.70rem) !important;
     margin-top: 1px !important;
   }
 
+  #project-page .card-red-accent {
+    width: 18px !important;
+  }
+
   #project-page .slink-preview-panel {
-    flex: 0 0 51% !important;
-    width: 51% !important;
-    max-width: 51% !important;
+    flex: 0 0 53% !important;
+    width: 53% !important;
+    max-width: 53% !important;
     align-self: center !important;
     padding: 0 !important;
     max-height: calc(100vh - clamp(20px, 3vh, 36px)) !important;
     max-height: calc(100dvh - clamp(20px, 3vh, 36px)) !important;
     overflow-y: auto !important;
+    overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
   }
 
