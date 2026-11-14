@@ -377,14 +377,11 @@ function getAudioContext() {
 }
 
 function ensureBGM() {
-  if (!bgmLobbyEl) return;
-  bgmLobbyEl.volume = 0.35;
+  if (!bgmLobbyEl || isBgmMuted) return;
   bgmLobbyEl.loop = true;
-  if (isBgmMuted) {
-    if (!bgmLobbyEl.paused) bgmLobbyEl.pause();
-    return;
-  }
   if (bgmLobbyEl.paused) {
+    bgmLobbyEl.muted = false;
+    bgmLobbyEl.volume = 0.35;
     const p = bgmLobbyEl.play();
     if (p !== undefined) {
       p.then(() => {
@@ -392,49 +389,51 @@ function ensureBGM() {
           window.p3rMusicPlayer.updateUI();
         }
       }).catch(() => {
-        // Autoplay policy prevented immediate playback without user interaction.
-        // Listen on any user activity (even mouse movement, touch, or scroll) to start playback immediately!
-        if (!bgmAutoplayArmed) {
-          bgmAutoplayArmed = true;
-          const unlockEvents = [
-            "pointerdown", "touchstart", "click", "keydown",
-            "mousemove", "wheel", "scroll", "focus"
-          ];
-          const unlockBgm = () => {
-            if (!isBgmMuted && bgmLobbyEl.paused) {
-              const retryP = bgmLobbyEl.play();
-              if (retryP !== undefined) {
-                retryP.then(() => {
-                  if (window.p3rMusicPlayer && typeof window.p3rMusicPlayer.updateUI === "function") {
-                    window.p3rMusicPlayer.updateUI();
-                  }
-                }).catch(() => {});
-              }
-            }
-            const ctx = getAudioContext();
-            if (ctx && ctx.state === "suspended") {
-              ctx.resume().catch(() => {});
-            }
-            unlockEvents.forEach((evt) => {
-              window.removeEventListener(evt, unlockBgm, { capture: true });
-              document.removeEventListener(evt, unlockBgm, { capture: true });
-            });
-            bgmAutoplayArmed = false;
-          };
-          unlockEvents.forEach((evt) => {
-            window.addEventListener(evt, unlockBgm, { capture: true, once: true, passive: true });
-            document.addEventListener(evt, unlockBgm, { capture: true, once: true, passive: true });
-          });
-        }
+        // Autoplay policy prevented immediate unmuted playback without prior user gesture.
+        // Start muted playback immediately so media is running, and unmute on first gesture!
+        bgmLobbyEl.muted = true;
+        const mutedP = bgmLobbyEl.play();
+        if (mutedP !== undefined) mutedP.catch(() => {});
       });
     }
+  } else if (bgmLobbyEl.muted) {
+    bgmLobbyEl.muted = false;
+    bgmLobbyEl.volume = 0.35;
   }
 }
 
-// Immediately attempt playback on script load
+function unlockAndPlayAudio() {
+  if (!bgmLobbyEl || isBgmMuted) return;
+  if (bgmLobbyEl.muted) {
+    bgmLobbyEl.muted = false;
+    bgmLobbyEl.volume = 0.35;
+  }
+  if (bgmLobbyEl.paused) {
+    bgmLobbyEl.play().catch(() => {});
+  }
+  const ctx = getAudioContext();
+  if (ctx && ctx.state === "suspended") {
+    ctx.resume().catch(() => {});
+  }
+  if (window.p3rMusicPlayer && typeof window.p3rMusicPlayer.updateUI === "function") {
+    window.p3rMusicPlayer.updateUI();
+  }
+}
+
+// Continuous global listeners to ensure instant music play on ANY interaction
+const audioGestureEvents = ["click", "pointerdown", "touchstart", "touchend", "mousedown", "keydown"];
+audioGestureEvents.forEach((evt) => {
+  window.addEventListener(evt, unlockAndPlayAudio, { passive: true });
+  document.addEventListener(evt, unlockAndPlayAudio, { passive: true });
+});
+
+// Immediately attempt playback on script load, DOM ready, and window load
 ensureBGM();
 window.addEventListener("DOMContentLoaded", ensureBGM);
 window.addEventListener("load", ensureBGM);
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden && !isBgmMuted) ensureBGM();
+});
 
 function updateAudioToggleUI() {
   if (toggleBgmBtn) {
@@ -1745,10 +1744,11 @@ async function startLoadingSequence() {
     ? Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 800))]).catch(() => {})
     : Promise.resolve();
 
-  await Promise.all([waitAbortable(2600), waitForMenuVideoReady(12000), fontPromise]);
+  await Promise.all([waitAbortable(1200), waitForMenuVideoReady(12000), fontPromise]);
   if (isStarted) return;
 
   isLoaded = true;
+  unlockAndPlayAudio();
   playConfirmSFX();
 
   const ctx = getAudioContext();
@@ -1756,7 +1756,7 @@ async function startLoadingSequence() {
     ctx.resume().catch(() => {});
   }
 
-  await waitAbortable(300);
+  await waitAbortable(150);
   if (isStarted) return;
 
   enterExperience();
@@ -1767,9 +1767,12 @@ if (loadingScreen) {
     if (isStarted) return;
     if (e && e.cancelable) e.preventDefault();
     isLoaded = true;
+    unlockAndPlayAudio();
     playConfirmSFX();
     enterExperience();
   };
+  loadingScreen.addEventListener("pointerdown", handleStartTap);
+  loadingScreen.addEventListener("touchstart", handleStartTap, { passive: true });
   loadingScreen.addEventListener("click", handleStartTap);
   loadingScreen.addEventListener("touchend", handleStartTap);
 }
