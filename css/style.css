@@ -4582,8 +4582,8 @@ html, body {
   /* Mobile Corner Back Button on Mobile: Compact & sleek */
   .p3r-mobile-corner-back,
   .p3r-corner-back {
-    top: clamp(8px, 1.8vh, 14px) !important;
-    left: clamp(8px, 1.8vw, 14px) !important;
+    top: clamp(10px, 2.2vh, 16px) !important;
+    left: clamp(10px, 2.0vw, 18px) !important;
     width: clamp(34px, 5.2vh, 40px) !important;
     height: clamp(34px, 5.2vh, 40px) !important;
   }
@@ -4942,46 +4942,55 @@ html, body {
     font-size: clamp(0.64rem, 0.82vw, 0.72rem) !important;
   }
 
-  /* 9. ABOUT Subpage: Clean, Left-Aligned Card with Balanced Proportions */
+  /* 9. ABOUT Subpage: Vertically Centered Layout with Balanced Proportions */
   #about-page .slink-viewport {
     flex-direction: column !important;
-    padding: clamp(4px, 1.0vh, 10px) clamp(8px, 1.6vw, 16px) !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding: clamp(14px, 3.2vh, 24px) clamp(16px, 2.8vw, 26px) !important;
     overflow: hidden !important;
     box-sizing: border-box !important;
+    height: 100vh !important;
+    height: 100dvh !important;
   }
 
   #about-page .slink-left-column {
     width: 100% !important;
     max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    margin: auto 0 !important;
   }
 
   #about-header-div {
     width: clamp(230px, 42vw, 290px) !important;
-    height: clamp(50px, 8.4vh, 62px) !important;
+    height: clamp(46px, 7.5vh, 56px) !important;
     transform: none !important;
     margin-top: 0 !important;
-    margin-bottom: clamp(3px, 0.8vh, 6px) !important;
+    margin-bottom: clamp(6px, 1.2vh, 10px) !important;
+    margin-left: clamp(44px, 5.2vw, 56px) !important;
   }
 
   #about-header-div #about-header-text {
-    margin-left: clamp(52px, 5.8vw, 66px) !important;
+    margin-left: clamp(22px, 2.8vw, 32px) !important;
   }
 
   #about-header-text .p3r-cutout-char {
-    font-size: clamp(1.4rem, 2.5vw, 1.72rem) !important;
+    font-size: clamp(1.35rem, 2.4vw, 1.68rem) !important;
     padding: 0.05em 0.12em 0.07em !important;
   }
 
   #about-page .p3r-about-card {
-    width: min(720px, calc(100vw - 32px)) !important;
-    max-height: calc(100vh - clamp(68px, 10.5vh, 88px)) !important;
-    max-height: calc(100dvh - clamp(68px, 10.5vh, 88px)) !important;
+    width: min(720px, calc(100vw - clamp(28px, 4.5vw, 44px))) !important;
+    max-height: calc(100vh - clamp(78px, 13vh, 98px)) !important;
+    max-height: calc(100dvh - clamp(78px, 13vh, 98px)) !important;
     margin: 0 !important;
-    margin-left: clamp(10px, 2.0vw, 20px) !important;
-    padding: clamp(8px, 1.3vh, 14px) clamp(12px, 1.8vw, 18px) !important;
+    margin-left: clamp(10px, 1.8vw, 18px) !important;
+    padding: clamp(9px, 1.5vh, 15px) clamp(14px, 2.0vw, 20px) !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
-    gap: clamp(6px, 0.9vh, 10px) !important;
+    gap: clamp(7px, 1.1vh, 11px) !important;
   }
 
   .p3r-about-top-row {
@@ -5061,21 +5070,23 @@ html, body {
     max-height: clamp(110px, 26vh, 160px) !important;
   }
 
-  /* 10. CONTACT Subpage: Clean 2-Column Handheld Grid (Zero Overlap & Zero Distortions) */
+  /* 10. CONTACT Subpage: Perfectly Centered 2-Column Handheld Grid */
   .p3r-contact-viewport {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: clamp(6px, 1vh, 12px) !important;
+    padding: clamp(16px, 3.8vh, 26px) clamp(16px, 2.8vw, 28px) !important;
     overflow: hidden !important;
     box-sizing: border-box !important;
+    height: 100vh !important;
+    height: 100dvh !important;
   }
 
   .p3r-mail-phone-wrap {
-    width: min(660px, 94vw) !important;
+    width: min(650px, 92vw) !important;
     height: auto !important;
-    max-height: calc(100vh - 16px) !important;
-    max-height: calc(100dvh - 16px) !important;
+    max-height: calc(100vh - clamp(32px, 7.5vh, 48px)) !important;
+    max-height: calc(100dvh - clamp(32px, 7.5vh, 48px)) !important;
     margin: auto !important;
     transform: none !important;
     background: rgba(4, 15, 38, 0.96) !important;
@@ -5084,12 +5095,28 @@ html, body {
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.9), 0 0 20px rgba(22, 207, 251, 0.3) !important;
   }
 
+  .p3r-contact-screen.active .p3r-mail-phone-wrap {
+    animation: p3rMobileCardFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+    transform: none !important;
+  }
+
+  @keyframes p3rMobileCardFadeIn {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 14px, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
   .p3r-mail-chassis-svg {
     display: none !important;
   }
 
   .p3r-mail-phone-card {
-    padding: clamp(8px, 1.3vh, 14px) clamp(10px, 1.6vw, 18px) !important;
+    padding: clamp(10px, 1.8vh, 16px) clamp(14px, 2.2vw, 22px) !important;
     width: 100% !important;
     height: auto !important;
     box-sizing: border-box !important;
@@ -5097,18 +5124,21 @@ html, body {
 
   .p3r-mail-header-row {
     min-height: auto !important;
-    margin-bottom: clamp(4px, 0.8vh, 8px) !important;
+    margin-bottom: clamp(6px, 1.2vh, 10px) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
   }
 
   .p3r-mail-watermark {
-    font-size: clamp(1.45rem, 3.2vw, 2.1rem) !important;
+    font-size: clamp(1.4rem, 3.0vw, 2.0rem) !important;
     line-height: 1 !important;
     margin: 0 !important;
     transform: none !important;
   }
 
   .p3r-mail-watermark .p3r-cutout-char {
-    font-size: clamp(1.25rem, 2.6vw, 1.7rem) !important;
+    font-size: clamp(1.22rem, 2.4vw, 1.60rem) !important;
     padding: 0.05em 0.12em 0.07em !important;
   }
 
@@ -5117,14 +5147,14 @@ html, body {
   .p3r-mail-list-6 {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: clamp(4px, 0.7vh, 7px) clamp(8px, 1.2vw, 14px) !important;
+    gap: clamp(5px, 0.9vh, 8px) clamp(8px, 1.4vw, 14px) !important;
     width: 100% !important;
     padding-right: 0 !important;
     margin-top: 0 !important;
   }
 
   .p3r-mail-row {
-    height: clamp(38px, 5.2vh, 46px) !important;
+    height: clamp(38px, 5.4vh, 46px) !important;
     border-radius: 5px !important;
     transform: none !important;
   }
