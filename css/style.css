@@ -1197,7 +1197,7 @@ body.project-screen-active .side-number {
 
 /* Custom Proportional Sizing per Headline */
 #about-header-div {
-  width: clamp(300px, 21vw, 360px);
+  width: clamp(340px, 24vw, 420px);
   height: clamp(110px, 12.8vh, 128px);
 }
 #about-header-div .p3r-header-slash-main,
@@ -1205,30 +1205,30 @@ body.project-screen-active .side-number {
   clip-path: polygon(0 0, 50% 10%, 53% 0%, 100% 0%, calc(100% - 32px) 100%, 0 100%);
 }
 #about-header-div #about-header-text {
-  margin-left: clamp(14px, 1.4vw, 22px);
+  margin-left: clamp(68px, 6.2vw, 84px);
 }
 #about-header-text .p3r-cutout-group {
   gap: clamp(0.06rem, 0.16vw, 0.20rem);
 }
 #about-header-text .p3r-cutout-char {
-  font-size: clamp(2.85rem, 3.65vw, 4.35rem);
+  font-size: clamp(2.55rem, 3.4vw, 4.0rem);
   padding: 0.06em 0.12em 0.08em;
   margin: 0 0.015em;
 }
 
 #slink-project-div {
-  width: clamp(375px, 26.5vw, 450px);
+  width: clamp(400px, 28vw, 480px);
   height: clamp(106px, 12.4vh, 124px);
 }
 #slink-project-div #slink-project-text {
-  margin-left: clamp(24px, 2.4vw, 42px);
+  margin-left: clamp(68px, 6.2vw, 84px);
 }
 #slink-project-text .p3r-cutout-char {
-  font-size: clamp(2.25rem, 2.85vw, 3.3rem);
+  font-size: clamp(2.15rem, 2.7vw, 3.1rem);
 }
 
 #skill-header-div {
-  width: clamp(400px, 27.5vw, 470px);
+  width: clamp(450px, 31vw, 530px);
   height: clamp(106px, 12.6vh, 125px);
   margin-bottom: clamp(10px, 1.4vh, 16px);
 }
@@ -1237,13 +1237,13 @@ body.project-screen-active .side-number {
   clip-path: polygon(0 0, 50% 10%, 53% 0%, 100% 0%, calc(100% - 32px) 100%, 0 100%);
 }
 #skill-header-div #skill-header-text {
-  margin-left: clamp(10px, 1.1vw, 18px);
+  margin-left: clamp(68px, 6.2vw, 84px);
 }
 #skill-header-div #skill-header-text .p3r-cutout-group {
   gap: clamp(0.04rem, 0.12vw, 0.16rem);
 }
 #skill-header-text .p3r-cutout-char {
-  font-size: clamp(2.2rem, 2.8vw, 3.25rem);
+  font-size: clamp(2.05rem, 2.6vw, 3.0rem);
   padding: 0.06em 0.10em 0.08em;
   margin: 0 0.01em;
 }
@@ -3174,18 +3174,20 @@ html, body {
   .slink-bottom-hud #slink-confirm-btn,
   .slink-bottom-hud #skill-confirm-btn,
   .slink-bottom-hud #about-confirm-btn,
-  .slink-bottom-hud #contact-confirm-btn {
+  .slink-bottom-hud #contact-confirm-btn,
+  #skill-tab-prev-btn,
+  #skill-tab-next-btn {
     display: none !important;
   }
 
-  /* Subpage Close Button on Mobile: Floating pinned at top-right for easy one-tap exit */
+  /* Subpage Bottom Right HUD: Neatly docked at bottom-right, isolated from top-right BGM */
   .slink-bottom-hud {
-    position: fixed;
-    top: 1.0rem;
-    right: 1.0rem;
-    bottom: auto;
-    z-index: 200;
-    pointer-events: auto;
+    position: fixed !important;
+    bottom: clamp(10px, 2vh, 18px) !important;
+    right: clamp(12px, 2.5vw, 24px) !important;
+    top: auto !important;
+    z-index: 250 !important;
+    pointer-events: auto !important;
   }
 
   .slink-hud-btn {
@@ -3920,8 +3922,9 @@ html, body {
 /* Floating Player Mobile Adaptation */
 @media (max-width: 768px) {
   .p3r-music-launcher {
-    top: 1.0rem;
-    right: 4.8rem;
+    top: clamp(10px, 1.8vh, 16px) !important;
+    right: clamp(12px, 2.5vw, 20px) !important;
+    z-index: 9999 !important;
     padding: 5px 10px 5px 8px;
   }
 
@@ -4330,10 +4333,11 @@ html, body {
 
 
 /* ==========================================================================
-   PERSONA 3 RELOAD - MOBILE LANDSCAPE DEDICATED OPTIMIZATION
-   Screen height <= 560px in landscape mode (All modern smartphones horizontal)
+   PERSONA 3 RELOAD - UNIVERSAL RESPONSIVE ADAPTATION (MOBILE, TABLET, COMPACT)
+   Applies to screens <= 1180px width OR <= 800px height
+   Prevents all button collisions, overlaps, and aligns layout cleanly like PC
    ========================================================================== */
-@media screen and (orientation: landscape) and (max-height: 560px) {
+@media (max-width: 1180px), (max-height: 800px) {
 
   /* 1. Main Canvas & Makoto Yuki Video Placement */
   .p3r-main {
@@ -4344,7 +4348,7 @@ html, body {
 
   .background-video {
     object-fit: cover;
-    object-position: 74% center !important; /* Keep Makoto Yuki's face visible on right */
+    object-position: 74% center !important;
   }
 
   .p3r-global-vignette {
@@ -4353,74 +4357,68 @@ html, body {
 
   /* 2. Menu Left Dock (Hero Name + Bio Card + Options List) */
   .menu-left-dock {
-    top: clamp(0.5rem, 2.2vh, 0.95rem) !important;
-    left: clamp(1.0rem, 3.2vw, 1.8rem) !important;
-    gap: clamp(0.2rem, 0.8vh, 0.45rem) !important;
-    max-width: min(340px, 46vw) !important;
+    top: clamp(0.5rem, 2.5vh, 1.2rem) !important;
+    left: clamp(1.0rem, 3.0vw, 2.0rem) !important;
+    gap: clamp(0.2rem, 1.0vh, 0.6rem) !important;
+    max-width: min(380px, 48vw) !important;
   }
 
   .profile-top-badge {
-    font-size: 0.64rem !important;
-    padding: 1.5px 6.5px !important;
-    margin-bottom: 0.12rem !important;
+    font-size: 0.66rem !important;
+    padding: 1.5px 7px !important;
+    margin-bottom: 0.15rem !important;
   }
 
   .profile-name-stacked {
-    gap: 0.08rem !important;
+    gap: 0.10rem !important;
   }
 
   .profile-name-stacked .p3r-cutout-char {
-    font-size: clamp(1.15rem, 3.6vh, 1.45rem) !important;
+    font-size: clamp(1.2rem, 3.6vh, 1.6rem) !important;
     padding: 0.06em 0.14em 0.08em !important;
   }
 
   .profile-bio-card {
-    margin-top: 0.12rem !important;
-    padding: 4px 8px !important;
-    max-width: 320px !important;
+    margin-top: 0.15rem !important;
+    padding: 5px 9px !important;
+    max-width: 340px !important;
   }
 
   .profile-bio-card p {
-    font-size: clamp(0.58rem, 1.7vh, 0.68rem) !important;
-    line-height: 1.25 !important;
+    font-size: clamp(0.60rem, 1.6vh, 0.72rem) !important;
+    line-height: 1.28 !important;
     margin: 0 !important;
   }
 
   .options-list {
-    gap: clamp(0.16rem, 0.65vh, 0.32rem) !important;
+    gap: clamp(0.20rem, 0.8vh, 0.45rem) !important;
   }
 
   .option-plain-text {
-    font-size: clamp(1.15rem, 3.7vh, 1.48rem) !important;
-    line-height: 1.05 !important;
+    font-size: clamp(1.2rem, 3.8vh, 1.6rem) !important;
+    line-height: 1.08 !important;
   }
 
   .option-item.selected .p3r-cutout-char {
-    font-size: clamp(1.05rem, 3.4vh, 1.35rem) !important;
+    font-size: clamp(1.1rem, 3.5vh, 1.45rem) !important;
     padding: 0.06em 0.14em 0.08em !important;
   }
 
   .banner-jagged-inner {
-    padding: 0.14rem 0.72rem 0.14rem 0.52rem !important;
-    gap: 0.38rem !important;
+    padding: 0.16rem 0.8rem 0.16rem 0.6rem !important;
+    gap: 0.4rem !important;
   }
 
-  .banner-arrow {
-    border-top: 4px solid transparent !important;
-    border-bottom: 4px solid transparent !important;
-    border-left: 6px solid #ffffff !important;
-  }
-
-  /* 3. Bottom HUD Controls */
+  /* 3. Bottom HUD Controls (Menu Utama) */
   .hud-controls {
-    bottom: 0.4rem !important;
-    right: 0.65rem !important;
+    bottom: 0.5rem !important;
+    right: 0.8rem !important;
   }
 
   .hud-controls .buttons-row {
     display: flex !important;
     align-items: center !important;
-    gap: 0.4rem !important;
+    gap: 0.45rem !important;
   }
 
   .hud-controls .control-item {
@@ -4429,203 +4427,247 @@ html, body {
   }
 
   .hud-controls .control-key {
-    font-size: 0.65rem !important;
+    font-size: 0.66rem !important;
     padding: 1px 5px !important;
   }
 
   .hud-controls .control-text {
-    font-size: 0.75rem !important;
+    font-size: 0.76rem !important;
   }
 
-  /* 4. Floating Music Player */
+  /* 4. Top-Right Corner: ONLY Floating Music Player (Zero Collisions!) */
   .p3r-music-launcher {
-    top: 8px !important;
-    right: 10px !important;
-    padding: 3.5px 8.5px 3.5px 6.5px !important;
-    gap: 5px !important;
+    position: fixed !important;
+    top: clamp(8px, 1.6vh, 14px) !important;
+    right: clamp(10px, 2vw, 18px) !important;
+    padding: 4px 10px 4px 7px !important;
+    gap: 6px !important;
     z-index: 9999 !important;
   }
 
   .music-launcher-disc {
-    width: 20px !important;
-    height: 20px !important;
+    width: 22px !important;
+    height: 22px !important;
   }
 
   .music-launcher-text {
-    font-size: 0.68rem !important;
+    font-size: 0.72rem !important;
   }
 
   .music-floating-dialog {
     margin: auto !important;
-    width: min(460px, 88vw) !important;
+    width: min(480px, 90vw) !important;
     max-height: 94vh !important;
     padding: 10px 14px 12px !important;
   }
 
-  .music-carousel-stage {
-    height: 75px !important;
-    margin-bottom: 6px !important;
-  }
-
-  .music-track-card {
-    width: 190px !important;
-    padding: 6px 9px !important;
-  }
-
-  .music-track-title {
-    font-size: 0.82rem !important;
-  }
-
-  .music-ctrl-btn {
-    width: 32px !important;
-    height: 32px !important;
-  }
-
-  /* Universal Mobile Corner Back Button */
+  /* 5. Top-Left Corner: Circular Back Button with Clean Air Gap */
   .p3r-mobile-corner-back,
   .p3r-corner-back {
-    width: 36px !important;
-    height: 36px !important;
-    top: 8px !important;
-    left: 10px !important;
+    position: fixed !important;
+    width: clamp(36px, 4.4vw, 40px) !important;
+    height: clamp(36px, 4.4vw, 40px) !important;
+    top: clamp(8px, 1.6vh, 14px) !important;
+    left: clamp(10px, 2vw, 18px) !important;
     z-index: 9999 !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 8px rgba(22, 207, 251, 0.35) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 0 10px rgba(22, 207, 251, 0.45) !important;
   }
 
   .p3r-mobile-corner-back svg,
   .p3r-corner-back svg {
-    width: 16px !important;
-    height: 16px !important;
+    width: 17px !important;
+    height: 17px !important;
   }
 
-  /* Universal Mobile Subpage Header Alignment (Clears Corner Back Button) */
+  /* Subpage Headline Clearance: Guarantees Back Button NEVER covers any letters */
   .p3r-geometric-header {
-    transform: scale(0.68) !important;
+    transform: scale(clamp(0.70, 1.15vw, 0.84)) !important;
     transform-origin: left center !important;
-    margin-top: 4px !important;
-    margin-bottom: 2px !important;
+    margin-top: 2px !important;
+    margin-bottom: 4px !important;
   }
 
   .p3r-banner-title,
   #skill-header-div #skill-header-text,
   #slink-project-div #slink-project-text,
   #about-header-div #about-header-text {
-    margin-left: 58px !important;
+    margin-left: clamp(66px, 7vw, 82px) !important;
   }
 
-  /* 5. Projects Subpage Screen */
-  .slink-viewport {
-    padding: 1.2vh 2.0vw !important;
+  /* 6. Subpage Bottom-Right HUD: Neatly docked at Bottom Right */
+  .slink-bottom-hud {
+    position: fixed !important;
+    bottom: clamp(8px, 1.6vh, 16px) !important;
+    right: clamp(10px, 2vw, 18px) !important;
+    top: auto !important;
+    z-index: 250 !important;
+  }
+
+  .slink-bottom-hud .buttons-row {
+    gap: 6px !important;
+  }
+
+  .slink-hud-btn {
+    padding: 3.5px 9px 3.5px 7px !important;
+  }
+
+  .slink-hud-btn .control-key {
+    font-size: 0.66rem !important;
+    padding: 1.5px 5.5px !important;
+  }
+
+  .slink-hud-btn .control-text {
+    font-size: 0.78rem !important;
+  }
+
+  #skill-tab-prev-btn,
+  #skill-tab-next-btn {
+    display: none !important;
+  }
+
+  /* 7. PROJECT Subpage: Clean Side-by-Side (47% Left : 51% Right, Zero Overlap!) */
+  #project-page .slink-viewport {
     display: flex !important;
     flex-direction: row !important;
-    gap: 1.5vw !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 2% !important;
+    padding: clamp(6px, 1.4vh, 14px) clamp(10px, 1.8vw, 18px) !important;
     height: 100vh !important;
     height: 100dvh !important;
     box-sizing: border-box !important;
     overflow: hidden !important;
   }
 
-  .slink-left-column {
-    width: 36vw !important;
-    max-width: 310px !important;
+  #project-page .slink-left-column {
+    flex: 0 0 47% !important;
+    width: 47% !important;
+    max-width: 47% !important;
     display: flex !important;
     flex-direction: column !important;
-    flex-shrink: 0 !important;
+    min-width: 0 !important;
   }
 
-  .slink-cards-container {
+  #project-page .slink-cards-container {
     display: flex !important;
     flex-direction: column !important;
-    gap: 4px !important;
-    max-height: calc(100vh - 78px) !important;
-    max-height: calc(100dvh - 78px) !important;
+    gap: clamp(4px, 0.8vh, 7px) !important;
+    max-height: calc(100vh - clamp(75px, 12vh, 100px)) !important;
+    max-height: calc(100dvh - clamp(75px, 12vh, 100px)) !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
     padding-right: 4px !important;
-    margin-left: 12px !important;
-    --slink-skew: -16deg !important;
+    margin-left: 8px !important;
+    --slink-skew: -14deg !important;
+    width: calc(100% - 8px) !important;
   }
 
-  .slink-card {
-    height: 36px !important;
+  #project-page .slink-card {
+    height: clamp(38px, 5.4vh, 48px) !important;
     width: 100% !important;
-    padding: 0 10px !important;
+    max-width: 100% !important;
+    padding: 0 !important;
   }
 
-  .card-title-text {
-    font-size: 0.88rem !important;
+  #project-page .slink-card.active {
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: skewX(-14deg) translateX(6px) !important;
   }
 
-  .card-subtitle-text {
-    font-size: 0.62rem !important;
+  #project-page .card-numeral-box {
+    width: clamp(38px, 4.8vw, 50px) !important;
   }
 
-  .slink-preview-panel {
-    flex: 1 !important;
-    width: auto !important;
-    max-height: calc(100vh - 16px) !important;
-    max-height: calc(100dvh - 16px) !important;
+  #project-page .card-numeral-text {
+    font-size: clamp(1.1rem, 1.7vw, 1.42rem) !important;
+  }
+
+  #project-page .card-main-body {
+    padding: 0 clamp(8px, 1.2vw, 14px) !important;
+  }
+
+  #project-page .card-title-text {
+    font-size: clamp(0.80rem, 1.25vw, 1.02rem) !important;
+  }
+
+  #project-page .card-subtitle-text {
+    font-size: clamp(0.58rem, 0.85vw, 0.72rem) !important;
+    margin-top: 1px !important;
+  }
+
+  #project-page .slink-preview-panel {
+    flex: 0 0 51% !important;
+    width: 51% !important;
+    max-width: 51% !important;
+    align-self: center !important;
+    padding: 0 !important;
+    max-height: calc(100vh - clamp(20px, 3vh, 36px)) !important;
+    max-height: calc(100dvh - clamp(20px, 3vh, 36px)) !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
-    padding: 6px 10px !important;
   }
 
-  .slink-preview-card {
-    padding: 8px 10px !important;
+  #project-page .slink-preview-card {
+    padding: clamp(8px, 1.3vh, 13px) clamp(10px, 1.5vw, 15px) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  .slink-preview-image-wrap {
-    max-height: 115px !important;
+  #project-page .slink-preview-image-wrap {
+    max-height: clamp(100px, 17vh, 150px) !important;
     border-radius: 4px !important;
     overflow: hidden !important;
   }
 
-  .slink-preview-img {
-    max-height: 115px !important;
+  #project-page .slink-preview-img {
+    max-height: clamp(100px, 17vh, 150px) !important;
     object-fit: cover !important;
   }
 
-  .slink-preview-title {
-    font-size: 0.98rem !important;
+  #project-page .slink-preview-title {
+    font-size: clamp(0.96rem, 1.45vw, 1.22rem) !important;
     margin: 4px 0 2px !important;
   }
 
-  .slink-preview-desc {
-    font-size: 0.70rem !important;
-    line-height: 1.28 !important;
-    margin-bottom: 4px !important;
+  #project-page .slink-preview-desc {
+    font-size: clamp(0.70rem, 0.98vw, 0.82rem) !important;
+    line-height: 1.3 !important;
+    margin-bottom: 5px !important;
   }
 
-  .slink-preview-tools {
+  #project-page .slink-preview-tools {
     gap: 3px !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 5px !important;
   }
 
-  .slink-preview-tool-tag {
-    font-size: 0.62rem !important;
-    padding: 1.5px 5px !important;
+  #project-page .slink-preview-tool-tag {
+    font-size: clamp(0.60rem, 0.85vw, 0.70rem) !important;
+    padding: 1.5px 6px !important;
   }
 
-  .slink-preview-open-btn {
-    padding: 4px 10px !important;
-    font-size: 0.72rem !important;
+  #project-page .slink-preview-open-btn {
+    padding: clamp(4px, 0.7vh, 7px) clamp(10px, 1.3vw, 15px) !important;
+    font-size: clamp(0.72rem, 1.0vw, 0.84rem) !important;
   }
 
-  /* 6. Certificate Subpage Screen */
-  .p3r-skill-viewport .slink-left-column {
+  /* 8. CERTIFICATE Subpage: Single-Line Horizontal Tabs + Balanced Grid */
+  #skill-page .slink-left-column {
     width: 100% !important;
     max-width: 100% !important;
   }
 
   .p3r-skill-tabs {
-    margin-left: 10px !important;
-    gap: 6px !important;
-    margin-bottom: 5px !important;
+    display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
     scrollbar-width: none !important;
+    gap: clamp(5px, 0.9vw, 9px) !important;
+    margin-left: clamp(8px, 1.5vw, 16px) !important;
+    margin-bottom: clamp(6px, 1vh, 9px) !important;
     padding-bottom: 2px !important;
+    width: calc(100% - clamp(16px, 3vw, 32px)) !important;
   }
 
   .p3r-skill-tabs::-webkit-scrollbar {
@@ -4633,41 +4675,81 @@ html, body {
   }
 
   .p3r-skill-tab {
-    padding: 3px 8px !important;
-    font-size: 0.68rem !important;
     flex-shrink: 0 !important;
+    padding: clamp(3px, 0.5vh, 5.5px) clamp(8px, 1.1vw, 12px) !important;
+    font-size: clamp(0.66rem, 0.9vw, 0.76rem) !important;
+  }
+
+  .p3r-skills-container {
+    margin-left: clamp(8px, 1.5vw, 16px) !important;
+    width: calc(100% - clamp(16px, 3vw, 32px)) !important;
+    max-height: calc(100vh - clamp(112px, 15vh, 145px)) !important;
+    max-height: calc(100dvh - clamp(112px, 15vh, 145px)) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 2px 4px clamp(32px, 5vh, 44px) 2px !important;
   }
 
   .p3r-cert-grid {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
-    gap: 8px !important;
-    max-height: calc(100vh - 116px) !important;
-    max-height: calc(100dvh - 116px) !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    padding-bottom: 34px !important;
-    margin-left: 10px !important;
-    padding-right: 6px !important;
+    grid-template-columns: repeat(auto-fill, minmax(clamp(185px, 24vw, 250px), 1fr)) !important;
+    gap: clamp(8px, 1.1vw, 13px) !important;
+    width: 100% !important;
   }
 
   .p3r-cert-card {
-    padding: 7px !important;
+    padding: clamp(6px, 0.9vh, 9px) !important;
+  }
+
+  .p3r-cert-card-top {
+    padding: 3px 7px !important;
+  }
+
+  .p3r-cert-index {
+    font-size: 0.66rem !important;
+  }
+
+  .p3r-cert-badge {
+    font-size: 0.62rem !important;
+    padding: 1px 5px !important;
   }
 
   .p3r-cert-thumb {
-    height: 98px !important;
+    height: clamp(92px, 14.5vh, 126px) !important;
+    object-fit: contain !important;
+    background: #010814 !important;
+  }
+
+  .p3r-cert-body {
+    padding: 5px 3px 3px !important;
   }
 
   .p3r-cert-title {
-    font-size: 0.80rem !important;
+    font-size: clamp(0.76rem, 1.05vw, 0.90rem) !important;
+    line-height: 1.22 !important;
   }
 
-  /* 7. About Subpage Screen */
+  .p3r-cert-issuer {
+    font-size: clamp(0.60rem, 0.8vw, 0.70rem) !important;
+    margin: 2px 0 5px !important;
+  }
+
+  .p3r-cert-actions {
+    gap: 5px !important;
+  }
+
+  .p3r-cert-preview-btn,
+  .p3r-cert-link-btn {
+    padding: 3px 7.5px !important;
+    font-size: clamp(0.64rem, 0.82vw, 0.72rem) !important;
+  }
+
+  /* 9. ABOUT Subpage: Centered Card with Balanced Proportions */
   #about-page .slink-viewport {
     flex-direction: column !important;
-    padding: 1.2vh 2.0vw !important;
+    padding: clamp(6px, 1.4vh, 14px) clamp(10px, 1.8vw, 18px) !important;
     overflow: hidden !important;
+    box-sizing: border-box !important;
   }
 
   #about-page .slink-left-column {
@@ -4676,121 +4758,182 @@ html, body {
   }
 
   #about-page .p3r-about-card {
-    width: min(660px, 94vw) !important;
-    max-height: calc(100vh - 105px) !important;
-    max-height: calc(100dvh - 105px) !important;
+    width: min(680px, 94vw) !important;
+    max-height: calc(100vh - clamp(96px, 13.5vh, 130px)) !important;
+    max-height: calc(100dvh - clamp(96px, 13.5vh, 130px)) !important;
     margin: 0 auto !important;
-    padding: 10px 14px !important;
+    padding: clamp(10px, 1.5vh, 16px) clamp(12px, 1.8vw, 20px) !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
-    gap: 6px !important;
+    gap: clamp(6px, 1vh, 10px) !important;
   }
 
   .p3r-about-top-row {
-    gap: 10px !important;
+    gap: clamp(8px, 1.3vw, 14px) !important;
   }
 
   .p3r-photo-box {
-    width: 52px !important;
-    height: 52px !important;
+    width: clamp(50px, 6.8vw, 64px) !important;
+    height: clamp(50px, 6.8vw, 64px) !important;
   }
 
   .p3r-about-name {
-    font-size: 1.15rem !important;
+    font-size: clamp(1.12rem, 1.8vw, 1.42rem) !important;
   }
 
   .p3r-about-title {
-    font-size: 0.70rem !important;
+    font-size: clamp(0.66rem, 0.95vw, 0.80rem) !important;
   }
 
   .p3r-about-location {
-    font-size: 0.62rem !important;
+    font-size: clamp(0.58rem, 0.8vw, 0.70rem) !important;
   }
 
   .p3r-about-tabs {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
     gap: 4px !important;
   }
 
   .p3r-about-tab {
-    padding: 3.5px 7.5px !important;
-    font-size: 0.66rem !important;
+    flex-shrink: 0 !important;
+    padding: 3px 8px !important;
+    font-size: 0.65rem !important;
   }
 
   .p3r-about-p {
-    font-size: 0.72rem !important;
+    font-size: clamp(0.68rem, 0.95vw, 0.80rem) !important;
     line-height: 1.32 !important;
+  }
+
+  .p3r-quote-card {
+    padding: clamp(6px, 0.9vh, 9px) clamp(8px, 1.2vw, 12px) !important;
+    margin-top: 2px !important;
+  }
+
+  .p3r-quote-text {
+    font-size: clamp(0.66rem, 0.9vw, 0.78rem) !important;
+    line-height: 1.28 !important;
+  }
+
+  .p3r-quote-author {
+    font-size: 0.62rem !important;
+    margin-top: 2px !important;
+  }
+
+  .p3r-about-actions {
+    display: flex !important;
+    gap: 6px !important;
+    margin-top: 2px !important;
+  }
+
+  .p3r-btn-primary,
+  .p3r-btn-secondary {
+    padding: clamp(4px, 0.7vh, 7px) clamp(10px, 1.3vw, 15px) !important;
+    font-size: clamp(0.68rem, 0.9vw, 0.80rem) !important;
   }
 
   #about-page .p3r-about-scroll-list {
     max-height: 120px !important;
   }
 
-  /* 8. Contact Subpage Screen */
+  /* 10. CONTACT Subpage: Clean Grid with Corrected Class Names (Zero Distortions) */
+  .p3r-contact-viewport {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: clamp(6px, 1vh, 12px) !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
   .p3r-mail-phone-wrap {
-    max-width: min(640px, 94vw) !important;
+    width: min(640px, 94vw) !important;
+    height: auto !important;
     max-height: calc(100vh - 16px) !important;
     max-height: calc(100dvh - 16px) !important;
     margin: auto !important;
     transform: none !important;
+    background: rgba(4, 15, 38, 0.96) !important;
+    border: 2px solid rgba(22, 207, 251, 0.55) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.9), 0 0 20px rgba(22, 207, 251, 0.3) !important;
+  }
+
+  .p3r-mail-chassis-svg {
+    display: none !important;
   }
 
   .p3r-mail-phone-card {
-    padding: 8px 12px !important;
+    padding: clamp(8px, 1.3vh, 15px) clamp(10px, 1.6vw, 18px) !important;
+    width: 100% !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .p3r-mail-header-row {
+    min-height: auto !important;
+    margin-bottom: clamp(4px, 0.8vh, 8px) !important;
   }
 
   .p3r-mail-watermark {
-    font-size: 1.45rem !important;
-    margin-bottom: 4px !important;
+    font-size: clamp(1.45rem, 3.2vw, 2.1rem) !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .p3r-mail-list-container {
+    padding-right: 0 !important;
+    margin-top: 0 !important;
+    gap: 0 !important;
   }
 
   .p3r-mail-list-6 {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 6px !important;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(170px, 35vw, 240px), 1fr)) !important;
+    gap: clamp(5px, 0.8vh, 7px) !important;
+    width: 100% !important;
   }
 
   .p3r-mail-row {
-    height: 38px !important;
-    padding: 0 8px !important;
+    height: clamp(38px, 5.2vh, 46px) !important;
+    border-radius: 5px !important;
+    transform: none !important;
+  }
+
+  .p3r-mail-row:hover,
+  .p3r-mail-row.active {
+    transform: translateY(-2px) !important;
   }
 
   .p3r-mail-icon-block {
-    width: 30px !important;
-    height: 30px !important;
+    width: clamp(34px, 5vw, 44px) !important;
   }
 
-  .p3r-mail-name {
-    font-size: 0.66rem !important;
+  .p3r-mail-content-block {
+    padding: 2px clamp(6px, 1vw, 10px) !important;
   }
 
-  .p3r-mail-val {
-    font-size: 0.76rem !important;
+  .p3r-mail-sender-row {
+    font-size: clamp(0.64rem, 0.85vw, 0.74rem) !important;
+    gap: 4px !important;
   }
 
-  /* 9. Subpage Floating Close Button placed symmetrically at Bottom Right */
-  .slink-bottom-hud {
-    position: fixed !important;
-    bottom: 8px !important;
-    right: 12px !important;
-    top: auto !important;
-    z-index: 250 !important;
+  .p3r-mail-sender-row svg {
+    width: 12px !important;
+    height: 12px !important;
   }
 
-  .slink-bottom-hud .buttons-row {
-    gap: 5px !important;
+  .p3r-mail-row-line {
+    margin: 2px 0 !important;
   }
 
-  .slink-hud-btn {
-    padding: 3px 8px 3px 6px !important;
-  }
-
-  .slink-hud-btn .control-key {
-    font-size: 0.65rem !important;
-    padding: 1px 5px !important;
-  }
-
-  .slink-hud-btn .control-text {
-    font-size: 0.75rem !important;
+  .p3r-mail-msg-text {
+    font-size: clamp(0.72rem, 1.0vw, 0.84rem) !important;
+    line-height: 1.25 !important;
+    padding-bottom: 2px !important;
   }
 }
 
