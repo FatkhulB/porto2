@@ -1216,17 +1216,17 @@ body.project-screen-active .side-number {
 }
 
 #skill-header-div {
-  width: clamp(480px, 35vw, 580px);
-  height: clamp(120px, 14vh, 140px);
+  width: clamp(450px, 33vw, 535px);
+  height: clamp(106px, 12.6vh, 125px);
   margin-bottom: clamp(10px, 1.4vh, 16px);
 }
 #skill-header-div #skill-header-text {
-  margin-left: clamp(24px, 2.4vw, 42px);
+  margin-left: clamp(18px, 1.8vw, 30px);
 }
 #skill-header-text .p3r-cutout-char {
-  font-size: clamp(1.78rem, 2.25vw, 2.6rem);
-  padding: 0.08em 0.14em 0.10em;
-  margin: 0 0.02em;
+  font-size: clamp(1.98rem, 2.5vw, 2.9rem);
+  padding: 0.06em 0.12em 0.08em;
+  margin: 0 0.015em;
 }
 
 /* Page Open Entrance Animation */

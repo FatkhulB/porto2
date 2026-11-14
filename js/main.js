@@ -361,6 +361,8 @@ if (bgmLobbyEl) {
   bgmLobbyEl.loop = true;
 }
 
+let bgmAutoplayArmed = false;
+
 function getAudioContext() {
   if (!audioCtx) {
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
@@ -384,9 +386,55 @@ function ensureBGM() {
   }
   if (bgmLobbyEl.paused) {
     const p = bgmLobbyEl.play();
-    if (p !== undefined) p.catch(() => {});
+    if (p !== undefined) {
+      p.then(() => {
+        if (window.p3rMusicPlayer && typeof window.p3rMusicPlayer.updateUI === "function") {
+          window.p3rMusicPlayer.updateUI();
+        }
+      }).catch(() => {
+        // Autoplay policy prevented immediate playback without user interaction.
+        // Listen on any user activity (even mouse movement, touch, or scroll) to start playback immediately!
+        if (!bgmAutoplayArmed) {
+          bgmAutoplayArmed = true;
+          const unlockEvents = [
+            "pointerdown", "touchstart", "click", "keydown",
+            "mousemove", "wheel", "scroll", "focus"
+          ];
+          const unlockBgm = () => {
+            if (!isBgmMuted && bgmLobbyEl.paused) {
+              const retryP = bgmLobbyEl.play();
+              if (retryP !== undefined) {
+                retryP.then(() => {
+                  if (window.p3rMusicPlayer && typeof window.p3rMusicPlayer.updateUI === "function") {
+                    window.p3rMusicPlayer.updateUI();
+                  }
+                }).catch(() => {});
+              }
+            }
+            const ctx = getAudioContext();
+            if (ctx && ctx.state === "suspended") {
+              ctx.resume().catch(() => {});
+            }
+            unlockEvents.forEach((evt) => {
+              window.removeEventListener(evt, unlockBgm, { capture: true });
+              document.removeEventListener(evt, unlockBgm, { capture: true });
+            });
+            bgmAutoplayArmed = false;
+          };
+          unlockEvents.forEach((evt) => {
+            window.addEventListener(evt, unlockBgm, { capture: true, once: true, passive: true });
+            document.addEventListener(evt, unlockBgm, { capture: true, once: true, passive: true });
+          });
+        }
+      });
+    }
   }
 }
+
+// Immediately attempt playback on script load
+ensureBGM();
+window.addEventListener("DOMContentLoaded", ensureBGM);
+window.addEventListener("load", ensureBGM);
 
 function updateAudioToggleUI() {
   if (toggleBgmBtn) {
@@ -1687,6 +1735,7 @@ async function startLoadingSequence() {
 
   // Preload audio and fonts while running initial loading display
   loadAudioBuffers();
+  ensureBGM();
 
   if (loadingStatusText) loadingStatusText.textContent = "Loading...";
   if (loadingIndicatorWrap) loadingIndicatorWrap.style.display = "flex";
@@ -2140,6 +2189,7 @@ try {
 } catch (err) {}
 
 // URL Navigation Shortcuts & Responsive Init (Runs seamlessly on Desktop, iPad, Tablet, Mobile)
+ensureBGM();
 if (urlParams.get("page") === "project") {
   if (loadingScreen) loadingScreen.style.display = "none";
   isStarted = true;
@@ -2500,6 +2550,7 @@ function setupP3RMusicPlayer() {
 
 // Initialize Music Player
 setupP3RMusicPlayer();
+ensureBGM();
 
 // ==========================================================================
 // 16. Persona 3 Reload - Mobile Portrait Blocker & Orientation Helper
