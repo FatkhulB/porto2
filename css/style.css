@@ -4376,11 +4376,11 @@ html, body {
 
 
 /* ==========================================================================
-   PERSONA 3 RELOAD - UNIVERSAL RESPONSIVE ADAPTATION (MOBILE, TABLET, COMPACT)
-   Applies to screens <= 1180px width OR <= 800px height
-   Prevents all button collisions, overlaps, and aligns layout cleanly like PC
+   PERSONA 3 RELOAD - MOBILE & COMPACT HANDHELD ADAPTATION ONLY
+   Applies STRICTLY to mobile viewports (<= 900px width OR handheld landscape <= 500px height)
+   Desktop PCs and Laptops NEVER enter this query, preserving 100% full-size PC layout!
    ========================================================================== */
-@media (max-width: 1180px), (max-height: 800px) {
+@media (max-width: 900px), ((max-height: 500px) and (orientation: landscape)) {
 
   /* 1. Main Canvas & Makoto Yuki Video Placement */
   .p3r-main {
