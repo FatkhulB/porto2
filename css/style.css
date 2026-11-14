@@ -1195,24 +1195,24 @@ body.project-screen-active .side-number {
   user-select: none;
 }
 
-/* Custom Proportional Sizing per Headline */
+/* Custom Proportional Sizing per Headline - ABOUT (Compact Border, Enlarged Cutout Text) */
 #about-header-div {
-  width: clamp(340px, 24vw, 420px);
-  height: clamp(110px, 12.8vh, 128px);
+  width: clamp(280px, 20vw, 360px);
+  height: clamp(86px, 10.4vh, 104px);
 }
 #about-header-div .p3r-header-slash-main,
 #about-header-div .p3r-shard-back-band {
   clip-path: polygon(0 0, 50% 10%, 53% 0%, 100% 0%, calc(100% - 32px) 100%, 0 100%);
 }
 #about-header-div #about-header-text {
-  margin-left: clamp(68px, 6.2vw, 84px);
+  margin-left: clamp(56px, 5.0vw, 72px);
 }
 #about-header-text .p3r-cutout-group {
   gap: clamp(0.06rem, 0.16vw, 0.20rem);
 }
 #about-header-text .p3r-cutout-char {
-  font-size: clamp(2.55rem, 3.4vw, 4.0rem);
-  padding: 0.06em 0.12em 0.08em;
+  font-size: clamp(2.85rem, 3.8vw, 4.3rem);
+  padding: 0.06em 0.14em 0.08em;
   margin: 0 0.015em;
 }
 
@@ -1873,20 +1873,20 @@ body.about-screen-active .character-viewport {
 }
 
 #about-page .p3r-geometric-header {
-  margin-bottom: clamp(18px, 2.4vh, 28px);
+  margin-bottom: clamp(12px, 1.8vh, 20px);
 }
 
 /* Left-Docked About Card (Larger, Solid Deep Black, No Transparency, No Blue Line) */
 .p3r-about-card {
-  margin-left: 5vw;
-  width: min(880px, 68vw);
+  margin-left: clamp(24px, 3.8vw, 56px);
+  width: min(860px, 64vw);
   background: #090d14; /* 100% Solid Deep Black - Tanpa Transparansi */
   border: 1px solid #1c2433;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.96);
-  padding: 30px 40px 32px 40px;
+  padding: clamp(22px, 2.6vh, 30px) clamp(28px, 2.8vw, 38px);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: clamp(12px, 1.5vh, 16px);
   clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%);
   position: relative;
   pointer-events: auto;
@@ -4579,8 +4579,18 @@ html, body {
     margin-left: clamp(66px, 7vw, 82px) !important;
   }
 
+  /* Mobile Corner Back Button on Mobile: Compact & sleek */
+  .p3r-mobile-corner-back,
+  .p3r-corner-back {
+    top: clamp(8px, 1.8vh, 14px) !important;
+    left: clamp(8px, 1.8vw, 14px) !important;
+    width: clamp(34px, 5.2vh, 40px) !important;
+    height: clamp(34px, 5.2vh, 40px) !important;
+  }
+
   /* 6. Subpage Bottom-Right HUD: Neatly docked at Bottom Right */
-  .slink-bottom-hud {
+  .slink-bottom-hud,
+  .p3r-contact-bottom-hud {
     position: fixed !important;
     bottom: clamp(8px, 1.6vh, 16px) !important;
     right: clamp(10px, 2vw, 18px) !important;
@@ -4588,7 +4598,8 @@ html, body {
     z-index: 250 !important;
   }
 
-  .slink-bottom-hud .buttons-row {
+  .slink-bottom-hud .buttons-row,
+  .p3r-contact-bottom-hud .buttons-row {
     gap: 6px !important;
   }
 
@@ -4931,10 +4942,10 @@ html, body {
     font-size: clamp(0.64rem, 0.82vw, 0.72rem) !important;
   }
 
-  /* 9. ABOUT Subpage: Centered Card with Balanced Proportions */
+  /* 9. ABOUT Subpage: Clean, Left-Aligned Card with Balanced Proportions */
   #about-page .slink-viewport {
     flex-direction: column !important;
-    padding: clamp(6px, 1.4vh, 14px) clamp(10px, 1.8vw, 18px) !important;
+    padding: clamp(4px, 1.0vh, 10px) clamp(8px, 1.6vw, 16px) !important;
     overflow: hidden !important;
     box-sizing: border-box !important;
   }
@@ -4944,15 +4955,33 @@ html, body {
     max-width: 100% !important;
   }
 
+  #about-header-div {
+    width: clamp(230px, 42vw, 290px) !important;
+    height: clamp(50px, 8.4vh, 62px) !important;
+    transform: none !important;
+    margin-top: 0 !important;
+    margin-bottom: clamp(3px, 0.8vh, 6px) !important;
+  }
+
+  #about-header-div #about-header-text {
+    margin-left: clamp(52px, 5.8vw, 66px) !important;
+  }
+
+  #about-header-text .p3r-cutout-char {
+    font-size: clamp(1.4rem, 2.5vw, 1.72rem) !important;
+    padding: 0.05em 0.12em 0.07em !important;
+  }
+
   #about-page .p3r-about-card {
-    width: min(680px, 94vw) !important;
-    max-height: calc(100vh - clamp(96px, 13.5vh, 130px)) !important;
-    max-height: calc(100dvh - clamp(96px, 13.5vh, 130px)) !important;
-    margin: 0 auto !important;
-    padding: clamp(10px, 1.5vh, 16px) clamp(12px, 1.8vw, 20px) !important;
+    width: min(720px, calc(100vw - 32px)) !important;
+    max-height: calc(100vh - clamp(68px, 10.5vh, 88px)) !important;
+    max-height: calc(100dvh - clamp(68px, 10.5vh, 88px)) !important;
+    margin: 0 !important;
+    margin-left: clamp(10px, 2.0vw, 20px) !important;
+    padding: clamp(8px, 1.3vh, 14px) clamp(12px, 1.8vw, 18px) !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
-    gap: clamp(6px, 1vh, 10px) !important;
+    gap: clamp(6px, 0.9vh, 10px) !important;
   }
 
   .p3r-about-top-row {
@@ -4960,20 +4989,20 @@ html, body {
   }
 
   .p3r-photo-box {
-    width: clamp(50px, 6.8vw, 64px) !important;
-    height: clamp(50px, 6.8vw, 64px) !important;
+    width: clamp(48px, 6.4vw, 60px) !important;
+    height: clamp(48px, 6.4vw, 60px) !important;
   }
 
   .p3r-about-name {
-    font-size: clamp(1.12rem, 1.8vw, 1.42rem) !important;
+    font-size: clamp(1.10rem, 1.8vw, 1.38rem) !important;
   }
 
   .p3r-about-title {
-    font-size: clamp(0.66rem, 0.95vw, 0.80rem) !important;
+    font-size: clamp(0.64rem, 0.92vw, 0.78rem) !important;
   }
 
   .p3r-about-location {
-    font-size: clamp(0.58rem, 0.8vw, 0.70rem) !important;
+    font-size: clamp(0.56rem, 0.78vw, 0.68rem) !important;
   }
 
   .p3r-about-tabs {
@@ -4994,9 +5023,16 @@ html, body {
     line-height: 1.32 !important;
   }
 
-  .p3r-quote-card {
+  .p3r-about-quote {
+    display: flex !important;
+    gap: 10px !important;
     padding: clamp(6px, 0.9vh, 9px) clamp(8px, 1.2vw, 12px) !important;
     margin-top: 2px !important;
+    border-radius: 4px !important;
+  }
+
+  .p3r-quote-mark {
+    font-size: 1.3rem !important;
   }
 
   .p3r-quote-text {
@@ -5015,17 +5051,17 @@ html, body {
     margin-top: 2px !important;
   }
 
-  .p3r-btn-primary,
-  .p3r-btn-secondary {
+  .p3r-about-btn,
+  .p3r-about-btn.primary {
     padding: clamp(4px, 0.7vh, 7px) clamp(10px, 1.3vw, 15px) !important;
     font-size: clamp(0.68rem, 0.9vw, 0.80rem) !important;
   }
 
   #about-page .p3r-about-scroll-list {
-    max-height: 120px !important;
+    max-height: clamp(110px, 26vh, 160px) !important;
   }
 
-  /* 10. CONTACT Subpage: Clean Grid with Corrected Class Names (Zero Distortions) */
+  /* 10. CONTACT Subpage: Clean 2-Column Handheld Grid (Zero Overlap & Zero Distortions) */
   .p3r-contact-viewport {
     display: flex !important;
     align-items: center !important;
@@ -5036,15 +5072,15 @@ html, body {
   }
 
   .p3r-mail-phone-wrap {
-    width: min(640px, 94vw) !important;
+    width: min(660px, 94vw) !important;
     height: auto !important;
     max-height: calc(100vh - 16px) !important;
     max-height: calc(100dvh - 16px) !important;
     margin: auto !important;
     transform: none !important;
     background: rgba(4, 15, 38, 0.96) !important;
-    border: 2px solid rgba(22, 207, 251, 0.55) !important;
-    border-radius: 12px !important;
+    border: 2px solid rgba(22, 207, 251, 0.65) !important;
+    border-radius: 10px !important;
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.9), 0 0 20px rgba(22, 207, 251, 0.3) !important;
   }
 
@@ -5053,7 +5089,7 @@ html, body {
   }
 
   .p3r-mail-phone-card {
-    padding: clamp(8px, 1.3vh, 15px) clamp(10px, 1.6vw, 18px) !important;
+    padding: clamp(8px, 1.3vh, 14px) clamp(10px, 1.6vw, 18px) !important;
     width: 100% !important;
     height: auto !important;
     box-sizing: border-box !important;
@@ -5071,23 +5107,33 @@ html, body {
     transform: none !important;
   }
 
-  .p3r-mail-list-container {
-    padding-right: 0 !important;
-    margin-top: 0 !important;
-    gap: 0 !important;
+  .p3r-mail-watermark .p3r-cutout-char {
+    font-size: clamp(1.25rem, 2.6vw, 1.7rem) !important;
+    padding: 0.05em 0.12em 0.07em !important;
   }
 
+  .p3r-mail-list-container,
+  .p3r-mail-list-5,
   .p3r-mail-list-6 {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(170px, 35vw, 240px), 1fr)) !important;
-    gap: clamp(5px, 0.8vh, 7px) !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: clamp(4px, 0.7vh, 7px) clamp(8px, 1.2vw, 14px) !important;
     width: 100% !important;
+    padding-right: 0 !important;
+    margin-top: 0 !important;
   }
 
   .p3r-mail-row {
     height: clamp(38px, 5.2vh, 46px) !important;
     border-radius: 5px !important;
     transform: none !important;
+  }
+
+  .p3r-mail-row.is-instagram {
+    grid-column: 1 / -1 !important;
+    max-width: 440px !important;
+    justify-self: center !important;
+    width: 100% !important;
   }
 
   .p3r-mail-row:hover,
