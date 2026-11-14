@@ -3501,10 +3501,8 @@ html, body {
 .p3r-music-modal {
   position: fixed;
   inset: 0;
-  z-index: 400;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
+  z-index: 9990;
+  display: block;
   pointer-events: auto;
 }
 
@@ -3517,11 +3515,9 @@ html, body {
 }
 
 .music-floating-dialog {
-  position: relative;
-  z-index: 10;
-  margin-top: clamp(4.5rem, 9.5vh, 6.8rem);
-  margin-right: clamp(1.8rem, 3.8vw, 3.8rem);
-  width: clamp(380px, 32vw, 450px);
+  position: fixed;
+  z-index: 9995;
+  width: clamp(340px, 32vw, 420px);
   background: transparent;
   display: flex;
   flex-direction: column;
@@ -4470,10 +4466,15 @@ html, body {
   }
 
   .music-floating-dialog {
-    margin: auto !important;
-    width: min(480px, 90vw) !important;
-    max-height: 94vh !important;
-    padding: 10px 14px 12px !important;
+    position: fixed !important;
+    z-index: 9995 !important;
+    margin: 0 !important;
+    width: min(340px, 86vw) !important;
+    max-height: 88vh !important;
+    max-height: 88dvh !important;
+    padding: 6px 10px 8px !important;
+    gap: 5px !important;
+    overflow-y: auto !important;
   }
 
   /* 5. Top-Left Corner: Circular Back Button with Clean Air Gap */
@@ -4540,14 +4541,14 @@ html, body {
     display: none !important;
   }
 
-  /* 7. PROJECT Subpage: Clean Side-by-Side (38% Left : 48% Right, Perfectly Aligned, Generous Air Gap!) */
+  /* 7. PROJECT Subpage: Clean Side-by-Side (38% Left : 50% Right, Zero Overlap, Zero Cutoff!) */
   #project-page .slink-viewport {
     display: flex !important;
     flex-direction: row !important;
     justify-content: flex-start !important;
     align-items: flex-start !important;
-    gap: clamp(28px, 4.5vw, 56px) !important;
-    padding: clamp(10px, 2vh, 18px) clamp(16px, 2.5vw, 32px) !important;
+    gap: clamp(20px, 3.8vw, 42px) !important;
+    padding: clamp(8px, 1.5vh, 14px) clamp(14px, 2.2vw, 26px) !important;
     height: 100vh !important;
     height: 100dvh !important;
     box-sizing: border-box !important;
@@ -4564,19 +4565,53 @@ html, body {
     overflow: visible !important;
   }
 
+  /* CRITICAL: Constrain PROJECT Geometric Banner strictly inside left column to eliminate collision */
   #project-page .p3r-geometric-header {
-    transform: scale(clamp(0.66, 1.0vw, 0.76)) !important;
-    transform-origin: left center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: clamp(54px, 9.2vh, 70px) !important;
+    transform: none !important;
     margin-top: 0 !important;
-    margin-bottom: clamp(6px, 1.2vh, 12px) !important;
+    margin-bottom: clamp(3px, 0.8vh, 6px) !important;
+    overflow: hidden !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+  }
+
+  #project-page .p3r-shard-back-band {
+    left: -40px !important;
+    top: -4px !important;
+    width: calc(100% + 40px) !important;
+    height: 100% !important;
+    clip-path: polygon(0 0, 82% 0%, 100% 100%, 0 100%) !important;
+  }
+
+  #project-page .p3r-header-slash-main {
+    left: -40px !important;
+    top: 0 !important;
+    width: calc(100% + 40px) !important;
+    height: 100% !important;
+    clip-path: polygon(0 0, 82% 0%, 100% 100%, 0 100%) !important;
+  }
+
+  #project-page .p3r-banner-title {
+    margin-left: clamp(42px, 5.2vw, 58px) !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  #project-page .p3r-banner-title .p3r-cutout-char {
+    font-size: clamp(1.15rem, 1.8vw, 1.45rem) !important;
+    padding: 0.04em 0.10em 0.06em !important;
   }
 
   #project-page .slink-cards-container {
     display: flex !important;
     flex-direction: column !important;
-    gap: clamp(4px, 0.8vh, 7px) !important;
-    max-height: calc(100vh - clamp(75px, 12vh, 95px)) !important;
-    max-height: calc(100dvh - clamp(75px, 12vh, 95px)) !important;
+    gap: clamp(3.5px, 0.7vh, 5.5px) !important;
+    max-height: calc(100vh - clamp(68px, 11vh, 84px)) !important;
+    max-height: calc(100dvh - clamp(68px, 11vh, 84px)) !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
@@ -4594,7 +4629,7 @@ html, body {
   }
 
   #project-page .slink-card {
-    height: clamp(36px, 5.0vh, 44px) !important;
+    height: clamp(34px, 4.6vh, 40px) !important;
     width: 100% !important;
     max-width: 100% !important;
     margin-left: 0 !important;
@@ -4614,85 +4649,106 @@ html, body {
   }
 
   #project-page .card-numeral-box {
-    width: clamp(34px, 4.2vw, 44px) !important;
+    width: clamp(32px, 3.8vw, 40px) !important;
   }
 
   #project-page .card-numeral-text {
-    font-size: clamp(1.0rem, 1.5vw, 1.3rem) !important;
+    font-size: clamp(0.92rem, 1.35vw, 1.20rem) !important;
   }
 
   #project-page .card-main-body {
-    padding: 0 clamp(8px, 1.1vw, 12px) !important;
+    padding: 0 clamp(7px, 1.0vw, 11px) !important;
     overflow: hidden !important;
   }
 
   #project-page .card-title-text {
-    font-size: clamp(0.76rem, 1.1vw, 0.94rem) !important;
+    font-size: clamp(0.72rem, 1.0vw, 0.88rem) !important;
   }
 
   #project-page .card-subtitle-text {
-    font-size: clamp(0.52rem, 0.74vw, 0.64rem) !important;
+    font-size: clamp(0.48rem, 0.68vw, 0.60rem) !important;
     margin-top: 1px !important;
   }
 
   #project-page .card-red-accent {
-    width: 16px !important;
+    width: 15px !important;
   }
 
+  /* PREVIEW PANEL: Positioned cleanly below launcher, generous bottom clearance, zero cropping! */
   #project-page .slink-preview-panel {
-    flex: 0 0 48% !important;
-    width: 48% !important;
-    max-width: 48% !important;
+    flex: 0 0 50% !important;
+    width: 50% !important;
+    max-width: 50% !important;
     align-self: flex-start !important;
-    margin-top: clamp(68px, 9.5vh, 92px) !important; /* Perfectly aligns top of preview with top of Card I! */
+    margin-top: clamp(24px, 5.0vh, 38px) !important;
     padding: 0 !important;
-    max-height: calc(100vh - clamp(85px, 12vh, 115px)) !important;
-    max-height: calc(100dvh - clamp(85px, 12vh, 115px)) !important;
+    max-height: calc(100vh - clamp(42px, 8.0vh, 58px)) !important;
+    max-height: calc(100dvh - clamp(42px, 8.0vh, 58px)) !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
   }
 
   #project-page .slink-preview-card {
-    padding: clamp(6px, 1.0vh, 10px) clamp(8px, 1.2vw, 14px) !important;
+    padding: clamp(6px, 1.0vh, 9px) clamp(8px, 1.2vw, 12px) clamp(8px, 1.2vh, 11px) !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    background: rgba(4, 15, 38, 0.94) !important;
+    border: 2px solid #16cffb !important;
+    border-radius: 6px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.85), 0 0 16px rgba(22, 207, 251, 0.35) !important;
   }
 
   #project-page .slink-preview-image-wrap {
-    max-height: clamp(80px, 14vh, 120px) !important;
+    height: clamp(75px, 16vh, 105px) !important;
+    max-height: clamp(75px, 16vh, 105px) !important;
     border-radius: 4px !important;
     overflow: hidden !important;
+    background: #010814 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   #project-page .slink-preview-img {
-    max-height: clamp(80px, 14vh, 120px) !important;
-    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: clamp(75px, 16vh, 105px) !important;
+    object-fit: contain !important;
   }
 
   #project-page .slink-preview-title {
-    font-size: clamp(0.88rem, 1.3vw, 1.08rem) !important;
+    font-size: clamp(0.85rem, 1.25vw, 1.02rem) !important;
     margin: 3px 0 2px !important;
+    line-height: 1.18 !important;
   }
 
   #project-page .slink-preview-desc {
-    font-size: clamp(0.66rem, 0.9vw, 0.76rem) !important;
+    font-size: clamp(0.64rem, 0.86vw, 0.74rem) !important;
     line-height: 1.25 !important;
     margin-bottom: 4px !important;
   }
 
   #project-page .slink-preview-tools {
+    display: flex !important;
+    flex-wrap: wrap !important;
     gap: 3px !important;
     margin-bottom: 4px !important;
   }
 
   #project-page .slink-preview-tool-tag {
-    font-size: clamp(0.56rem, 0.78vw, 0.66rem) !important;
+    font-size: clamp(0.56rem, 0.76vw, 0.65rem) !important;
     padding: 1px 5px !important;
   }
 
+  #project-page .slink-preview-actions {
+    display: flex !important;
+    justify-content: flex-end !important;
+    margin-top: 2px !important;
+  }
+
   #project-page .slink-preview-open-btn {
-    padding: clamp(3.5px, 0.6vh, 5.5px) clamp(8px, 1.1vw, 12px) !important;
+    padding: clamp(3.5px, 0.6vh, 5.5px) clamp(9px, 1.2vw, 14px) !important;
     font-size: clamp(0.68rem, 0.9vw, 0.78rem) !important;
   }
 

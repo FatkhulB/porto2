@@ -2393,9 +2393,71 @@ function setupP3RMusicPlayer() {
     if (!isSfxMuted) playConfirmSFX();
   }
 
+  function isMusicModalOpen() {
+    return modal && modal.style.display !== "none" && modal.style.display !== "";
+  }
+
+  function updateMusicDialogPosition() {
+    if (!modal || !launcher) return;
+    const dialog = modal.querySelector(".music-floating-dialog");
+    if (!dialog) return;
+
+    const launcherRect = launcher.getBoundingClientRect();
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+
+    // Responsive width based on screen width
+    const isMobileLandscape = vh <= 550 || vw <= 900;
+    const dialogWidth = Math.min(isMobileLandscape ? 340 : 420, vw - 16);
+    dialog.style.setProperty("width", `${dialogWidth}px`, "important");
+    dialog.style.setProperty("max-width", `${vw - 16}px`, "important");
+
+    // Dialog rendered height or estimated fallback
+    const dialogHeight = dialog.offsetHeight || (isMobileLandscape ? 220 : 320);
+
+    // Horizontal placement: anchor near launcher and clamp within screen bounds
+    let left;
+    const launcherCenterX = launcherRect.left + launcherRect.width / 2;
+    if (launcherCenterX > vw / 2) {
+      // Launcher is on right half: align dialog right edge with launcher right edge
+      left = launcherRect.right - dialogWidth;
+    } else {
+      // Launcher is on left half: align dialog left edge with launcher left edge
+      left = launcherRect.left;
+    }
+    // Clamp horizontally with 8px margin
+    left = Math.max(8, Math.min(left, vw - dialogWidth - 8));
+
+    // Vertical placement: place below launcher if space permits, else above
+    const spaceBelow = vh - launcherRect.bottom - 8;
+    const spaceAbove = launcherRect.top - 8;
+
+    let top;
+    if (spaceBelow >= dialogHeight || spaceBelow >= spaceAbove) {
+      top = launcherRect.bottom + 8;
+    } else {
+      top = launcherRect.top - dialogHeight - 8;
+    }
+    // Clamp vertically with 8px margin
+    top = Math.max(8, Math.min(top, vh - dialogHeight - 8));
+
+    dialog.style.setProperty("position", "fixed", "important");
+    dialog.style.setProperty("left", `${Math.round(left)}px`, "important");
+    dialog.style.setProperty("top", `${Math.round(top)}px`, "important");
+    dialog.style.setProperty("right", "auto", "important");
+    dialog.style.setProperty("bottom", "auto", "important");
+    dialog.style.setProperty("margin", "0", "important");
+  }
+
   function openMusicModal() {
-    if (modal) modal.style.display = "flex";
-    updatePlayerDeckUI();
+    if (modal) {
+      modal.style.display = "flex";
+      updatePlayerDeckUI();
+      updateMusicDialogPosition();
+      requestAnimationFrame(() => {
+        updateMusicDialogPosition();
+      });
+    }
     if (!isSfxMuted) playSFX();
   }
 
@@ -2404,8 +2466,16 @@ function setupP3RMusicPlayer() {
     if (!isSfxMuted) playCloseMenuSFX();
   }
 
+  function toggleMusicModal() {
+    if (isMusicModalOpen()) {
+      closeMusicModal();
+    } else {
+      openMusicModal();
+    }
+  }
+
   // Floating Draggable Launcher Setup (Bisa dipindah kemana saja secara bebas)
-  function setupDraggableLauncher(el, onOpen) {
+  function setupDraggableLauncher(el, onToggle) {
     if (!el) return;
 
     let isPointerDown = false;
@@ -2469,6 +2539,11 @@ function setupP3RMusicPlayer() {
         el.style.setProperty("top", `${Math.round(newY)}px`, "important");
         el.style.setProperty("right", "auto", "important");
         el.style.setProperty("bottom", "auto", "important");
+
+        // If music playlist is open, keep dialog anchored to launcher!
+        if (isMusicModalOpen()) {
+          updateMusicDialogPosition();
+        }
       }
     }
 
@@ -2492,6 +2567,10 @@ function setupP3RMusicPlayer() {
         el.style.setProperty("top", `${Math.round(clampedY)}px`, "important");
         el.style.setProperty("right", "auto", "important");
         el.style.setProperty("bottom", "auto", "important");
+
+        if (isMusicModalOpen()) {
+          updateMusicDialogPosition();
+        }
       }
     }
 
@@ -2507,8 +2586,8 @@ function setupP3RMusicPlayer() {
         hasMoved = false;
         return;
       }
-      if (typeof onOpen === "function") {
-        onOpen(e);
+      if (typeof onToggle === "function") {
+        onToggle(e);
       }
     });
 
@@ -2521,11 +2600,14 @@ function setupP3RMusicPlayer() {
         el.style.setProperty("left", `${Math.round(clampedX)}px`, "important");
         el.style.setProperty("top", `${Math.round(clampedY)}px`, "important");
       }
+      if (isMusicModalOpen()) {
+        updateMusicDialogPosition();
+      }
     }, { passive: true });
   }
 
   // Hook launcher & modal controls
-  if (launcher) setupDraggableLauncher(launcher, openMusicModal);
+  if (launcher) setupDraggableLauncher(launcher, toggleMusicModal);
   if (closeBtn) closeBtn.addEventListener("click", closeMusicModal);
   if (backdrop) backdrop.addEventListener("click", closeMusicModal);
   
