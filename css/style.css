@@ -1227,6 +1227,9 @@ body.project-screen-active .side-number {
   width: clamp(375px, 26.5vw, 450px);
   height: clamp(106px, 12.4vh, 124px);
 }
+#slink-project-div #slink-project-text {
+  margin-left: clamp(24px, 2.4vw, 42px);
+}
 #slink-project-text .p3r-cutout-char {
   font-size: clamp(2.25rem, 2.85vw, 3.3rem);
 }
