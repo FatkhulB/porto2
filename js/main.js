@@ -1775,47 +1775,57 @@ async function startLoadingSequence() {
 
   // Preload audio and fonts while running initial loading display
   loadAudioBuffers();
-  ensureBGM();
 
   if (loadingStatusText) loadingStatusText.textContent = "Loading...";
   if (loadingIndicatorWrap) loadingIndicatorWrap.style.display = "flex";
-  if (loadingStateText) loadingStateText.style.display = "none";
+  const continueWrap = document.getElementById("loading-continue-wrap");
+  if (continueWrap) continueWrap.style.display = "none";
 
   const fontPromise = (document.fonts && document.fonts.ready)
     ? Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 800))]).catch(() => {})
     : Promise.resolve();
 
-  await Promise.all([waitAbortable(1200), waitForMenuVideoReady(12000), fontPromise]);
+  await Promise.all([waitAbortable(1400), waitForMenuVideoReady(12000), fontPromise]);
   if (isStarted) return;
 
   isLoaded = true;
-  unlockAndPlayAudio();
-  playConfirmSFX();
 
-  const ctx = getAudioContext();
-  if (ctx && ctx.state !== "running") {
-    ctx.resume().catch(() => {});
+  // Reveal the title screen "CLICK TO CONTINUE" button
+  if (loadingIndicatorWrap) {
+    loadingIndicatorWrap.style.display = "none";
+  }
+  if (continueWrap) {
+    continueWrap.style.display = "flex";
+  }
+}
+
+function triggerContinueToMenu(e) {
+  if (!isLoaded || isStarted) return;
+  if (e && e.cancelable) e.preventDefault();
+
+  const continueBtn = document.getElementById("p3r-continue-btn");
+  if (continueBtn) {
+    continueBtn.classList.add("activating");
   }
 
-  await waitAbortable(150);
-  if (isStarted) return;
+  unlockAudioEngine();
+  playConfirmSFX();
 
-  enterExperience();
+  setTimeout(() => {
+    enterExperience();
+  }, 220);
 }
 
 if (loadingScreen) {
-  const handleStartTap = (e) => {
-    if (isStarted) return;
-    if (e && e.cancelable) e.preventDefault();
-    isLoaded = true;
-    unlockAndPlayAudio();
-    playConfirmSFX();
-    enterExperience();
-  };
-  loadingScreen.addEventListener("pointerdown", handleStartTap);
-  loadingScreen.addEventListener("touchstart", handleStartTap, { passive: true });
-  loadingScreen.addEventListener("click", handleStartTap);
-  loadingScreen.addEventListener("touchend", handleStartTap);
+  const continueBtn = document.getElementById("p3r-continue-btn");
+  if (continueBtn) {
+    continueBtn.addEventListener("click", triggerContinueToMenu);
+  }
+  loadingScreen.addEventListener("click", (e) => {
+    if (isLoaded && !isStarted) {
+      triggerContinueToMenu(e);
+    }
+  });
 }
 
 function enterExperience() {
@@ -1932,8 +1942,8 @@ if (contactMailRows && contactMailRows.length > 0) {
 // Keyboard Router
 document.addEventListener("keydown", (e) => {
   if (!isStarted) {
-    if (isLoaded || e.key === "Enter" || e.key === " ") {
-      enterExperience();
+    if (isLoaded && (e.key === "Enter" || e.key === " " || e.key.length === 1)) {
+      triggerContinueToMenu(e);
     }
     return;
   }

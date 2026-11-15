@@ -236,41 +236,136 @@ body.project-screen-active .side-number {
 }
 
 .loading-text,
-#loading-status-text,
-.start-text,
-#loading-state-text {
+#loading-status-text {
   display: none !important;
 }
 
-.start-text {
-  font-family: 'Anton', 'Persona', sans-serif;
-  font-size: 64px;
-  font-weight: 400;
-  color: #ffffff;
-  line-height: 1.1;
-  text-shadow:
-    -3px -3px 0 #000,
-    3px -3px 0 #000,
-    -3px 3px 0 #000,
-    3px 3px 0 #000;
-  animation: p3LoadingPulse 1s ease-in-out infinite;
+/* ==========================================================================
+   Persona 3 Reload Post-Loading Title Screen Prompt (Click to Continue)
+   ========================================================================== */
+.loading-continue-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 1.8vh, 16px);
+  animation: p3rContinueFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
   user-select: none;
-  text-align: center;
+  z-index: 10;
 }
 
-.start-text.loading-complete {
-  color: #ffff00;
+@keyframes p3rContinueFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(14px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
-@keyframes p3LoadingPulse {
+.p3r-continue-btn {
+  background: rgba(0, 0, 0, 0.55);
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: clamp(10px, 1.8vh, 16px) clamp(28px, 4.0vw, 48px);
+  font-family: 'Anton', 'Bebas Neue', var(--font-new-rodin-ub), var(--font-rodin), Impact, sans-serif;
+  font-size: clamp(1.4rem, 2.8vw, 2.5rem);
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  transform: skewX(-12deg);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25), inset 0 0 12px rgba(255, 255, 255, 0.1);
+  animation: p3rGameTitlePulse 1.35s ease-in-out infinite;
+  transition: background-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.p3r-continue-btn .continue-text {
+  display: inline-block;
+  transform: skewX(12deg);
+  color: #ffffff;
+  transition: color 0.18s ease;
+}
+
+.p3r-continue-btn:hover {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.95), 0 0 15px #ffffff;
+  transform: skewX(-12deg) scale(1.05);
+}
+
+.p3r-continue-btn:hover .continue-text {
+  color: #000000;
+}
+
+.p3r-continue-btn:active,
+.p3r-continue-btn.activating {
+  background: #ffffff;
+  color: #000000;
+  transform: skewX(-12deg) scale(0.96);
+  animation: p3rGameStartFlash 0.12s steps(2, start) infinite;
+}
+
+.p3r-continue-btn.activating .continue-text {
+  color: #000000;
+}
+
+/* Classic Video Game Title Screen Pulsing Animation */
+@keyframes p3rGameTitlePulse {
   0%,
   100% {
-    transform: scale(1);
+    opacity: 1;
+    transform: skewX(-12deg) scale(1);
+    box-shadow: 0 0 22px rgba(255, 255, 255, 0.4), inset 0 0 14px rgba(255, 255, 255, 0.15);
   }
 
   50% {
-    transform: scale(1.1);
+    opacity: 0.38;
+    transform: skewX(-12deg) scale(0.985);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15), inset 0 0 4px rgba(255, 255, 255, 0.05);
+  }
+}
+
+@keyframes p3rGameStartFlash {
+  0%,
+  100% {
+    filter: brightness(2.2);
+    opacity: 1;
+  }
+
+  50% {
+    filter: brightness(0.4);
+    opacity: 0.15;
+  }
+}
+
+.continue-subtext {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: clamp(0.68rem, 1.1vw, 0.85rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  animation: p3rGameSubPulse 1.35s ease-in-out infinite;
+}
+
+@keyframes p3rGameSubPulse {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+
+  50% {
+    opacity: 0.35;
   }
 }
 

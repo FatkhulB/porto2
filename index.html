@@ -14,16 +14,24 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap"></noscript>
-  <link rel="stylesheet" href="css/style.css?v=77">
+  <link rel="stylesheet" href="css/style.css?v=78">
 </head>
 <body>
   <!-- Persona 3 Style Initial Loading Screen -->
   <div id="loading-screen" class="p3r-loading-screen" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+    <!-- Step 1: Loading Indicator GIF -->
     <div id="loading-indicator-wrap" class="loading-indicator-wrap">
       <img id="loading-gif" class="loading-gif" src="assets/InitLoading.gif" alt="Loading" height="60" />
       <span id="loading-status-text" class="loading-text" style="display: none !important;"></span>
     </div>
-    <span id="loading-state-text" class="start-text" style="display: none !important;"></span>
+
+    <!-- Step 2: Post-Loading Title Screen Prompt (Click Button to Continue) -->
+    <div id="loading-continue-wrap" class="loading-continue-wrap" style="display: none;">
+      <button id="p3r-continue-btn" class="p3r-continue-btn" type="button" aria-label="Click to Continue">
+        <span class="continue-text">CLICK TO CONTINUE</span>
+      </button>
+      <div class="continue-subtext">PRESS ANY KEY OR CLICK TO ENTER</div>
+    </div>
   </div>
 
   <!-- Persona 3 Reload Mobile Portrait Blocker & Orientation Guide -->
@@ -794,6 +802,6 @@
     </div>
   </aside>
 
-  <script src="js/main.js?v=77" defer></script>
+  <script src="js/main.js?v=78" defer></script>
 </body>
 </html>
