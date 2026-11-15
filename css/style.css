@@ -1351,7 +1351,7 @@ body.project-screen-active .side-number {
 
 /* Custom Proportional Sizing per Headline - CERTIFICATE (Scaled identically to ABOUT) */
 #skill-header-div {
-  width: clamp(640px, 45vw, 780px);
+  width: clamp(520px, 36vw, 610px);
   height: clamp(86px, 10.4vh, 104px);
   margin-bottom: clamp(10px, 1.4vh, 16px);
 }
@@ -3408,14 +3408,10 @@ body {
     display: none !important;
   }
 
-  /* Subpage Bottom Right HUD: Neatly docked at bottom-right, isolated from top-right BGM */
-  .slink-bottom-hud {
-    position: fixed !important;
-    bottom: clamp(10px, 2vh, 18px) !important;
-    right: clamp(12px, 2.5vw, 24px) !important;
-    top: auto !important;
-    z-index: 250 !important;
-    pointer-events: auto !important;
+  /* Subpage Bottom Right HUD: Hidden on mobile per user request */
+  .slink-bottom-hud,
+  .p3r-contact-bottom-hud {
+    display: none !important;
   }
 
   .slink-hud-btn {
@@ -4897,32 +4893,10 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
     height: clamp(34px, 5.2vh, 40px) !important;
   }
 
-  /* 6. Subpage Bottom-Right HUD: Neatly docked at Bottom Right */
+  /* 6. Subpage Bottom-Right HUD: Hidden on mobile viewports per user request so exit is only via top-left corner back button */
   .slink-bottom-hud,
   .p3r-contact-bottom-hud {
-    position: fixed !important;
-    bottom: clamp(8px, 1.6vh, 16px) !important;
-    right: clamp(10px, 2vw, 18px) !important;
-    top: auto !important;
-    z-index: 250 !important;
-  }
-
-  .slink-bottom-hud .buttons-row,
-  .p3r-contact-bottom-hud .buttons-row {
-    gap: 6px !important;
-  }
-
-  .slink-hud-btn {
-    padding: 3.5px 9px 3.5px 7px !important;
-  }
-
-  .slink-hud-btn .control-key {
-    font-size: 0.66rem !important;
-    padding: 1.5px 5.5px !important;
-  }
-
-  .slink-hud-btn .control-text {
-    font-size: 0.78rem !important;
+    display: none !important;
   }
 
   #skill-tab-prev-btn,
