@@ -4651,7 +4651,7 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
    Applies STRICTLY to mobile viewports (<= 900px width OR handheld landscape <= 500px height)
    Desktop PCs and Laptops NEVER enter this query, preserving 100% full-size PC layout!
    ========================================================================== */
-@media (max-width: 900px),
+@media (max-width: 600px),
 ((max-height: 500px) and (orientation: landscape)) {
 
   /* 1. Main Canvas & Makoto Yuki Video Placement */
@@ -4840,8 +4840,8 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   .p3r-geometric-header {
     transform: rotate(-4.2deg) !important;
     transform-origin: left center !important;
-    margin-top: 2px !important;
-    margin-bottom: 4px !important;
+    margin-top: 0 !important;
+    margin-bottom: 2px !important;
     padding: 0 !important;
   }
 
@@ -4849,16 +4849,16 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   #skill-header-div #skill-header-text,
   #slink-project-div #slink-project-text,
   #about-header-div #about-header-text {
-    margin-left: clamp(54px, 6.0vw, 70px) !important;
+    margin-left: clamp(48px, 5.5vw, 64px) !important;
     width: auto !important;
     justify-content: flex-start !important;
   }
 
   #skill-header-div {
     width: clamp(340px, 46vw, 440px) !important;
-    height: clamp(54px, 9.2vh, 68px) !important;
+    height: clamp(52px, 10.5vh, 66px) !important;
     margin-top: 0 !important;
-    margin-bottom: clamp(4px, 0.9vh, 8px) !important;
+    margin-bottom: clamp(3px, 0.7vh, 6px) !important;
     transform: rotate(-4.2deg) !important;
     transform-origin: left center !important;
   }
@@ -4872,7 +4872,7 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   }
 
   #skill-header-div #skill-header-text {
-    margin-left: clamp(52px, 5.8vw, 68px) !important;
+    margin-left: clamp(48px, 5.5vw, 64px) !important;
   }
 
   #skill-header-div #skill-header-text .p3r-cutout-group {
@@ -4880,14 +4880,15 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   }
 
   #skill-header-text .p3r-cutout-char {
-    font-size: clamp(1.20rem, 2.2vw, 1.55rem) !important;
-    padding: 0.05em 0.10em 0.07em !important;
+    font-size: clamp(1.45rem, 2.6vw, 1.85rem) !important;
+    padding: 0.05em 0.11em 0.07em !important;
+    box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.9), 0 3px 8px rgba(0, 0, 0, 0.5) !important;
   }
 
   /* Mobile Corner Back Button on Mobile: Compact & sleek */
   .p3r-mobile-corner-back,
   .p3r-corner-back {
-    top: clamp(10px, 2.2vh, 16px) !important;
+    top: clamp(8px, 1.6vh, 14px) !important;
     left: clamp(10px, 2.0vw, 18px) !important;
     width: clamp(34px, 5.2vh, 40px) !important;
     height: clamp(34px, 5.2vh, 40px) !important;
@@ -4910,8 +4911,8 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
     flex-direction: row !important;
     justify-content: flex-start !important;
     align-items: flex-start !important;
-    gap: clamp(16px, 3.2vw, 36px) !important;
-    padding: clamp(8px, 1.5vh, 14px) clamp(14px, 2.2vw, 26px) !important;
+    gap: clamp(14px, 2.8vw, 32px) !important;
+    padding: clamp(6px, 1.2vh, 12px) clamp(12px, 2.0vw, 22px) !important;
     height: 100vh !important;
     height: 100dvh !important;
     box-sizing: border-box !important;
@@ -4931,11 +4932,11 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   /* PROJECT Geometric Banner matching PC angled aesthetic */
   #project-page .p3r-geometric-header {
     width: clamp(260px, 35vw, 330px) !important;
-    height: clamp(52px, 8.8vh, 64px) !important;
+    height: clamp(52px, 10.5vh, 64px) !important;
     transform: rotate(-4.2deg) !important;
     transform-origin: left center !important;
     margin-top: 0 !important;
-    margin-bottom: clamp(3px, 0.8vh, 6px) !important;
+    margin-bottom: clamp(2px, 0.6vh, 5px) !important;
     overflow: visible !important;
     position: relative !important;
     box-sizing: border-box !important;
@@ -4965,16 +4966,17 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   }
 
   #project-page .p3r-banner-title .p3r-cutout-char {
-    font-size: clamp(1.15rem, 1.8vw, 1.45rem) !important;
-    padding: 0.04em 0.10em 0.06em !important;
+    font-size: clamp(1.50rem, 2.7vw, 1.95rem) !important;
+    padding: 0.05em 0.12em 0.07em !important;
+    box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.9), 0 3px 8px rgba(0, 0, 0, 0.5) !important;
   }
 
   #project-page .slink-cards-container {
     display: flex !important;
     flex-direction: column !important;
-    gap: clamp(3.5px, 0.7vh, 5.5px) !important;
-    max-height: calc(100vh - clamp(68px, 11vh, 84px)) !important;
-    max-height: calc(100dvh - clamp(68px, 11vh, 84px)) !important;
+    gap: clamp(3px, 0.6vh, 5px) !important;
+    max-height: calc(100vh - clamp(60px, 11vh, 76px)) !important;
+    max-height: calc(100dvh - clamp(60px, 11vh, 76px)) !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
@@ -4992,7 +4994,7 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   }
 
   #project-page .slink-card {
-    height: clamp(34px, 4.6vh, 40px) !important;
+    height: clamp(32px, 4.4vh, 38px) !important;
     width: 100% !important;
     max-width: 100% !important;
     margin-left: 0 !important;
@@ -5016,7 +5018,7 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   }
 
   #project-page .card-numeral-text {
-    font-size: clamp(0.92rem, 1.35vw, 1.20rem) !important;
+    font-size: clamp(0.90rem, 1.3vw, 1.15rem) !important;
   }
 
   #project-page .card-main-body {
@@ -5025,11 +5027,11 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   }
 
   #project-page .card-title-text {
-    font-size: clamp(0.72rem, 1.0vw, 0.88rem) !important;
+    font-size: clamp(0.68rem, 0.95vw, 0.82rem) !important;
   }
 
   #project-page .card-subtitle-text {
-    font-size: clamp(0.48rem, 0.68vw, 0.60rem) !important;
+    font-size: clamp(0.46rem, 0.64vw, 0.56rem) !important;
     margin-top: 1px !important;
   }
 
@@ -5043,17 +5045,17 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
     width: clamp(270px, 40vw, 350px) !important;
     max-width: 360px !important;
     align-self: flex-start !important;
-    margin-top: clamp(16px, 3.8vh, 30px) !important;
+    margin-top: clamp(8px, 1.8vh, 16px) !important;
     padding: 0 !important;
-    max-height: calc(100vh - clamp(34px, 6.8vh, 48px)) !important;
-    max-height: calc(100dvh - clamp(34px, 6.8vh, 48px)) !important;
+    max-height: calc(100vh - clamp(18px, 3.8vh, 28px)) !important;
+    max-height: calc(100dvh - clamp(18px, 3.8vh, 28px)) !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch !important;
   }
 
   #project-page .slink-preview-card {
-    padding: 0 0 clamp(8px, 1.2vh, 12px) 0 !important;
+    padding: 0 0 clamp(6px, 1.0vh, 8px) 0 !important;
     width: 100% !important;
     box-sizing: border-box !important;
     background: rgba(4, 15, 38, 0.94) !important;
@@ -5067,7 +5069,7 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
     width: 100% !important;
     height: auto !important;
     aspect-ratio: 16 / 9 !important;
-    max-height: clamp(105px, 24vh, 145px) !important;
+    max-height: clamp(85px, 19vh, 118px) !important;
     border-radius: 0 !important;
     overflow: hidden !important;
     background: #010814 !important;
@@ -5093,43 +5095,43 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   }
 
   #project-page .slink-preview-body {
-    padding: clamp(6px, 1.0vh, 9px) clamp(10px, 1.4vw, 15px) 0 !important;
+    padding: clamp(4px, 0.8vh, 7px) clamp(10px, 1.4vw, 14px) 0 !important;
     box-sizing: border-box !important;
   }
 
   #project-page .slink-preview-title {
-    font-size: clamp(0.88rem, 1.3vw, 1.08rem) !important;
-    margin: 0 0 3px !important;
+    font-size: clamp(0.80rem, 1.15vw, 0.98rem) !important;
+    margin: 0 0 2px !important;
     line-height: 1.18 !important;
   }
 
   #project-page .slink-preview-desc {
-    font-size: clamp(0.65rem, 0.88vw, 0.75rem) !important;
-    line-height: 1.28 !important;
-    margin-bottom: 5px !important;
+    font-size: clamp(0.58rem, 0.78vw, 0.68rem) !important;
+    line-height: 1.22 !important;
+    margin-bottom: 4px !important;
   }
 
   #project-page .slink-preview-tools {
     display: flex !important;
     flex-wrap: wrap !important;
-    gap: 3.5px !important;
-    margin-bottom: 5px !important;
+    gap: 3px !important;
+    margin-bottom: 4px !important;
   }
 
   #project-page .slink-preview-tool-tag {
-    font-size: clamp(0.56rem, 0.76vw, 0.65rem) !important;
-    padding: 1.5px 6px !important;
+    font-size: clamp(0.52rem, 0.70vw, 0.60rem) !important;
+    padding: 1px 5px !important;
   }
 
   #project-page .slink-preview-actions {
     display: flex !important;
     justify-content: flex-end !important;
-    margin-top: 3px !important;
+    margin-top: 2px !important;
   }
 
   #project-page .slink-preview-open-btn {
-    padding: clamp(4px, 0.7vh, 6px) clamp(10px, 1.3vw, 15px) !important;
-    font-size: clamp(0.70rem, 0.95vw, 0.80rem) !important;
+    padding: clamp(3px, 0.6vh, 5px) clamp(9px, 1.2vw, 14px) !important;
+    font-size: clamp(0.64rem, 0.85vw, 0.74rem) !important;
   }
 
   /* 8. CERTIFICATE Subpage: Single-Line Horizontal Tabs + Balanced Grid */
@@ -5144,9 +5146,9 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
     scrollbar-width: none !important;
-    gap: clamp(5px, 0.9vw, 9px) !important;
+    gap: clamp(5px, 0.8vw, 8px) !important;
     margin-left: clamp(8px, 1.5vw, 16px) !important;
-    margin-bottom: clamp(6px, 1vh, 9px) !important;
+    margin-bottom: clamp(4px, 0.8vh, 6px) !important;
     padding-bottom: 2px !important;
     width: calc(100% - clamp(16px, 3vw, 32px)) !important;
   }
@@ -5157,72 +5159,116 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
 
   .p3r-skill-tab {
     flex-shrink: 0 !important;
-    padding: clamp(3px, 0.5vh, 5.5px) clamp(8px, 1.1vw, 12px) !important;
-    font-size: clamp(0.66rem, 0.9vw, 0.76rem) !important;
+    padding: clamp(2.5px, 0.5vh, 4.5px) clamp(7px, 1.0vw, 11px) !important;
+    height: clamp(26px, 4.2vh, 32px) !important;
+    box-sizing: border-box !important;
+    align-items: center !important;
+    font-size: clamp(0.64rem, 0.85vw, 0.74rem) !important;
+    gap: 6px !important;
+  }
+
+  .p3r-skill-tab .p3r-tab-tag,
+  .p3r-skill-tab.active .p3r-tab-tag {
+    font-size: clamp(0.60rem, 0.82vw, 0.70rem) !important;
+    padding: 0 !important;
+    background: transparent !important;
+    margin: 0 !important;
+    color: #16cffb !important;
+  }
+
+  .p3r-skill-tab.active .p3r-tab-tag {
+    color: #ffffff !important;
+  }
+
+  .p3r-skill-tab .p3r-tab-label,
+  .p3r-skill-tab.active .p3r-tab-label {
+    font-size: clamp(0.64rem, 0.88vw, 0.76rem) !important;
+    margin: 0 !important;
+  }
+
+  .p3r-category-headline {
+    font-size: clamp(0.72rem, 1.0vw, 0.86rem) !important;
+    margin-bottom: 2px !important;
+    margin-left: clamp(8px, 1.5vw, 16px) !important;
   }
 
   .p3r-skills-container {
     margin-left: clamp(8px, 1.5vw, 16px) !important;
     width: calc(100% - clamp(16px, 3vw, 32px)) !important;
-    max-height: calc(100vh - clamp(112px, 15vh, 145px)) !important;
-    max-height: calc(100dvh - clamp(112px, 15vh, 145px)) !important;
+    max-height: calc(100vh - clamp(92px, 15vh, 114px)) !important;
+    max-height: calc(100dvh - clamp(92px, 15vh, 114px)) !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
-    padding: 2px 4px clamp(32px, 5vh, 44px) 2px !important;
+    padding: 2px 4px clamp(12px, 2.5vh, 20px) 2px !important;
   }
 
   .p3r-cert-grid {
     display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(clamp(185px, 24vw, 250px), 1fr)) !important;
-    gap: clamp(8px, 1.1vw, 13px) !important;
+    grid-template-columns: repeat(auto-fill, minmax(clamp(170px, 22vw, 220px), 1fr)) !important;
+    gap: clamp(6px, 0.9vw, 10px) !important;
     width: 100% !important;
   }
 
   .p3r-cert-card {
-    padding: clamp(6px, 0.9vh, 9px) !important;
+    padding: clamp(3px, 0.5vh, 5px) !important;
+    border-radius: 4px !important;
   }
 
   .p3r-cert-card-top {
-    padding: 3px 7px !important;
+    padding: 2px 5px !important;
+    margin-bottom: 2px !important;
   }
 
   .p3r-cert-index {
-    font-size: 0.66rem !important;
+    font-size: 0.58rem !important;
   }
 
   .p3r-cert-badge {
-    font-size: 0.62rem !important;
-    padding: 1px 5px !important;
+    font-size: 0.54rem !important;
+    padding: 1px 4px !important;
   }
 
   .p3r-cert-thumb {
-    height: clamp(92px, 14.5vh, 126px) !important;
-    object-fit: contain !important;
+    height: clamp(58px, 10vh, 72px) !important;
+    object-fit: cover !important;
     background: #010814 !important;
+    border-radius: 2px !important;
   }
 
   .p3r-cert-body {
-    padding: 5px 3px 3px !important;
+    padding: 2px 2px 1px !important;
   }
 
   .p3r-cert-title {
-    font-size: clamp(0.76rem, 1.05vw, 0.90rem) !important;
-    line-height: 1.22 !important;
+    font-size: clamp(0.64rem, 0.85vw, 0.74rem) !important;
+    line-height: 1.15 !important;
+    margin: 1px 0 !important;
+    max-height: 2.3em !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
 
   .p3r-cert-issuer {
-    font-size: clamp(0.60rem, 0.8vw, 0.70rem) !important;
-    margin: 2px 0 5px !important;
+    font-size: clamp(0.50rem, 0.68vw, 0.58rem) !important;
+    margin: 1px 0 2px !important;
   }
 
   .p3r-cert-actions {
-    gap: 5px !important;
+    margin-top: 2px !important;
+    padding: 2px 0 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 4px !important;
+    align-items: center !important;
   }
 
   .p3r-cert-preview-btn,
-  .p3r-cert-link-btn {
-    padding: 3px 7.5px !important;
-    font-size: clamp(0.64rem, 0.82vw, 0.72rem) !important;
+  .p3r-cert-link-btn,
+  .p3r-cert-credential-btn {
+    padding: 2px 6px !important;
+    font-size: clamp(0.54rem, 0.72vw, 0.62rem) !important;
+    white-space: nowrap !important;
   }
 
   /* 9. ABOUT Subpage: Vertically Centered Layout matching PC aesthetics (left-docked card + slanted header) */
@@ -5230,7 +5276,7 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
     flex-direction: column !important;
     justify-content: center !important;
     align-items: flex-start !important;
-    padding: clamp(12px, 2.8vh, 22px) clamp(16px, 2.8vw, 26px) !important;
+    padding: clamp(6px, 1.2vh, 12px) clamp(14px, 2.2vw, 24px) !important;
     overflow: hidden !important;
     box-sizing: border-box !important;
     height: 100vh !important;
@@ -5248,11 +5294,11 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
 
   #about-header-div {
     width: clamp(260px, 35vw, 340px) !important;
-    height: clamp(52px, 8.8vh, 64px) !important;
+    height: clamp(52px, 10.5vh, 64px) !important;
     transform: rotate(-4.2deg) !important;
     transform-origin: left center !important;
     margin-top: 0 !important;
-    margin-bottom: clamp(6px, 1.2vh, 10px) !important;
+    margin-bottom: clamp(3px, 0.7vh, 6px) !important;
     margin-left: clamp(44px, 5.2vw, 56px) !important;
   }
 
@@ -5269,42 +5315,50 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   }
 
   #about-header-text .p3r-cutout-char {
-    font-size: clamp(1.35rem, 2.4vw, 1.68rem) !important;
-    padding: 0.05em 0.12em 0.07em !important;
+    font-size: clamp(1.65rem, 3.2vw, 2.15rem) !important;
+    padding: 0.05em 0.12em 0.08em !important;
+    box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.9), 0 3px 8px rgba(0, 0, 0, 0.5) !important;
   }
 
   #about-page .p3r-about-card {
-    width: clamp(410px, 58vw, 540px) !important;
-    max-width: calc(100vw - clamp(140px, 20vw, 220px)) !important;
-    max-height: calc(100vh - clamp(74px, 12vh, 92px)) !important;
-    max-height: calc(100dvh - clamp(74px, 12vh, 92px)) !important;
+    width: clamp(430px, 58vw, 560px) !important;
+    max-width: calc(100vw - clamp(100px, 16vw, 180px)) !important;
+    max-height: calc(100vh - clamp(62px, 11vh, 76px)) !important;
+    max-height: calc(100dvh - clamp(62px, 11vh, 76px)) !important;
     margin: 0 !important;
-    margin-left: clamp(16px, 2.5vw, 32px) !important;
-    padding: clamp(9px, 1.5vh, 15px) clamp(14px, 2.0vw, 20px) !important;
+    margin-left: clamp(12px, 2.0vw, 24px) !important;
+    padding: clamp(6px, 1.2vh, 10px) clamp(12px, 1.8vw, 18px) !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch !important;
-    gap: clamp(7px, 1.1vh, 11px) !important;
+    gap: clamp(4px, 0.8vh, 7px) !important;
+  }
+
+  .p3r-about-card-inner {
+    gap: clamp(4px, 0.8vh, 7px) !important;
   }
 
   .p3r-about-top-row {
-    gap: clamp(8px, 1.3vw, 14px) !important;
+    gap: clamp(8px, 1.2vw, 12px) !important;
+    margin-bottom: 0 !important;
   }
 
   .p3r-photo-box {
-    width: clamp(48px, 6.4vw, 60px) !important;
-    height: clamp(48px, 6.4vw, 60px) !important;
+    width: clamp(40px, 5.0vw, 48px) !important;
+    height: clamp(40px, 5.0vw, 48px) !important;
+    border-radius: 6px !important;
   }
 
   .p3r-about-name {
-    font-size: clamp(1.10rem, 1.8vw, 1.38rem) !important;
+    font-size: clamp(1.05rem, 1.65vw, 1.25rem) !important;
+    line-height: 1.05 !important;
   }
 
   .p3r-about-title {
-    font-size: clamp(0.64rem, 0.92vw, 0.78rem) !important;
+    font-size: clamp(0.58rem, 0.78vw, 0.68rem) !important;
   }
 
   .p3r-about-location {
-    font-size: clamp(0.56rem, 0.78vw, 0.68rem) !important;
+    font-size: clamp(0.52rem, 0.70vw, 0.60rem) !important;
   }
 
   .p3r-about-tabs {
@@ -5312,39 +5366,50 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
     overflow-x: auto !important;
     scrollbar-width: none !important;
     gap: 4px !important;
+    margin-top: 1px !important;
   }
 
   .p3r-about-tab {
     flex-shrink: 0 !important;
-    padding: 3px 8px !important;
-    font-size: 0.65rem !important;
+    padding: 2.5px 8px !important;
+    font-size: clamp(0.58rem, 0.8vw, 0.66rem) !important;
+  }
+
+  .p3r-about-panel {
+    gap: clamp(4px, 0.7vh, 6px) !important;
+  }
+
+  .p3r-about-bio {
+    gap: clamp(3px, 0.5vh, 5px) !important;
   }
 
   .p3r-about-p {
-    font-size: clamp(0.68rem, 0.95vw, 0.80rem) !important;
-    line-height: 1.32 !important;
+    font-size: clamp(0.59rem, 0.82vw, 0.69rem) !important;
+    line-height: 1.24 !important;
+    margin: 0 !important;
   }
 
   .p3r-about-quote {
     display: flex !important;
-    gap: 10px !important;
-    padding: clamp(6px, 0.9vh, 9px) clamp(8px, 1.2vw, 12px) !important;
-    margin-top: 2px !important;
+    gap: 8px !important;
+    padding: clamp(3px, 0.6vh, 5px) clamp(8px, 1.1vw, 12px) !important;
+    margin-top: 1px !important;
     border-radius: 4px !important;
   }
 
   .p3r-quote-mark {
-    font-size: 1.3rem !important;
+    font-size: 1.05rem !important;
+    line-height: 1 !important;
   }
 
   .p3r-quote-text {
-    font-size: clamp(0.66rem, 0.9vw, 0.78rem) !important;
-    line-height: 1.28 !important;
+    font-size: clamp(0.58rem, 0.8vw, 0.68rem) !important;
+    line-height: 1.20 !important;
   }
 
   .p3r-quote-author {
-    font-size: 0.62rem !important;
-    margin-top: 2px !important;
+    font-size: 0.55rem !important;
+    margin-top: 1px !important;
   }
 
   .p3r-about-actions {
@@ -5355,8 +5420,8 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
 
   .p3r-about-btn,
   .p3r-about-btn.primary {
-    padding: clamp(4px, 0.7vh, 7px) clamp(10px, 1.3vw, 15px) !important;
-    font-size: clamp(0.68rem, 0.9vw, 0.80rem) !important;
+    padding: clamp(3px, 0.6vh, 5px) clamp(9px, 1.2vw, 14px) !important;
+    font-size: clamp(0.60rem, 0.82vw, 0.72rem) !important;
   }
 
   #about-page .p3r-about-scroll-list {
@@ -5368,7 +5433,7 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: clamp(16px, 3.8vh, 26px) clamp(16px, 2.8vw, 28px) !important;
+    padding: clamp(12px, 2.5vh, 20px) clamp(14px, 2.2vw, 24px) !important;
     overflow: hidden !important;
     box-sizing: border-box !important;
     height: 100vh !important;
@@ -5376,10 +5441,10 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   }
 
   .p3r-mail-phone-wrap {
-    width: min(650px, 92vw) !important;
+    width: min(580px, 88vw) !important;
     height: auto !important;
-    max-height: calc(100vh - clamp(32px, 7.5vh, 48px)) !important;
-    max-height: calc(100dvh - clamp(32px, 7.5vh, 48px)) !important;
+    max-height: calc(100vh - clamp(24px, 5.5vh, 36px)) !important;
+    max-height: calc(100dvh - clamp(24px, 5.5vh, 36px)) !important;
     margin: auto !important;
     transform: none !important;
     background: rgba(4, 15, 38, 0.96) !important;
@@ -5410,7 +5475,7 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   }
 
   .p3r-mail-phone-card {
-    padding: clamp(10px, 1.8vh, 16px) clamp(14px, 2.2vw, 22px) !important;
+    padding: clamp(8px, 1.6vh, 13px) clamp(12px, 2.0vw, 18px) !important;
     width: 100% !important;
     height: auto !important;
     box-sizing: border-box !important;
@@ -5418,7 +5483,7 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
 
   .p3r-mail-header-row {
     min-height: auto !important;
-    margin-bottom: clamp(6px, 1.2vh, 10px) !important;
+    margin-bottom: clamp(5px, 1.0vh, 8px) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: flex-start !important;
@@ -5432,8 +5497,9 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   }
 
   .p3r-mail-watermark .p3r-cutout-char {
-    font-size: clamp(1.22rem, 2.4vw, 1.60rem) !important;
+    font-size: clamp(1.45rem, 2.7vw, 1.90rem) !important;
     padding: 0.05em 0.12em 0.07em !important;
+    box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.9), 0 3px 8px rgba(0, 0, 0, 0.5) !important;
   }
 
   .p3r-mail-list-container,
@@ -5441,21 +5507,21 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   .p3r-mail-list-6 {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: clamp(5px, 0.9vh, 8px) clamp(8px, 1.4vw, 14px) !important;
+    gap: clamp(4px, 0.8vh, 7px) clamp(8px, 1.3vw, 12px) !important;
     width: 100% !important;
     padding-right: 0 !important;
     margin-top: 0 !important;
   }
 
   .p3r-mail-row {
-    height: clamp(38px, 5.4vh, 46px) !important;
+    height: clamp(36px, 5.2vh, 42px) !important;
     border-radius: 5px !important;
     transform: none !important;
   }
 
   .p3r-mail-row.is-instagram {
     grid-column: 1 / -1 !important;
-    max-width: 440px !important;
+    max-width: 380px !important;
     justify-self: center !important;
     width: 100% !important;
   }
@@ -5466,7 +5532,7 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   }
 
   .p3r-mail-icon-block {
-    width: clamp(42px, 5.5vw, 50px) !important;
+    width: clamp(38px, 5.0vw, 46px) !important;
     height: 100% !important;
     display: flex !important;
     align-items: center !important;
