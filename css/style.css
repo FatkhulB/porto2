@@ -5466,30 +5466,67 @@ screen and (max-aspect-ratio: 1/1) and (max-width: 1024px) {
   }
 
   .p3r-mail-icon-block {
-    width: clamp(34px, 5vw, 44px) !important;
+    width: clamp(42px, 5.5vw, 50px) !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 6px 0 2px !important;
+    box-sizing: border-box !important;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .p3r-mail-icon-block svg {
+    width: clamp(16px, 2.2vw, 20px) !important;
+    height: clamp(16px, 2.2vw, 20px) !important;
+    display: block !important;
+    margin: auto !important;
+  }
+
+  /* Keep authentic brand colors solid and vibrant across states */
+  .p3r-mail-row.is-gmail .p3r-mail-icon-block {
+    background: #ea4335 !important;
+    color: #ffffff !important;
+  }
+  .p3r-mail-row.is-github .p3r-mail-icon-block {
+    background: #24292e !important;
+    color: #ffffff !important;
+  }
+  .p3r-mail-row.is-linkedin .p3r-mail-icon-block {
+    background: #0a66c2 !important;
+    color: #ffffff !important;
+  }
+  .p3r-mail-row.is-kaggle .p3r-mail-icon-block {
+    background: #20beff !important;
+    color: #041630 !important;
+  }
+  .p3r-mail-row.is-instagram .p3r-mail-icon-block {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
+    color: #ffffff !important;
+  }
+
+  /* Hide duplicate mini-icon on mobile for a clean, single-icon layout */
+  .p3r-mail-mini-icon {
+    display: none !important;
   }
 
   .p3r-mail-content-block {
-    padding: 2px clamp(6px, 1vw, 10px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding: 0 clamp(8px, 1.4vw, 14px) !important;
+    height: 100% !important;
   }
 
   .p3r-mail-sender-row {
-    font-size: clamp(0.64rem, 0.85vw, 0.74rem) !important;
-    gap: 4px !important;
+    font-size: clamp(0.86rem, 1.2vw, 1.05rem) !important;
+    gap: 0 !important;
+    line-height: 1 !important;
   }
 
-  .p3r-mail-sender-row svg {
-    width: 12px !important;
-    height: 12px !important;
-  }
-
-  .p3r-mail-row-line {
-    margin: 2px 0 !important;
-  }
-
+  .p3r-mail-row-line,
   .p3r-mail-msg-text {
-    font-size: clamp(0.72rem, 1.0vw, 0.84rem) !important;
-    line-height: 1.25 !important;
-    padding-bottom: 2px !important;
+    display: none !important;
   }
 }
